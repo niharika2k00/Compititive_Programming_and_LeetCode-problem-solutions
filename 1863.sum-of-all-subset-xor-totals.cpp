@@ -11,14 +11,15 @@ public:
     int subsetXORSum(vector<int> &nums)
     {
         // Obsesrve that after performing the sum we are actually performing the addition upto 2^n - 1.
-        int xor_sum = 0, i;
-        int limit = pow(2, nums.size()) - 1;
+        int xor_sum = 0, i, or_total, length = nums.size();
+        int limit = pow(2, length - 1);
 
-        for (i = 0; i <= limit; i++)
+        for (i = 0; i < length; i++)
         {
-            xor_sum = xor_sum + i;
+            or_total = or_total | nums[i];
         }
 
+        xor_sum = limit * or_total;
         return xor_sum;
     }
 };
