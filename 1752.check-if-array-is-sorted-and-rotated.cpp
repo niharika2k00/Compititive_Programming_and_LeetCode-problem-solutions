@@ -5,11 +5,20 @@
  */
 
 // @lc code=start
-class Solution {
+class Solution
+{
 public:
-    bool check(vector<int>& nums) {
-        
+    bool check(vector<int> &nums)
+    {
+
+        int i, count = 0, size = nums.size();
+        for (i = 0; i < size; i++)
+        {
+            if (nums[i] > nums[(i + 1) % size])
+                count++;
+        }
+
+        return (count <= 1);
     }
 };
 // @lc code=end
-
