@@ -11,7 +11,7 @@ public:
     vector<int> decrypt(vector<int> &code, int k)
     {
 
-        hdslk
+        
     }
 };
 // @lc code=end
