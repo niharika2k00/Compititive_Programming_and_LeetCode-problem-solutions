@@ -5,11 +5,25 @@
  */
 
 // @lc code=start
-class Solution {
+class Solution
+{
 public:
-    int maxLengthBetweenEqualCharacters(string s) {
-        
+    int maxLengthBetweenEqualCharacters(string s)
+    {
+
+        unordered_map<char, int> mp; // key: character, value: least index of character in s
+        int len = -1, compare;
+        for (int i = 0; i < s.length(); i++)
+        {
+            if (mp.count(s[i]))
+            {
+                compare = i - mp[s[i]] - 1;
+                len = max(len, compare);
+            }
+            else
+                mp[s[i]] = i;
+        }
+        return len;
     }
 };
 // @lc code=end
-
