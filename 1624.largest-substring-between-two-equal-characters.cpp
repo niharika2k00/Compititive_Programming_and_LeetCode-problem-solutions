@@ -11,17 +11,17 @@ public:
     int maxLengthBetweenEqualCharacters(string s)
     {
 
-        unordered_map<char, int> mp; // key: character, value: least index of character in s
+        unordered_map<char, int> map; // key: character, value: least index of character in s
         int len = -1, compare;
         for (int i = 0; i < s.length(); i++)
         {
-            if (mp.count(s[i]))
+            if (map.count(s[i])) // whether this ele is present or not
             {
-                compare = i - mp[s[i]] - 1;
+                compare = i - map[s[i]] - 1;
                 len = max(len, compare);
             }
             else
-                mp[s[i]] = i;
+                map[s[i]] = i;
         }
         return len;
     }
