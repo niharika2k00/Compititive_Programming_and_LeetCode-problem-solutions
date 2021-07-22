@@ -1,11 +1,11 @@
 {
 	"folders": [
 		{
-			"path": "..\\Data-Structure_DSA\\DSA_Data_Structures\\TREE"
+			"path": "."
 		},
 		{
 			"name": "LeetCode_Files",
-			"path": "."
+			"path": "..\\C++_codes\\LeetCode_Files"
 		}
 	],
 	"settings": {}
