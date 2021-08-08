@@ -2,10 +2,7 @@
 // https://leetcode.com/contest/biweekly-contest-58/problems/delete-characters-to-make-fancy-string/
 
 #include <iostream>
-#include <vector>
 #include <bits/stdc++.h>
-#include <string>
-#include <cmath>
 
 using namespace std;
 
@@ -27,9 +24,6 @@ int main()
         if (count < 3)
             ans = ans + s[i];
     }
-
-    cout << ans;
-    cout << "\n End";
 
     return 0;
 }
