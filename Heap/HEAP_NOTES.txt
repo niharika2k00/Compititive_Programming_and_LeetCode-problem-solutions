@@ -1,0 +1,19 @@
+
+//   _________________      Heap Data Structure    _____________________
+
+
+
+*  K + Largest Element   --->  MIN HEAP USE
+*  K + Smallest Element  --->  MAX HEAP USE
+*  Default priority_queue in c++ is a Max Heap 
+
+*  TIME COMPLEXITY : O(n log k) time
+
+
+
+
+ // Creates a max heap
+    priority_queue <int> pq;
+
+  // Creates a min heap
+    priority_queue <int, vector<int>, greater<int> > pq;   

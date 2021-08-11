@@ -29,7 +29,7 @@ void minimumCostRopes(int vec[], int len)
     // Using MIN HEAP
     priority_queue<int, vector<int>, greater<int>> pq(vec, vec + len); // initialises all the elements of the array
 
-    while (pq.size() >= 2)
+    while (pq.size() > 1)
     {
         ele1 = pq.top();
         pq.pop();
@@ -38,7 +38,7 @@ void minimumCostRopes(int vec[], int len)
         pq.push(ele1 + ele2);
     }
 
-    cout << "Minimum cost of connecting N Ropes : " << sum << endl;
+    // cout << "Minimum cost of connecting N Ropes : " << sum << endl;
 }
 
 int main()
@@ -51,6 +51,8 @@ int main()
     int vec[] = {4, 3, 2, 6};
     int len = 4;
     minimumCostRopes(vec, len);
+
+    cout << len << endl;
 
     return 0;
 }
