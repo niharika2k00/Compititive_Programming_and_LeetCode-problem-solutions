@@ -34,11 +34,12 @@ void minimumCostRopes(int vec[], int len)
         ele1 = pq.top();
         pq.pop();
         ele2 = pq.top();
+        pq.pop();
         sum = sum + (ele1 + ele2);
         pq.push(ele1 + ele2);
     }
 
-    // cout << "Minimum cost of connecting N Ropes : " << sum << endl;
+    cout << "Minimum cost of connecting N Ropes : " << sum << endl;
 }
 
 int main()
@@ -47,12 +48,10 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    // vector<int> vec{4, 3, 2, 6};
-    int vec[] = {4, 3, 2, 6};
-    int len = 4;
-    minimumCostRopes(vec, len);
+    int vec[] = {4, 1, 6, 18, 10};
+    int len = sizeof(vec) / sizeof(vec[0]);
 
-    cout << len << endl;
+    minimumCostRopes(vec, len);
 
     return 0;
 }
