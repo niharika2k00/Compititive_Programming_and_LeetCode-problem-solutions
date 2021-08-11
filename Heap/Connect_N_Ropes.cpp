@@ -1,4 +1,9 @@
-//   LINKS ::
+/* 
+________________________________________
+  - By Niharika Dutta
+ Code Link :  https://www.geeksforgeeks.org/connect-n-ropes-minimum-cost/
+________________________________________
+ */ 
 #include <bits/stdc++.h>
 #include <iostream>
 #include <vector>
@@ -13,16 +18,15 @@ using namespace std;
 #define mp make_pair
 #define loop1(n) for (ll i = 0; i < (n); i++)
 #define loop2(n) for (ll i = 1; i <= (n); i++)
-#define test  \
-    ll t;     \
-    cin >> t; \
-    while (t--)
+#define test   ll t;  cin >> t;   while (t--)
 
+ 
 int main()
 {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    cout.tie(NULL);
+ios_base::sync_with_stdio(false);
+cin.tie(NULL);
+ cout.tie(NULL);
 
-    return 0;
+     
+ return 0;
 }

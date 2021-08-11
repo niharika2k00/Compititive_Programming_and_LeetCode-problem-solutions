@@ -26,19 +26,37 @@ int main()
     cout.tie(NULL);
 
     vector<int> vec = {7, 4, 6, 3, 9, 1};
-    int k = 2;
+    int k = 2, i;
 
+    /* ----------------------
+       By using Max Heap
+      ---------------------- 
+    */
+    priority_queue<int, vector<int>> maxHeap;
+
+    for (i = 0; i < vec.size(); i++)
+        maxHeap.push(vec[i]);
+
+    for (i = 1; i < k; i++) // as we need  Kth largest value
+        maxHeap.pop();
+
+    cout << "The second largest element is " << maxHeap.top() << " using Max Heap " << endl;
+
+    /* ----------------------
+       By using Min Heap
+      ---------------------- 
+    */
     priority_queue<int, vector<int>, greater<int>> minHeap;
 
     // for (auto i = vec.begin(); i != vec.end(); i++)
-    for (int i = 0; i < vec.size(); i++)
+    for (i = 0; i < vec.size(); i++)
     {
         minHeap.push(vec[i]);
         if (minHeap.size() > k)
             minHeap.pop();
     }
 
-    cout << "The second largest element is " << minHeap.top() << endl;
+    cout << "The second largest element is " << minHeap.top() << " using Min Heap " << endl;
 
     return 0;
 }
