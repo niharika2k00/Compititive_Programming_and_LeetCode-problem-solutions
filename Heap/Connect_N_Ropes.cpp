@@ -3,7 +3,7 @@ ________________________________________
   - By Niharika Dutta
  Code Link :  https://www.geeksforgeeks.org/connect-n-ropes-minimum-cost/
 ________________________________________
- */ 
+ */
 #include <bits/stdc++.h>
 #include <iostream>
 #include <vector>
@@ -18,15 +18,39 @@ using namespace std;
 #define mp make_pair
 #define loop1(n) for (ll i = 0; i < (n); i++)
 #define loop2(n) for (ll i = 1; i <= (n); i++)
-#define test   ll t;  cin >> t;   while (t--)
+#define test  \
+    ll t;     \
+    cin >> t; \
+    while (t--)
 
- 
+void minimumCostRopes(int vec[], int len)
+{
+    int sum = 0, ele1, ele2;
+    // Using MIN HEAP
+    priority_queue<int, vector<int>, greater<int>> pq(vec, vec + len); // initialises all the elements of the array
+
+    while (pq.size() >= 2)
+    {
+        ele1 = pq.top();
+        pq.pop();
+        ele2 = pq.top();
+        sum = sum + (ele1 + ele2);
+        pq.push(ele1 + ele2);
+    }
+
+    cout << "Minimum cost of connecting N Ropes : " << sum << endl;
+}
+
 int main()
 {
-ios_base::sync_with_stdio(false);
-cin.tie(NULL);
- cout.tie(NULL);
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
 
-     
- return 0;
+    // vector<int> vec{4, 3, 2, 6};
+    int vec[] = {4, 3, 2, 6};
+    int len = 4;
+    minimumCostRopes(vec, len);
+
+    return 0;
 }

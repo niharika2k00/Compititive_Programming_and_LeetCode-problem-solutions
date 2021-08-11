@@ -8,8 +8,6 @@ ________________________________________
  */
 #include <bits/stdc++.h>
 #include <iostream>
-#include <vector>
-#include <cmath>
 
 using namespace std;
 
@@ -25,6 +23,7 @@ using namespace std;
     cin >> t; \
     while (t--)
 
+// Time Complexity  :  O(n log k)
 void K_Sort_MinHeap(int arr[], int n, int k)
 {
     int len, count = 0, i;
