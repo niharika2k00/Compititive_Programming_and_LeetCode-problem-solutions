@@ -2,8 +2,7 @@
 /* 
 ________________________________________
   - By Niharika Dutta
- Code Link : https://www.geeksforgeeks.org/largest-sum-contiguous-subarray/
- Time Complexity :            O(n)
+ Code Link :   https://www.geeksforgeeks.org/boyer-moore-majority-voting-algorithm/
 ________________________________________
  */
 #include <bits/stdc++.h>
@@ -29,18 +28,7 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    int a[] = {5, -4, -2, 6, -1};
-    int i, size = sizeof(a) / sizeof(a[0]), maxSum = 0, currentSum = 0;
+    vector<int> vec{5, 5, 4, 5, 3};
 
-    for (i = 0; i < size; i++)
-    {
-        currentSum += a[i];
-        if (currentSum > maxSum)
-            maxSum = currentSum;
-        if (currentSum < 0) // negative sum
-            currentSum = 0;
-    }
-
-    cout << "Maximum sum of the Longest Contiguous Subarray  :  " << maxSum << endl;
     return 0;
 }
