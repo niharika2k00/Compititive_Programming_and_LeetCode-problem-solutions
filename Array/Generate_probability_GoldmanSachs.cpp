@@ -30,10 +30,13 @@ int rand50()
     // number with equal probability. If rand()
     // generates odd number, the function will
     // return 1 else it will return 0.
+
+    // int a = rand();
+    // cout << "a = " << endl;
+
     return rand() & 1;
 }
 
-// Returns 1 with 75% probability and 0 with 25% probability using Bitwise OR
 bool rand75()
 {
     return rand50() | rand50();
@@ -48,11 +51,11 @@ int main()
     srand(time(NULL));
     unsigned char a = 6, b = 11;
 
-    // The result is 00000001
-    printf("a = %d, b = %d\n", a, b);
+    // The result is 010
+    printf("a = %d, b = %d   , a & b = %d\n", a, b, a & b);
 
-    for (int i = 0; i < 50; i++)
-        cout << rand75();
+    for (int i = 0; i < 20; i++)
+        cout << rand75() << "\t";
 
     return 0;
 }
