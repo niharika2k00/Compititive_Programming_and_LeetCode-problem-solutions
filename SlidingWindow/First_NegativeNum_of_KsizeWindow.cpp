@@ -33,23 +33,37 @@ int main()
     // Print the first negative number of every window of K size .
 
     int arr[] = {-2, -8, 3, 4, 10, -6, 5, -1};
-    vector<int> vecAnswer;
-    vector<int> storeNeg;
-    int n = 8, k = 3, count = 0, i;
+    deque<int> storeNegativeIndex;
+    int n = 8, k = 3, count = 0, i = 0;
 
     for (i = 0; i < k; i++)
     {
         if (arr[i] < 0)
         {
-            storeNeg.push_back(arr[i]);
-            break;
+            storeNegativeIndex.push_back(i);
+            // break;
         }
     }
 
     for (i = k; i < n; i++)
     {
-        if (arr[i - k] < 0)
+        if (!storeNegativeIndex.empty())
+            cout << arr[storeNegativeIndex.front()] << "\t";
+        else
+            cout << "0\t";
+
+        // Remove the elements  from the FRONT which are out of the current new window
+        while (!storeNegativeIndex.empty() && (storeNegativeIndex.front() <= (i - k)))
+            storeNegativeIndex.pop_front();
+
+        if (arr[i] < 0)
+            storeNegativeIndex.push_back(i);
     }
+
+    if (!storeNegativeIndex.empty())
+        storeNegativeIndex.push_back(i);
+    else
+        cout << "0 \t";
 
     return 0;
 }
