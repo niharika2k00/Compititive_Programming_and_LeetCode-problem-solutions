@@ -73,5 +73,7 @@ int main()
     for (i = 0; i < result.size(); i++)
         cout << result[i] << "\t";
 
+    cout << "\n\nTotal Anagrams encountered : " << result.size() << "\n";
+
     return 0;
 }

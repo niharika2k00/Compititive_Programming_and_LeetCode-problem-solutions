@@ -16,6 +16,7 @@ using namespace std;
 #define vi vector<int>
 #define vll vector<ll>
 #define pb push_back
+#define NO_OF_CHARS 256
 #define mp make_pair
 #define loop1(n) for (ll i = 0; i < (n); i++)
 #define loop2(n) for (ll i = 1; i <= (n); i++)
@@ -40,8 +41,26 @@ bool anagram_usingSorting(string s1, string s2)
         return true;
 }
 
+// Time Complexity :  O(n)
 bool anagram_usingCountCharacter(string s1, string s2)
 {
+    vector<int> vecCount(NO_OF_CHARS, 0);
+    // int vecCount[NO_OF_CHARS] = {0};
+    int i;
+
+    if (s1.length() != s2.length())
+        return false;
+
+    for (i = 0; i < s1.length(); i++)
+    {
+        vecCount[s1[i]]++;
+        vecCount[s2[i]]--;
+    }
+
+    for (i = 0; i < NO_OF_CHARS; i++)
+        if (vecCount[i]) // !0
+            return false;
+    return true;
 }
 
 int main()
