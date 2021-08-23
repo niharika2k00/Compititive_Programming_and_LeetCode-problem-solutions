@@ -3,7 +3,7 @@
 ________________________________________
 ----------------------------------------
  Author :  Niharika Dutta
- Code Link :    
+ Code Link :    https://www.geeksforgeeks.org/first-negative-integer-every-window-size-k/
 ________________________________________
 ----------------------------------------
  */
@@ -39,10 +39,7 @@ int main()
     for (i = 0; i < k; i++)
     {
         if (arr[i] < 0)
-        {
             storeNegativeIndex.push_back(i);
-            // break;
-        }
     }
 
     for (i = k; i < n; i++)
