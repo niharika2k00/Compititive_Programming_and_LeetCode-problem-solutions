@@ -32,13 +32,14 @@ int main()
     ll int n, ans, i;
     cin >> n;
 
-    // if (n == 1)
-    //     cout << "0" << endl;
-    // else
-    // {
-    //     ans = log2(n) / log2(2);
-    //     cout << ans << endl;
-    // }
+    if (n == 1)
+        cout << "0" << endl;
+    else
+    {
+        ans = log2(n) / log2(2);
+        cout << floor(log2((long double)n)) << '\n'; // correct ans according to editorial as my ans was having more precisions than 64-bit floating point decimal
+        cout << ans << endl;
+    }
 
     // OR  \\
 

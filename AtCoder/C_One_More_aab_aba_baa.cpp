@@ -36,10 +36,12 @@ int main()
 
     sort(s.begin(), s.end());
 
-    for (int i = 1; i < n; i++)
-    {
-        next_permutation(s.begin(), s.end());
-    }
+    // for (int i = 1; i < n; i++)
+    // {
+    //     next_permutation(s.begin(), s.end());
+    // }
+
+    /* Both loop works same */
 
     do
     {

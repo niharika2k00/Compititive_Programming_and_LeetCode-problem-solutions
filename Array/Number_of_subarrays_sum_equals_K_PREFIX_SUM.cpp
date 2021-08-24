@@ -41,7 +41,7 @@ int main()
         if (currentSum == k)
             count++;
 
-        // if (currentSum - k) element is found in the map
+        // if (currentSum - k) element is FOUND in the map
         // then take that value else by default val of any element in the map is 1
         if (hash.find(currentSum - k) != hash.end())
             count = count + hash[currentSum - k];
