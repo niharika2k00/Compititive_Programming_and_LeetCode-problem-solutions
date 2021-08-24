@@ -32,6 +32,13 @@ int main()
     cout.tie(NULL);
 
     int arr[] = {1, 2, 3, 7, 5};
-    int i, sum = 12;
+    int i, sum = 12, start = 0, currSum = 0, n = sizeof(arr) / sizeof(arr[0]);
+
+    currSum = currSum + arr[0];
+
+    for (i = 1; i < n; i++)
+    {
+    }
+
     return 0;
 }
