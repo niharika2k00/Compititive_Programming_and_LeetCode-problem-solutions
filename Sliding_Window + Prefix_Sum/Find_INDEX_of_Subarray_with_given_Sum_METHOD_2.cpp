@@ -1,9 +1,9 @@
-
 /* 
 ________________________________________
 ----------------------------------------
- Author :  Niharika Dutta
- Code Link :    https://www.geeksforgeeks.org/number-subarrays-sum-exactly-equal-k/
+ Author    :  Niharika Dutta
+ Code Link :   https://www.geeksforgeeks.org/find-subarray-with-given-sum-in-array-of-integers/ 
+ Time Complexity :  O(n)
 ________________________________________
 ----------------------------------------
  */
@@ -30,10 +30,11 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
+    // ********            THIS METHOD CAN DEAL WITH - ve nuber as well          ***********
     int arr[] = {10, 2, -2, -20, 10};
-    int i, k = -10, n = sizeof(arr) / sizeof(arr[0]), count = 0, currentSum = 0;
+    int i, k = -10, n = sizeof(arr) / sizeof(arr[0]), count = 0, currentSum = 0, flag = 0;
 
-    unordered_map<int, int> hash;
+    unordered_map<int, int> mp;
 
     for (i = 0; i < n; i++)
     {
@@ -43,13 +44,17 @@ int main()
 
         // if (currentSum - k) element is FOUND in the map
         // then take that value else by default val of any element in the map is 1
-        if (hash.find(currentSum - k) != hash.end())
-            count = count + hash[currentSum - k];
+        if (mp.find(currentSum - k) != mp.end())
+        {
+            cout << "Sum found between indexes " << 0 << " to " << i << endl;
+            flag = 1;
+        }
 
-        hash[currentSum]++;
+        mp[currentSum] = 1;
     }
 
-    cout << "Number of subarrays present whose SUM is equal to K :  " << count << endl;
+    if (!flag)
+        cout << "No Subarray exsist with the given Sum " << endl;
 
     return 0;
 }

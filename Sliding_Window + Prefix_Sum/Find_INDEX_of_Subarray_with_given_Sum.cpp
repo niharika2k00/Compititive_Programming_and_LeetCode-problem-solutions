@@ -32,8 +32,8 @@ int main()
     cout.tie(NULL);
 
     //   **************          THIS ALGO DOESNT DEALS WITH THE NEGATIVE ELEMENTS SO FOR THAT REFER TO METHOD 2        ***********
-    int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-    int i, sum = 15, start = 0, currSum = 0, n = sizeof(arr) / sizeof(arr[0]), flag = 0;
+    int arr[] = {1, 2, 3, 7, 5};
+    int i, sum = 12, start = 0, currSum = 0, n = sizeof(arr) / sizeof(arr[0]), flag = 0;
 
     for (i = 0; i < n; i++)
     {
@@ -54,7 +54,7 @@ int main()
     }
 
     if (!flag)
-        cout << "No subarray found";
+        cout << "NOT FOUND" << endl;
 
     return 0;
 }
