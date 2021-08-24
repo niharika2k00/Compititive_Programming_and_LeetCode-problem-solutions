@@ -3,6 +3,8 @@ ________________________________________
 ----------------------------------------
  Author :  Niharika Dutta
  Code Link :  https://www.geeksforgeeks.org/sliding-window-maximum-maximum-of-all-subarrays-of-size-k/  
+ Time Complexity :      O(n). 
+ Auxiliary Space:       O(k).  -- for the queue
 ________________________________________
 ----------------------------------------
  */
@@ -30,14 +32,14 @@ int main()
     cout.tie(NULL);
 
     vector<int> vec = {2, 10, -4, 69, 20, 8};
-    deque<int> Q;
+    queue<int> Q;
     int i = 0, k = 3;
 
     for (i = 0; i < k; i++)
     { // if the current element is GREATER than the previously inserted element ? Pop Q.back()
         while (!Q.empty() && vec[i] >= vec[Q.back()])
-            Q.pop_front();
-        Q.push_back(i); // index store
+            Q.pop();
+        Q.push(i); // index store
     }
 
     for (i = k; i < vec.size(); i++)
@@ -46,11 +48,11 @@ int main()
 
         // pop() element from the Front which lie outside the Window.
         while (!Q.empty() && Q.front() <= i - k)
-            Q.pop_front();
+            Q.pop();
 
         while (!Q.empty() && vec[i] >= vec[Q.back()])
-            Q.pop_front();
-        Q.push_back(i);
+            Q.pop();
+        Q.push(i);
     }
 
     // print the max ele of the Last Window
@@ -58,3 +60,19 @@ int main()
 
     return 0;
 }
+
+/* 
+
+EXPLAINATION ::
+
+- Use Queue or Dequeue STL functions
+- Insert k element into the Queue , and check whether the current element is GREATER than the previous/y pushed element
+
+- main LOOP from K to N
+            print element
+            Check if !Q.empty() && Q.front() element is not a member of the current window ?  Q.pop()   -- REmoves the FRONT ELEMENT
+            Again compare with the previous/y pushed element 
+
+- print the element of the last window
+
+ */
