@@ -1,0 +1,14 @@
+
+
+//  ----------------------------------------------------------------------------
+//                                SET 
+// ------------------------------------------------------------------------------
+
+
+Set is implemented as a balanced tree structure that is why it is possible to maintain order between the elements (by specific tree traversal). 
+The time complexity of set operations is O(log n)
+Unordered_set, it is O(1).
+
+
+ set<int, greater<int> > s1             - O(log n)
+ unordered_set <string> stringSet ;     - O(1)
