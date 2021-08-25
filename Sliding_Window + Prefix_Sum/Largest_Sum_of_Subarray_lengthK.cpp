@@ -11,6 +11,7 @@ ________________________________________
 
 // SAME PROBLEM CAN BE DONE IN 2 WAYS ---> *  KANDANE ALGORITHM (done in array folder)
 //                                         *  SLIDING WINDOW TECHNIQUE
+
 #include <bits/stdc++.h>
 #include <iostream>
 
@@ -47,7 +48,7 @@ int main()
 
     for (i = k; i < n; i++)
     {
-        currSum = currSum + arr[i] - arr[k - i];
+        currSum = currSum + arr[i] - arr[i - k];
         windowSumMax = max(currSum, windowSumMax);
     }
 
