@@ -66,7 +66,7 @@ int main()
         {
             for (j = i + 1; j < len; j++)
             {
-                ll K = (s[i] - '0') * 10 + (s[j] - '0');
+                ll K = (s[i] - '0') * 10 + (s[j] - '0'); // jst to convert string to int
                 // cout << " k = " << K << endl;
                 if (!isPrime(K)) // not prime  --> means Composite
                 {
@@ -83,3 +83,13 @@ int main()
 
     return 0;
 }
+
+/* 
+
+EXPLAINATIONS :: 
+
+- First loop responsible for that a digit in a  number doesnt contain 2 3 5 7, then we will print it as AIM : print the NON PRIME SMALLEST NUMBER 
+- If every individual digit of the number contains a prime num then Check its pair with 2 DIGITS ----- in LOOP 2
+
+
+ */
