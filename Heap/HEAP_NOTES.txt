@@ -12,7 +12,7 @@
 
 
 
- // Creates a max heap
+ // Creates a max heap (default)
     priority_queue <int> pq;
 
   // Creates a min heap
