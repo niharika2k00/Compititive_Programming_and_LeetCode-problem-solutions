@@ -24,7 +24,7 @@ using namespace std;
     cin >> t; \
     while (t--)
 
-// Find the maximum average of the numbers of any contiguous subarray of length between A and B, inclusive.
+// Find the MAXIMUM  average of the numbers of any contiguous subarray of length between A and B, inclusive.
 
 int main()
 {
@@ -34,12 +34,14 @@ int main()
 
     test
     {
-        int n, b, a, i;
+        int n, b, a, i, j;
         cin >> n >> b >> a;
         vector<int> vec(n);
         for (i = 0; i < n; i++)
             cin >> vec[i];
-    }
+
+        for (i = 0; i < n; i++)
+        }
 
     return 0;
 }
