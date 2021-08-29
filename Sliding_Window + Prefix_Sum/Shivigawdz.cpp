@@ -41,7 +41,10 @@ int main()
             cin >> vec[i];
 
         for (i = 0; i < n; i++)
-        }
+    }
+    // SOLUTION LINKS
+    // https://www.codechef.com/viewsolution/49830685
+    // https://www.codechef.com/viewsolution/49013843
 
     return 0;
 }

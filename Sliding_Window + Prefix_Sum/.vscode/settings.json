@@ -6,6 +6,8 @@
         "ranges": "cpp",
         "span": "cpp",
         "regex": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "random": "cpp",
+        "ostream": "cpp"
     }
 }
