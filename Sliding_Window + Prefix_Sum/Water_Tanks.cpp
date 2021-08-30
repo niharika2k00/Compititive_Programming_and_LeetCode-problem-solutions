@@ -43,19 +43,48 @@ int main()
         for (i = 0; i < n; i++)
             cin >> waterPresent[i];
 
-        req = capacity[n - 1] - waterPresent[n - 1]; // more  h20 req
+        req = capacity[n - 1] - waterPresent[n - 1]; // more  H2O  req
+        maxWaterN = waterPresent[n - 1];
 
         for (i = n - 2; i >= 0; i--)
         {
             if (waterPresent[i] >= req && req > 0)
             {
+                cout << capacity[n - 1] << endl;
                 flag = 1;
                 break;
             }
+            else if (waterPresent[i] < req)
+            {
+                req = req - waterPresent[i];
+                maxWaterN = maxWaterN + waterPresent[i];
+            }
         }
 
-        cout << req << endl;
+        if (!flag)
+            cout << maxWaterN << endl;
     }
 
     return 0;
 }
+
+/* 
+//  Sample Test Case :: 
+a) 1
+   3
+   4 3 5
+   3 2 2
+
+   output : 5
+
+ b)  1
+     5 6
+     2 3
+
+     output : 5
+
+ c)  2 3 2
+     1 3 1
+
+     output : 2  
+ */
