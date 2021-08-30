@@ -2,7 +2,7 @@
 ________________________________________
 ----------------------------------------
  Author    :  Niharika Dutta
- Code Link :   https://www.codechef.com/problems/SHIVIGOD 
+ Code Link :  https://www.codechef.com/UCO32021/problems/UCODE015  
  Time Complexity :  
 ________________________________________
 ----------------------------------------
@@ -24,8 +24,6 @@ using namespace std;
     cin >> t; \
     while (t--)
 
-// Find the MAXIMUM  average of the numbers of any contiguous subarray of length between A and B, inclusive.
-
 int main()
 {
     ios_base::sync_with_stdio(false);
@@ -34,19 +32,30 @@ int main()
 
     test
     {
-        int n, b, a, i, j;
-        cin >> n >> b >> a;
-        vector<int> vec(n);
-        for (i = 0; i < n; i++)
-            cin >> vec[i];
+        ll n, i, req = 0, maxWaterN = 0, flag = 0;
+        cin >> n;
+        vector<int> capacity(n);
+        vector<int> waterPresent(n);
 
         for (i = 0; i < n; i++)
+            cin >> capacity[i];
+
+        for (i = 0; i < n; i++)
+            cin >> waterPresent[i];
+
+        req = capacity[n - 1] - waterPresent[n - 1]; // more  h20 req
+
+        for (i = n - 2; i >= 0; i--)
+        {
+            if (waterPresent[i] >= req && req > 0)
+            {
+                flag = 1;
+                break;
+            }
+        }
+
+        cout << req << endl;
     }
-
-    // have not understood
-    // SOLUTION LINKS
-    // https://www.codechef.com/viewsolution/49830685
-    // https://www.codechef.com/viewsolution/49013843
 
     return 0;
 }
