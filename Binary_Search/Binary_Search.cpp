@@ -59,7 +59,7 @@ int main()
 
 STL :  BUILD IN FUNCTION 
 
-  # For Binary Search ---> the array must be sorted  
+  # For Binary Search --->  ARAAY MUST BE SORTED 
 
 binary_search(startaddress, endaddress, valuetofind)
 e.g.  binary_search(arr, arr + 10 , 8);
