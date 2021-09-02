@@ -25,18 +25,27 @@ using namespace std;
     while (t--)
 
 /* 
-           Logic is to Find the MINUMUM element in the array.
+               
+           Logic is to Find the INDEX of the MINUMUM element in the array.
 
+        PART - 1 ::
            - Bcz we know that the array in Binary_Search is always SORTED
+           - Hence, MINIMUM ele is the Start of the Array 
            - So, we can use LINEAR SEARCH (to find the min ele)   --------->   Time Complexity : O (n) 
-           - Using Binary_Search                                  --------->   Time Complexity : O (log n) 
+           - Using Binary_Search                                  --------->   Time Complexity : O (log n) (preferred as more optimisec)
+
+
+
+        PART - 2 ::
+            - Find an element in the Rotated Sorted Array
+            -
     
 */
 
 int minimumNumberOfRotation(int arr[], int start, int end)
 {
-    int mid = (start + end) / 2, next, prev;
-    cout << "MID = " << mid << endl;
+    int mid = (start + end) / 2;
+    // cout << "MID = " << mid << endl;
 
     // when already Sorted
     if (end < start)
@@ -61,6 +70,25 @@ int minimumNumberOfRotation(int arr[], int start, int end)
     return 0;
 }
 
+int find_Element(int arr[], int start, int end, int Num)
+{
+    int mid = (start + end) / 2;
+
+    if (start <= end)
+    {
+        if (Num == arr[mid])
+            return mid;
+
+        else if (Num < arr[mid])
+            return find_Element(arr, start, mid - 1, Num);
+
+        else
+            return find_Element(arr, mid + 1, end, Num);
+    }
+
+    return 0;
+}
+
 int main()
 {
     ios_base::sync_with_stdio(false);
@@ -68,12 +96,22 @@ int main()
     cout.tie(NULL);
 
     int arr[] = {15, 20, 100, 5, 8};
-    int n = sizeof(arr) / sizeof(arr[0]), result = 0;
-    result = minimumNumberOfRotation(arr, 0, n - 1); // n-1 as 0 ZERO indexing
+    int n = sizeof(arr) / sizeof(arr[0]), rotationTimes = 0, Num = 100, leftHalf = 0, rightHalf = 0;
+    rotationTimes = minimumNumberOfRotation(arr, 0, n - 1); // n-1 as 0 ZERO indexing
 
-    if (!result)
+    if (!rotationTimes)
         cout << "NO ROTATION NEEDED .... YEAhhhhh .. ";
     else
-        cout << "\n Array rotated  " << result << " Times \n";
+        cout << "\n Array rotated  " << rotationTimes << " Times \n\n";
+
+    // -----------------------------------------------------
+    // FOR FINDING THE ELEMENT IN THE ROTATED SORTED ARRAY
+    // -----------------------------------------------------
+    int minIndex = rotationTimes;
+    leftHalf = find_Element(arr, 0, minIndex - 1, Num);
+    rightHalf = find_Element(arr, minIndex, n - 1, Num);
+
+    cout << leftHalf << " " << rightHalf << endl;
+
     return 0;
 }
