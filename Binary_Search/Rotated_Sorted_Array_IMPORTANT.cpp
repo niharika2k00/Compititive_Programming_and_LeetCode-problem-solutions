@@ -38,6 +38,7 @@ int minimumNumberOfRotation(int arr[], int start, int end)
     int mid = (start + end) / 2, next, prev;
     cout << "MID = " << mid << endl;
 
+    // when already Sorted
     if (end < start)
         return 0;
 
