@@ -46,13 +46,13 @@ int searchNearlySortedArray(int arr[], int start, int end, int findNum)
         else if (mid + 1 <= end && arr[mid + 1] == findNum)
             return mid + 1;
 
-        else if (findNum < arr[mid])
+        else if (start <= mid && mid < end && findNum < arr[mid])
             return searchNearlySortedArray(arr, start, mid - 2, findNum);
 
-        else if (findNum > arr[mid])
+        else if (start <= mid && mid < end && findNum > arr[mid])
             return searchNearlySortedArray(arr, mid + 2, end, findNum);
     }
-    return -1;
+    return 0;
 }
 
 int main()
@@ -61,7 +61,7 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    int arr[] = {42, 55, 6, 10, 16}, findNum = 42, res = 0, size = sizeof(arr) / sizeof(arr[0]);
+    int arr[] = {42, 55, 6, 10, 16}, findNum = 55, res = 0, size = sizeof(arr) / sizeof(arr[0]);
     res = searchNearlySortedArray(arr, 0, size - 1, findNum);
     cout << res << endl;
     return 0;
