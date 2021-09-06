@@ -35,7 +35,7 @@ int peakElement_Finder(int arr[], int start, int size)
         {
             if (arr[mid - 1] < arr[mid] && arr[mid] < arr[mid + 1]) // arr[mid]  is the PEAK
                 return arr[mid];
-            else if (arr[mid - 1] > arr[mid]) // Move RIGHT Side as it is more promising. (EX : 10 20 30   , mid = 20)
+            else if (arr[mid - 1] > arr[mid]) // Move LEFT Side as it is more promising. (EX : 20 10 5   , mid = 10)
                 end = mid - 1;
             else
                 start = mid + 1;

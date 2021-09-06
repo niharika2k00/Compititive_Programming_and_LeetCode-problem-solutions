@@ -6,6 +6,12 @@
   1) ARRAY MUST BE SORTED ALWAYSSSSSSS ........
 
   2) fIND MID = (START + END)/2
+  
   3) use while loop / recurtion both same 
+
   4)  AT THE LAST ITERATION IN THE WHILE LOOP EVERYTIME THE END < START  BY 1 DIFFERENCE ,  So take that start and end at the end after the 
-                    Loop iteration completes (this logic required in Minimum difference in Sorted Array).                                                               
+                    Loop iteration completes (this logic required in Minimum difference in Sorted Array).   
+
+  5)  BITONIC ARRAY ---> array where we can apply binary search though it is not sorted 
+                           Structure like a hill.
+                           First the values increases then reaches a PEAK and after that it decreases.                                                                              
