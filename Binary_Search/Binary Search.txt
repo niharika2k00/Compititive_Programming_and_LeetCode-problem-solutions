@@ -1,0 +1,9 @@
+
+
+                                                           //    BINARY SEARCH    //
+
+
+  1) fIND MID = (START + END)/2
+  2) use while loop / recurtion both same 
+  3)  AT THE LAST ITERATION IN THE WHILE LOOP EVERYTIME THE END < START  BY 1 DIFFERENCE ,  So take that start and end at the end after the 
+                    Loop iteration completes (this logic required in Minimum difference in Sorted Array).                                                               

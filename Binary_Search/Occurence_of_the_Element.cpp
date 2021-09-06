@@ -24,6 +24,7 @@ using namespace std;
     cin >> t; \
     while (t--)
 
+// If multiple digits are present ans Q asked to find the first occurrence of it.
 int FirstPosition(int arr[], int start, int end, int findNum)
 {
     int mid = 0, ans = -1;
