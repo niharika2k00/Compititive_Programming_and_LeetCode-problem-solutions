@@ -35,26 +35,36 @@ int main()
     set<int, greater<int>> s;
     // unordered_set<int> setCopy;
 
-    s.insert(20);
-    s.insert(42);
-    s.insert(10);
-    s.insert(77);
-    s.insert(16);
-    s.insert(100);
+    s.insert(0);
+    s.insert(2);
+    s.insert(4);
+    s.insert(5);
+    // s.insert(20);
+    // s.insert(42);
+    // s.insert(10);
+    // s.insert(77);
+    // s.insert(16);
+    // s.insert(100);
 
     for (auto i = s.begin(); i != s.end(); i++)
         cout << *i << "\t";
+    cout << "\n";
 
     set<int> setCopy(s.begin(), s.end());
 
     // Erase elements < 70
-    setCopy.erase(setCopy.begin(), setCopy.find(77));
+    // setCopy.erase(setCopy.begin(), setCopy.find(77));
 
     // setCopy.erase(77);
 
-    cout << "\nErase elements < 77" << endl;
-    for (auto i = setCopy.begin(); i != setCopy.end(); i++)
-        cout << *i << "\t";
+    // cout << "\nErase elements < 77" << endl;
+    // for (auto i = setCopy.begin(); i != setCopy.end(); i++)
+    // cout << *i << "\t";
+
+    auto upper = s.upper_bound(3);
+    auto lower = s.lower_bound(3);
+
+    cout << *upper << "\t" << *lower << "\t";
 
     return 0;
 }
