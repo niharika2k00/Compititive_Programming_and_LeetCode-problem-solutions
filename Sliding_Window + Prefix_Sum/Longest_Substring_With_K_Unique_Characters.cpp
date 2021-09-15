@@ -52,7 +52,6 @@ void longestSubstring_K_uniqueCharacters(string s, int k)
     }
 
     cout << " Size = " << maxLenghtSubstring << "\t Substring =  " << s.substr(i, end) << endl;
-    ;
 }
 
 int main()
@@ -67,3 +66,17 @@ int main()
 
     return 0;
 }
+
+/* 
+    ALGORITHM ::
+
+  1) start = 0 , end = 0 ,  maxLenghtSubstring = 0
+  2)  if (mp.size() == k)
+         MAX of [ maxLenghtSubstring  OR end -  start + 1]   
+
+  3) if (mp.size() > k)
+                // when unique characters exceeds K
+                // Remove one element from the start (BEGINNING)
+                // map[s[start]] -- ;    means -1 from the Count
+                // Increament start 
+ */

@@ -25,11 +25,44 @@ using namespace std;
     cin >> t; \
     while (t--)
 
+void longestSubstringWithoutRepeatingCharacters(string s)
+{
+    int i, start = 0, end = 0, maxLength = 0, temp = 0, windowSize;
+    unordered_map<char, int> map;
+
+    for (end = 0; end < s.size(); end++)
+    {
+        map[s[end]]++;
+        cout << "Size of map = " << map.size() << endl;
+        windowSize = end - start + 1;
+
+        if (map.size() == windowSize)
+            maxLength = max(maxLength, windowSize);
+
+        else if (map.size() < windowSize)
+        {
+            int in = start; //  Pop() from the start
+            while (map[s[in]] != 0)
+            {
+                map[s[start]]--;
+                start++;
+            }
+            auto a = map.find(s[in]);
+            map.erase(a);
+        }
+    }
+
+    cout << " Max Length Substring Without Repeating Characters : " << maxLength << endl;
+}
+
 int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
+
+    string s = "pwwekw";
+    longestSubstringWithoutRepeatingCharacters(s);
 
     return 0;
 }
