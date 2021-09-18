@@ -7,8 +7,12 @@ ________________________________________
 ________________________________________
 ----------------------------------------
  */
+
 #include <bits/stdc++.h>
 #include <iostream>
+#include <stdio.h>
+#include <bits/stdc++.h>
+#include <sstream>
 
 using namespace std;
 
@@ -25,27 +29,45 @@ using namespace std;
     cin >> t; \
     while (t--)
 
+unordered_map<char, int> hashMap;
+
+bool compare(string x, string y)
+{
+    for (int i = 0; i < min(x.size(), y.size()); i++)
+    {
+        if (hashMap[x[i]] == hashMap[y[i]])
+            continue;
+        return hashMap[x[i]] < hashMap[y[i]];
+    }
+
+    return x.size() < y.size();
+}
+
 int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
 
-    string x, s;
+    string x;
     int i, n;
 
-    cin >> n;
     cin >> x;
+    cin >> n;
 
-    unordered_map<char, int> hashMap;
     vector<string> s(n);
 
     for (i = 0; i < n; i++)
         cin >> s[i];
 
     // Storing in the Hash-Map
+    for (i = 0; i < x.size(); i++)
+        hashMap[x[i]] = i;
+
+    sort(s.begin(), s.end(), compare); // Comparator Function
+
     for (i = 0; i < n; i++)
-        hashMap[s[i]] = i;
+        cout << s[i] << "\n";
 
     return 0;
 }
