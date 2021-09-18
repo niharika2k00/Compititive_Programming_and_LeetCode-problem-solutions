@@ -32,15 +32,20 @@ int main()
     cout.tie(NULL);
 
     string x, s;
-    int n;
+    int i, n;
 
-    cin >> x;
     cin >> n;
+    cin >> x;
 
-    while (n--)
-    {
-        cin >> s;
-    }
+    unordered_map<char, int> hashMap;
+    vector<string> s(n);
+
+    for (i = 0; i < n; i++)
+        cin >> s[i];
+
+    // Storing in the Hash-Map
+    for (i = 0; i < n; i++)
+        hashMap[s[i]] = i;
 
     return 0;
 }
