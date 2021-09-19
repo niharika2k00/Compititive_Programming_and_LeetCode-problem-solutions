@@ -7,6 +7,7 @@ ________________________________________
 ________________________________________
 ----------------------------------------
  */
+
 #include <bits/stdc++.h>
 #include <iostream>
 
@@ -31,11 +32,38 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    vector<int> nums{1, 2, 2, 1};
-    int k = 1, i, count = 0, left = 0, right = 0, len = nums.size(), j = 0;
+    vector<int> nums{3, 2, 2, 1};
+    int k = 1, i, count = 0, len = nums.size(), j = 0;
 
-    /*     sort(nums.begin(), nums.end());
-    while (right < nums.size())
+    // ----------------------------
+    // ==  BRUTE FORCE  N^2  ==
+    // ----------------------------
+
+    for (i = 0; i < len; i++)
+    {
+        for (j = i + 1; j < len; j++)
+            if (abs(nums[i] - nums[j]) == k || abs(nums[j] - nums[i]) == k)
+                count++;
+    }
+
+    // ----------------------------
+    //     HASH - MAP APPROACH
+    // ----------------------------
+
+    unordered_map<int, int> freq;
+    for (i = 0; i < nums.size(); i++)
+    {
+        count = count + freq[nums[i] + k] + freq[nums[i] - k]; // means if num = 4 then (x - 4) = (4 - x) = K
+        freq[nums[i]]++;
+    }
+
+    // ----------------------------
+    // == TWO POINTERS APPROACH ==
+    // ----------------------------
+
+    int left = 0, right = 0;
+    sort(nums.begin(), nums.end());
+    while (right <= len)
     {
         if (abs(nums[right] - nums[left]) == k)
         {
@@ -45,16 +73,8 @@ int main()
         }
         else if (abs(nums[right] - nums[left]) > k)
             left++;
-        else // nums[right] - nums[left] < sum
+        else
             right++;
-    } */
-
-    // Pick all elements one by one
-    for (i = 0; i < len; i++)
-    {
-        for (j = i + 1; j < len; j++)
-            if (abs(nums[i] - nums[j]) == k || abs(nums[j] - nums[i]) == k)
-                count++;
     }
 
     cout << count << endl;
