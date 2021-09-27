@@ -16,28 +16,25 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
-// class Solution
-// {
-// public:
-//     // USING RECURSION METHOD INVERTING THE EXSISTING TREE
-//     TreeNode *invertTree(TreeNode *root)
-//     {
-
-//         if (!root)
-//             return NULL;
-
-//         swap(root->right, root->left);
-//         invertTree(root->left);
-//         invertTree(root->right);
-
-//         return root;
-//     }
-// };
-// @lc code=end
-
 class Solution
 {
 public:
+    // Method - 1
+    // USING RECURSION METHOD INVERTING THE EXSISTING TREE
+    TreeNode *invertTree(TreeNode *root)
+    {
+
+        if (!root)
+            return NULL;
+
+        swap(root->right, root->left);
+        invertTree(root->left);
+        invertTree(root->right);
+
+        return root;
+    }
+
+    // Method - 2
     // USING STACK DATA STRUCTURE METHOD INVERTING THE EXSISTING TREE
     TreeNode *invertTree(TreeNode *root)
     {
@@ -64,3 +61,4 @@ public:
         return root;
     }
 };
+// @lc code=end
