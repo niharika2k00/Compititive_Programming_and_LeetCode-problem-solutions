@@ -37,6 +37,7 @@ int main()
         string s;
         cin >> s;
 
+        // We can cancel AB & BC
         for (i = 0; i < s.size(); i++)
         {
             if (s[i] == 'A')
@@ -47,7 +48,7 @@ int main()
                 c++;
         }
 
-        int ans = a + c;
+        int ans = a + c; // This is because for both A & C both needs a B to cancel out.
         if (ans == b)
             cout << "YES" << endl;
         else
