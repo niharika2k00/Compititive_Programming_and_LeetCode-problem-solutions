@@ -5,11 +5,11 @@
  */
 
 // @lc code=start
-class Solution {
+class Solution
+{
 public:
-    vector<bool> kidsWithCandies(vector<int>& candies, int extraCandies) {
-        
+    vector<bool> kidsWithCandies(vector<int> &candies, int extraCandies)
+    {
     }
 };
 // @lc code=end
-
