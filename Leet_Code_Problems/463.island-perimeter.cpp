@@ -12,9 +12,9 @@ public:
     int islandPerimeter(vector<vector<int>> &grid)
     {
         int i, j;
-        for (i = 0; i < grid.size(); ++i)
+        for (i = 0; i < grid.size(); ++i) //  ROW
         {
-            for (j = 0; j < grid[0].size(); ++j)
+            for (j = 0; j < grid[0].size(); ++j) //  COLUMN
             {
                 if (grid[i][j]) //  Land = 1
                     return dfs(i, j, grid);
@@ -35,7 +35,7 @@ public:
 
         grid[i][j] = -1; //    Marked Current Box VISITED
 
-        return dfs(i + 1, j, grid) + dfs(i - 1, j, grid) + dfs(i, j + 1, grid) + dfs(i, j - 1, grid);
+        return (dfs(i + 1, j, grid) + dfs(i - 1, j, grid) + dfs(i, j + 1, grid) + dfs(i, j - 1, grid));
     }
 };
 
@@ -59,6 +59,6 @@ public:
 			return dfs for UP + dfs for DOWN + dfs for LEFT + dfs for RIGHT;
 		}
 
-     Complexity : O(mn) time and O(1) Space
-     
+     Complexity : O(m * n) time and O(1) Space
+
  */
