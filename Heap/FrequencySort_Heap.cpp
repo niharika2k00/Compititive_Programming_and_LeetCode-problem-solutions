@@ -37,14 +37,14 @@ int main()
         map[arr[i]]++;
 
     for (auto it = map.begin(); it != map.end(); it++)
+    {
         cout << it->first << " " << it->second << endl;
-
-    for (auto it = map.begin(); it != map.end(); it++)
-        maxHeap.push(make_pair(it->second, it->first));
+        maxHeap.push(make_pair(it->first, it->second));
+    }
 
     while (!maxHeap.empty())
     {
-        cout << maxHeap.top().second << "\t";
+        cout << maxHeap.top().first << "\t";
         // cout << maxHeap.top().second << " " << maxHeap.top().first << endl;
         maxHeap.pop();
     }
