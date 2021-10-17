@@ -22,7 +22,7 @@ using namespace std;
     cin >> t; \
     while (t--)
 
-// find the K  closest value from the X number in the given array
+// find the  K  closest value from the X number in the given array
 
 int main()
 {
@@ -32,14 +32,13 @@ int main()
 
     int arr[] = {5, 6, 7, 8, 9};
     int k = 3, x = 7, i, size = sizeof(arr) / sizeof(arr[0]), diff;
+    priority_queue<pair<int, int>> maxHeap;
 
     // --------   ALGORITHM  -------
     /*
-Take a max heap of Pair Type
-key pair.first =  will be the differene of the arr[i] & X     ,    pair.second =  arr[i]
-
- */
-    priority_queue<pair<int, int>> maxHeap;
+          Take a max heap of Pair Type
+          key pair.first =  will be the differene of the arr[i] & X     ,    pair.second =  arr[i]
+     */
 
     for (i = 0; i < size; i++)
     {
