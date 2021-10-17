@@ -1,0 +1,21 @@
+
+
+                                                                  //     PAIRS     //
+                                                              -----------------------------
+
+1)  Initializing Pairs ::
+
+       pair  g1;           //default
+       pair  g2(1, 'a');   //initialized,  different data type
+       pair  g3(1, 10);    //initialized,  same data type
+       pair  g4(g3);       //copy of g3
+
+       pair <int , char> sample;
+       sample = make_pair(1, 'a');
+
+       sample = {1, 'a'};
+
+
+2)    Print Statement ::
+
+         cout << sample.first << " " << sample.second << " " << endl;
