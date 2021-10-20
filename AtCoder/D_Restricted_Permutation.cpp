@@ -32,7 +32,7 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    // TOPOLOGICAL SORT IN GRAPHS --- kahns algorithm
+    // TOPOLOGICAL SORT IN GRAPHS --- kahns algorithm (bfs)
     int n, m, i;
     cin >> n >> m;
 
@@ -49,7 +49,7 @@ int main()
         inDegree[b]++;
     }
 
-    for (i = 0; i < n; i++)
+    for (i = 1; i <= n; i++)
         if (inDegree[i] == 0)
             queue.push(i);
 
@@ -57,7 +57,6 @@ int main()
     {
         int frontEle;
         frontEle = queue.top();
-        // cout << frontEle << " ";
         queue.pop();
         result.push_back(frontEle);
 
