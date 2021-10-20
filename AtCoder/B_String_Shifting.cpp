@@ -31,5 +31,16 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
+    // string r = s1.substr(startingIndex ,  length);
+    string s = "aaba";
+    int i, len = s.length();
+    vector<string> V(len);
+
+    for (i = 0; i < len; i++)
+        V[i] = s.substr(i, len - i) + s.substr(0, i);
+
+    cout << *min_element(V.begin(), V.end()) << endl;
+    cout << *max_element(V.begin(), V.end()) << endl;
+
     return 0;
 }
