@@ -1,9 +1,9 @@
-/* 
+/*
 ________________________________________
 ----------------------------------------
  Author    :  Niharika Dutta
- Code Link :  https://www.geeksforgeeks.org/length-of-the-longest-substring-without-repeating-characters/  
- Time Complexity :  
+ Code Link :  https://www.geeksforgeeks.org/length-of-the-longest-substring-without-repeating-characters/
+ Time Complexity :
 ________________________________________
 ----------------------------------------
  */
@@ -49,6 +49,18 @@ void longestSubstringWithoutRepeatingCharacters(string s)
             }
             auto a = map.find(s[in]);
             map.erase(a);
+            asldfjajflsk
+                asflj;
+            af;
+            lds
+
+                int in = start; //  Pop() from the start
+            while (map[s[in]] != 0)
+            {
+                map[s[start]]--;
+                start++;
+            }
+            auto a = map.find(s[in]);
         }
     }
 
