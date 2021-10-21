@@ -49,18 +49,6 @@ void longestSubstringWithoutRepeatingCharacters(string s)
             }
             auto a = map.find(s[in]);
             map.erase(a);
-            asldfjajflsk
-                asflj;
-            af;
-            lds
-
-                int in = start; //  Pop() from the start
-            while (map[s[in]] != 0)
-            {
-                map[s[start]]--;
-                start++;
-            }
-            auto a = map.find(s[in]);
         }
     }
 
