@@ -1,9 +1,9 @@
-/* 
+/*
 ________________________________________
 ----------------------------------------
  Author    :  Niharika Dutta
- Code Link :  https://www.geeksforgeeks.org/k-th-lexicographical-string-of-given-length/  
- Time Complexity :  
+ Code Link :  https://www.geeksforgeeks.org/k-th-lexicographical-string-of-given-length/
+ Time Complexity :
 ________________________________________
 ----------------------------------------
  */
@@ -61,7 +61,8 @@ int main()
     return 0;
 }
 
-/* 
+/*      EXPLANATION ::
+
          1) First fill all the indexes wuth 0
          2) then from the back increases lexicographically
           aaaa -> aaab -> aaac            ... like this
