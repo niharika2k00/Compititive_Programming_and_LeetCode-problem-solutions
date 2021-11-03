@@ -43,7 +43,7 @@ public:
 
         for (i = 2; i < len; ++i)
             dp[i] = max(dp[i - 1], nums[i] + dp[i - 2]);
-        return dp[len - 1];
+        return dp[len - 1]; // dp[3] for len = 4(zero indexing) , 0 1 2 3
     }
 };
 // @lc code=end
