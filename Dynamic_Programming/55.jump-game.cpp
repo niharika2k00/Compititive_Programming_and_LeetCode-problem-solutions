@@ -10,7 +10,6 @@ class Solution
 public:
     bool canJump(vector<int> &nums)
     {
-
         int len = nums.size(), i, reachable = 0, count = 0;
 
         if (nums[0] == 0 && len == 1) // [0]
