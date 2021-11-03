@@ -11,7 +11,7 @@ public:
     int minCostClimbingStairs(vector<int> &cost)
     {
 
-        int i, len = cost.size();
+        int i, len = cost.size();  //  zero indexing 
         int dp[len];
 
         dp[0] = cost[0];
