@@ -33,15 +33,3 @@ public:
     }
 };
 // @lc code=end
-
-/*
-        // If No Zero element  =>  always return true
-        if (nums[0] != 0)
-        {
-            for (i = 1; i < len; i++)
-                if (nums[i] != 0)
-                    count++;
-            if (count == len - 1)
-                return true;
-        }
- */
