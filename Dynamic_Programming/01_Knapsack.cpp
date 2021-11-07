@@ -46,7 +46,7 @@ int main()
 
     int val[] = {60, 100, 120};
     int wt[] = {10, 20, 30};
-    int Capacity = 50, len = sizeof(val) / sizeof(val[0]);
+    int Capacity = 35, len = sizeof(val) / sizeof(val[0]);
     cout << knapSack(Capacity, wt, val, len);
 
     return 0;
