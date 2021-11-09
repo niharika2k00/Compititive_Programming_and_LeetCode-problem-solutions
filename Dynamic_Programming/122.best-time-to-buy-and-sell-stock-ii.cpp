@@ -5,11 +5,15 @@
  */
 
 // @lc code=start
-class Solution {
+class Solution
+{
 public:
-    int maxProfit(vector<int>& prices) {
-        
+    int maxProfit(vector<int> &prices)
+    {
+        int ans = 0, p;
+        for (p = 1; p < prices.size(); ++p)
+            ans += max(prices[p] - prices[p - 1], 0);
+        return ans;
     }
 };
 // @lc code=end
-
