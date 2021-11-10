@@ -10,10 +10,13 @@ class Solution
 public:
     int maxProfit(vector<int> &prices)
     {
-        int ans = 0, p;
-        for (p = 1; p < prices.size(); ++p)
-            ans += max(prices[p] - prices[p - 1], 0);
-        return ans;
+        int maxprofit = 0, i;
+        for (i = 1; i < prices.size(); i++)
+        {
+            if (prices[i] > prices[i - 1])
+                maxprofit += prices[i] - prices[i - 1]; //  Sum of all the drop
+        }
+        return maxprofit;
     }
 };
 // @lc code=end
