@@ -27,3 +27,14 @@ public:
     }
 };
 // @lc code=end
+
+/*
+             Here we can also do this using BITWISE OPERATOR
+             as 2 XOR 2 = 0
+
+             So, all values will be 0 except one
+
+             for(int i = 0; i < len ; i++)
+                ans = ans + ans ^ nums[i];
+
+ */
