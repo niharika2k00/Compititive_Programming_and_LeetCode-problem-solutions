@@ -38,3 +38,12 @@ public:
                 ans = ans + ans ^ nums[i];
 
  */
+
+/*
+             AN ALTERNATIVE OF THIS
+
+               if (Set.find(nums[i]) == Set.end())
+                             IS
+
+                   if ( Set.count(nums[i]) )
+ */
