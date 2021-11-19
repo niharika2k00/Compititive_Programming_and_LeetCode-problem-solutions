@@ -1,8 +1,8 @@
-/* 
+/*
 ________________________________________
 ----------------------------------------
  Author    :  Niharika Dutta
- Code Link :  https://www.geeksforgeeks.org/find-element-bitonic-array/  
+ Code Link :  https://www.geeksforgeeks.org/find-element-bitonic-array/
  Time Complexity :    O(log n)
 ________________________________________
 ----------------------------------------
@@ -72,7 +72,7 @@ int descendingPartBS(int arr[], int start, int end, int key)
     return -1;
 }
 
-int searchKey(int arr[], int start, int end, int key, int bitonicPt)
+int findValue(int arr[], int start, int end, int key, int bitonicPt)
 {
     if (key == arr[bitonicPt])
         return bitonicPt; //  returning the INDEX
@@ -89,20 +89,19 @@ int searchKey(int arr[], int start, int end, int key, int bitonicPt)
             return downward;
         }
     }
-
     return 0;
 }
 
-/* 
-EXPLAINATIONS :: 
-        BITONIC ARRAY ---> array where we can apply binary search though it is not sorted 
+/*
+EXPLAINATIONS ::
+        BITONIC ARRAY ---> array where we can apply binary search though it is not sorted
                            Structure like a hill.
                            First the values increases then reaches a PEAK and after that it decreases.
 
          * Find a Key Element in Bitonic Array  :
                                        - STEP 1 :  First Search in the first part(i.e before the PEAK element)
-                                       - STEP 2 :  if KEY not found in step 1 then search in the Right (downward) part of the array               
-     
+                                       - STEP 2 :  if KEY not found in step 1 then search in the Right (downward) part of the array
+
  */
 
 int main()
@@ -111,12 +110,12 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    int arr[] = {-8, 1, 2, 3, 40, 5, -2, -3}, bitonicPt = 0, find_key = 0, key = -2, size = sizeof(arr) / sizeof(arr[0]);
+    int arr[] = {-8, 1, 2, 3, 40, 5, -2, -3}, bitonicPt = 0, find_key = 0, key = 1, size = sizeof(arr) / sizeof(arr[0]);
 
     bitonicPt = findBitonicPoint(arr, 0, size - 1);
     cout << "Bitonic Point  : " << arr[bitonicPt] << " at Index " << bitonicPt << endl;
 
-    find_key = searchKey(arr, 0, size - 1, key, bitonicPt);
+    find_key = findValue(arr, 0, size - 1, key, bitonicPt);
     if (find_key == -1)
         cout << "Key is Not Found" << endl;
     else
