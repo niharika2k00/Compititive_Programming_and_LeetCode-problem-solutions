@@ -26,16 +26,22 @@ using namespace std;
     cin >> t; \
     while (t--)
 
-int knapSack(int Capacity, int wt[], int val[], int len)
+int knapSack(int Capacity, int weight[], int val[], int len)
 {
+    int consider = 0, notConsider = 0;
     if (len == 0 || Capacity == 0)
         return 0;
 
-    if (wt[len - 1] > Capacity)
-        return knapSack(Capacity, wt, val, len - 1);
+    if (weight[len - 1] > Capacity)
+        return knapSack(Capacity, weight, val, len - 1);
 
     else
-        return max(val[len - 1] + knapSack(Capacity - wt[len - 1], wt, val, len - 1), knapSack(Capacity, wt, val, len - 1));
+    {
+        consider = val[len - 1] + knapSack(Capacity - weight[len - 1], weight, val, len - 1);
+        notConsider = knapSack(Capacity, weight, val, len - 1);
+
+        return max(consider, notConsider);
+    }
 }
 
 int main()
