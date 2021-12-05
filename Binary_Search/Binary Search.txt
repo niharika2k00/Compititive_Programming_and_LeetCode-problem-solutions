@@ -1,6 +1,7 @@
 
 
                                                            //    BINARY SEARCH    //
+                                                                ----------------
 
 
   1) ARRAY MUST BE SORTED ALWAYSSSSSSS ........
