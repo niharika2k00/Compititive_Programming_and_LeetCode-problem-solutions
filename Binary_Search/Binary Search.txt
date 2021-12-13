@@ -1,6 +1,6 @@
 
 
-                                                           //    BINARY SEARCH    //
+                                                           //    BINARY SEARCH    //   TC : log n 
                                                                 ----------------
 
 

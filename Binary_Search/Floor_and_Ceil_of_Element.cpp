@@ -1,9 +1,9 @@
-/* 
+/*
 ________________________________________
 ----------------------------------------
  Author    :  Niharika Dutta
- Code Link :    
- Time Complexity :  
+ Code Link :
+ Time Complexity :
 ________________________________________
 ----------------------------------------
  */
@@ -24,11 +24,10 @@ using namespace std;
     cin >> t; \
     while (t--)
 
-/* 
+/*
   # FLOOR & CEIL  ELEMENT ::
          when an element is just less than the given number means arr = { 2 3 5 8 } , key = 4 ............ then  ans = 3 (floor) ans ans = 5 (Ceil)
-  
- */
+*/
 
 // for finding the floor of the key that exsist in the array
 int find_Floor(int arr[], int start, int end, int key)
