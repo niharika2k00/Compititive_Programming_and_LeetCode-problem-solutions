@@ -12,6 +12,7 @@ public:
     {
         int ans = 0, mask = 0, num = n;
 
+        // Base Case
         if (n == 0)
             return 1;
 

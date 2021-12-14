@@ -10,7 +10,6 @@ class Solution
 public:
     int minCostToMoveChips(vector<int> &position)
     {
-        xdcd
     }
 };
 // @lc code=end

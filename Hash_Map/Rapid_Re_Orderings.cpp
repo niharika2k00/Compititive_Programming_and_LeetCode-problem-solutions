@@ -31,5 +31,9 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
+    test
+    {
+    }
+
     return 0;
 }

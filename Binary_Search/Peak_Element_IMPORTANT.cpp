@@ -2,7 +2,7 @@
 ________________________________________
 ----------------------------------------
  Author    :  Niharika Dutta
- Code Link :
+ Code Link :   https://leetcode.com/problems/peak-index-in-a-mountain-array/
  Time Complexity :
 ________________________________________
 ----------------------------------------
@@ -38,6 +38,9 @@ int peakElement_Finder(int arr[], int start, int size)
     return start;
 }
 
+//   OR
+//  return find(arr.begin(), arr.end(), *max_element(arr.begin(), arr.end())) - arr.begin();   <-----  using STL function
+
 int main()
 {
     ios_base::sync_with_stdio(false);
@@ -59,5 +62,4 @@ EXPLANATION ::
         # If MID element is greater than both its neighbour on either side ?  if YES then return it.
            ELSE
         # Move accordingly to the side that is GREATER than the MID
-
 */
