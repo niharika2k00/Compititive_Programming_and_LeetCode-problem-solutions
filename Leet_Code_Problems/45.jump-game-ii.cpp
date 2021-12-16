@@ -25,7 +25,7 @@ public:
                 return 0;
 
             reachable = max(reachable, i + nums[i]);
-            if (i == maxReachable)
+            if (maxReachable == i)
             {
                 jumps++;
                 maxReachable = reachable;
