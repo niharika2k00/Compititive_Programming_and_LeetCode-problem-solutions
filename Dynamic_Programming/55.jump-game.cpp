@@ -25,10 +25,10 @@ public:
                 return false;
 
             reachable = max(reachable, i + nums[i]);
+            if (reachable >= len)
+                break;
         }
 
-        if (reachable == len - 1)
-            return true;
         return true;
     }
 };
