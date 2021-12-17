@@ -28,6 +28,7 @@
         "deque": "cpp",
         "bitset": "cpp",
         "initializer_list": "cpp",
-        "utility": "cpp"
+        "utility": "cpp",
+        "list": "cpp"
     }
 }

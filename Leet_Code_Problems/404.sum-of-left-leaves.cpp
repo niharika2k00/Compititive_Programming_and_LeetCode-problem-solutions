@@ -37,4 +37,5 @@ public:
         return sum;
     }
 };
+//   https://leetcode.com/problems/sum-of-left-leaves/discuss/1626781/C%2B%2B-or-BFS-or-Iterative-or-100.00-Faster
 // @lc code=end
