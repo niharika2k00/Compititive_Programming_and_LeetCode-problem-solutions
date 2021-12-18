@@ -3,6 +3,7 @@ ________________________________________
 ----------------------------------------
  Author    :  Niharika Dutta
  Code Link :  https://www.interviewbit.com/problems/allocate-books/
+              https://www.codingninjas.com/codestudio/problem-details/allocate-books_1090540
  Time Complexity :
 ________________________________________
 ----------------------------------------
@@ -86,3 +87,23 @@ int main()
 
     return 0;
 }
+
+/*
+           ::  INPUT   ::
+
+      2
+      4 2
+      5 5 5 5
+      4 2
+      10 20 30 40
+
+
+            ::  OUTPUT   ::
+       10
+       60
+
+   NOTE : This code is same as Painter's Partition Problem
+
+   Link : (https://www.codingninjas.com/codestudio/problems/painter's-partition-problem_1089557?source=youtube&campaign=love_babbar_codestudio2&utm_source=youtube&utm_medium=affiliate&utm_campaign=love_babbar_codestudio2)
+
+ */
