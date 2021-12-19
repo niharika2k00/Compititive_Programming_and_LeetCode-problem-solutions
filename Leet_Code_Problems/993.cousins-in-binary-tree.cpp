@@ -22,15 +22,39 @@
 class Solution
 {
 public:
-    int depthFinder(TreeNode *root, int x)
+    int depthFinder(TreeNode *root, int data)
     {
-        depthFinder(root, x);
+        depthFinder(root, data);
+    }
+
+    TreeNode *parentFinder(TreeNode *root, int data)
+    {
+        auto left, right;
+        if (root == NULL)
+            return NULL;
+
+        if (root->left && root->left->val == data)
+            return root;
+
+        if (root->right && root->right->val == data)
+            return root;
+
+        left = parentFinder(root->left, data);
+        right = parentFinder(root->right, data);
+
+        if (left)
+            return left;
+        return right;
     }
 
     bool isCousins(TreeNode *root, int x, int y)
     {
+        bool result = false;
+
         if (root == NULL)
             return false;
+
+        result = ;
 
         int depthX = depthFinder(root, x);
     }
