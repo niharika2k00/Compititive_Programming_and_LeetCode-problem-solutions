@@ -22,8 +22,28 @@
 class Solution
 {
 public:
+    int shortestPath(TreeNode *root)
+    {
+        if (!root)
+            return 0;
+
+        if (!root->left && !root->right) //  NO Children
+            return 1;
+
+        if (!root->right) //  root->right === NULL
+            return (1 + shortestPath(root->left));
+
+        if (!root->left) // root->left === NULL
+            return (1 + shortestPath(root->right));
+
+        return 1 + min(shortestPath(root->left), shortestPath(root->right)); //  when right + left both exsist
+    }
+
     int minDepth(TreeNode *root)
     {
+        if (!root)
+            return 0;
+        return shortestPath(root);
     }
 };
 // @lc code=end
