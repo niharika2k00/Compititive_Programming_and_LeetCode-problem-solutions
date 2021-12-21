@@ -40,3 +40,5 @@
 
         ::  BST properties  ::
     4)  Inorder Traversal -->  nodes are in sorted order   
+    5)  Level Order Traversal = BFS (Breadth First Search)
+    6)  PreOrder , InOrder , PostOrder = DFS (Depth First Search)
