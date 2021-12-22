@@ -21,9 +21,36 @@
  */
 class Solution
 {
+    // A BINARY TREE in which the Left & Right Subtrees of every node differ in height by NO more than 1.
 public:
+    int Checking(TreeNode *root)
+    {
+        int left, right, diff;
+        if (!root)
+            return 0;
+
+        left = Checking(root->left);
+        if (left == -1)
+            return -1;
+        right = Checking(root->right);
+        if (right == -1)
+            return -1;
+
+        diff = abs(left - right);
+        if (diff > 1)
+            return -1;
+        return 1 + max(left, right);
+    }
+
     bool isBalanced(TreeNode *root)
     {
+        if (!root)
+            return true;
+
+        auto result = Checking(root);
+        if (result == -1)
+            return false;
+        return true;
     }
 };
 // @lc code=end
