@@ -51,7 +51,6 @@ public:
 
     TreeNode *buildTree(vector<int> &preorder, vector<int> &inorder)
     {
-
         int size = preorder.size() - 1;
         return treeCreation(preorder, inorder, 0, size);
     }

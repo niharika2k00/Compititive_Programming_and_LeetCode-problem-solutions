@@ -55,7 +55,7 @@ public:
         // Leaf Node -- convert the string to binary
         if (!root->left && !root->right)
         {
-            totalSum = totalSum + stoi(str + to_string(root->val), nullptr, 2);
+            totalSum = totalSum + stoi(str + to_string(root->val), NULL, 2);
             return;
         }
 

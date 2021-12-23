@@ -25,7 +25,8 @@ public:
         if (root == NULL)
             return 0;
 
-        if (root->left != NULL and root->left->left == NULL and root->left->right == NULL)
+        // Condition for LEAF Node.
+        if (root->left && root->left->left == NULL and root->left->right == NULL)
             sum = sum + root->left->val;
 
         if (root->left) // when ! NULL

@@ -26,8 +26,10 @@ public:
             return 0;
         else
         {
-            rightSubTree = maxDepth(root->right);
-            leftSubTree = maxDepth(root->left);
+            if (root->right)
+                rightSubTree = maxDepth(root->right);
+            if (root->left)
+                leftSubTree = maxDepth(root->left);
         }
         return (max(rightSubTree, leftSubTree) + 1);
     }
