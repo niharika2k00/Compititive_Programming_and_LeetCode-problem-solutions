@@ -33,7 +33,7 @@ public:
         return node;
     }
 
-    TreeNode *sortedArrayToBST(vector<int> &nums) // nums is sorted in a strictly increasing order.
+    TreeNode *sortedArrayToBST(vector<int> &nums) // nums is sorted in a strictly increasing order / Inorder Traversal
     {
         int start = 0, end = nums.size() - 1;
         return CreateBST(nums, start, end);

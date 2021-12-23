@@ -22,8 +22,23 @@
 class Solution
 {
 public:
+    void Inorder_Traversal(TreeNode *root, vector<int> &inorderArr)
+    {
+        if (root->left)
+            Inorder_Traversal(root->left, inorderArr);
+        inorderArr.push_back(root->val);
+        if (root->right)
+            Inorder_Traversal(root->right, inorderArr);
+        return;
+    }
+
     int kthSmallest(TreeNode *root, int k)
     {
+        if (!root)
+            return 0;
+        vector<int> inorderArr;
+        Inorder_Traversal(root, inorderArr);
+        return inorderArr[k - 1];
     }
 };
 // @lc code=end
