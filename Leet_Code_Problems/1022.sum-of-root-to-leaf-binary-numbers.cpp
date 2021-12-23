@@ -43,15 +43,19 @@ public:
     // ----------------------------------------------
     //               METHOD - 2
     // ----------------------------------------------
+    // stoi(string, position, int base)
+    //  to_string ()  -> converts string to integer.
     int totalSum = 0;
-    void PreorderTraversal_2(Traversal *root, string str)
+    void PreorderTraversal_2(TreeNode *root, string str)
     {
+        // Base Case
         if (!root)
             return;
 
+        // Leaf Node -- convert the string to binary
         if (!root->left && !root->right)
         {
-            totalSum = totalSum + stoi(str + to_string(root->val), nullptr, 2); // stoi(string, position, int base)
+            totalSum = totalSum + stoi(str + to_string(root->val), NULL, 2);
             return;
         }
 
