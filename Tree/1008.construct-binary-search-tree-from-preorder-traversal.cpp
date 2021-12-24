@@ -38,6 +38,7 @@ public:
 
     TreeNode *bstFromPreorder(vector<int> &preorder)
     {
+        //   ROOT    LEFT    RIGHT
         int i, len = preorder.size();
         TreeNode *NewNode = new TreeNode(preorder[0]);
         NewNode->left = NewNode->right = NULL;

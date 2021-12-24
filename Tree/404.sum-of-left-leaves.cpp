@@ -19,13 +19,10 @@
 class Solution
 {
 public:
-    int sum = 0, res = 0;
+    int sum = 0;
     int sumOfLeftLeaves(TreeNode *root)
     {
-        if (root == NULL)
-            return 0;
-
-        // Condition for LEAF Node.
+        // Condition for LEFT LEAF Node.
         if (root->left && root->left->left == NULL and root->left->right == NULL)
             sum = sum + root->left->val;
 
