@@ -46,17 +46,13 @@ public:
         if (root == NULL)
             return NULL;
 
-        if (root->left && root->left->val == data)
-            return root;
-
-        if (root->right && root->right->val == data)
+        if (root->left && root->left->val == data || root->right && root->right->val == data)
             return root;
 
         left = parentFinder(root->left, data);
-        right = parentFinder(root->right, data);
-
         if (left)
             return left;
+        right = parentFinder(root->right, data);
         return right;
     }
 
