@@ -29,6 +29,10 @@
         "bitset": "cpp",
         "initializer_list": "cpp",
         "utility": "cpp",
-        "list": "cpp"
+        "list": "cpp",
+        "chrono": "cpp",
+        "random": "cpp",
+        "limits": "cpp",
+        "complex": "cpp"
     }
 }
