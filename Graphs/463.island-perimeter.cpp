@@ -11,23 +11,19 @@ class Solution
 public:
     int islandPerimeter(vector<vector<int>> &grid)
     {
-        int i, j;
-        for (i = 0; i < grid.size(); ++i) //  ROW
+        int i, j, row = grid.size(), column = grid[0].size();
+        for (i = 0; i < row; ++i) //  ROW
         {
-            for (j = 0; j < grid[0].size(); ++j) //  COLUMN
-            {
-                if (grid[i][j]) //  Land = 1
-                    return dfs(i, j, grid);
-            }
+            for (j = 0; j < column; ++j) //  COLUMN
+                if (grid[i][j])          //  Land = 1
+                    return dfs(i, j, grid, row, column);
         }
-
         return 0;
     }
 
-    int dfs(int i, int j, vector<vector<int>> &grid)
+    int dfs(int i, int j, vector<vector<int>> &grid, int row, int column)
     {
-
-        if (i < 0 || j < 0 || i == grid.size() || j == grid[0].size() || grid[i][j] == 0)
+        if (i < 0 || j < 0 || i > row - 1 || j > column - 1 || grid[i][j] == 0) //  Out of the BOUND
             return 1;
 
         if (grid[i][j] == -1) //  already visited
@@ -35,29 +31,29 @@ public:
 
         grid[i][j] = -1; //    Marked Current Box VISITED
 
-        return (dfs(i + 1, j, grid) + dfs(i - 1, j, grid) + dfs(i, j + 1, grid) + dfs(i, j - 1, grid));
+        return (dfs(i + 1, j, grid, row, column) + dfs(i - 1, j, grid, row, column) + dfs(i, j + 1, grid, row, column) + dfs(i, j - 1, grid, row, column));
     }
 };
 
-/* 
+/*
                          ---------------------
-                              ALGORITHM 
+                              ALGORITHM
                          ---------------------
 
     (1) We firstly find the beginning of island [means grid[i][j] == 1]
-		Apply dfs from there
+        Apply dfs from there
     (2) dfs function working:
-		dfs(x , y grid)
-		{
-			if( (x,y is outside boundary of grid) OR (grid[x][y] is water cell) )
-				return 1;
-			if(grid[x][y] is already visited)
-				return 0;
-				
-			// Reaching this line of dfs means grid[i][j] is land cell
-			grid[x][y] = -1; // marking land cell as visited
-			return dfs for UP + dfs for DOWN + dfs for LEFT + dfs for RIGHT;
-		}
+        dfs(x , y grid)
+        {
+            if( (x,y is outside boundary of grid) OR (grid[x][y] is water cell) )
+                return 1;
+            if(grid[x][y] is already visited)
+                return 0;
+
+            // Reaching this line of dfs means grid[i][j] is land cell
+            grid[x][y] = -1; // marking land cell as visited
+            return dfs for UP + dfs for DOWN + dfs for LEFT + dfs for RIGHT;
+        }
 
      Complexity : O(m * n) time and O(1) Space
 

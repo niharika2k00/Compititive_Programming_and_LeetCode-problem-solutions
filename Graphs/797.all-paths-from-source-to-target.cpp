@@ -2,6 +2,9 @@
  * @lc app=leetcode id=797 lang=cpp
  *
  * [797] All Paths From Source to Target
+ *
+ * https://leetcode.com/problems/all-paths-from-source-to-target/
+ *
  */
 
 // @lc code=start
@@ -19,6 +22,7 @@ public:
 
         else
         {
+            // Iterate over the Adjacency list
             for (auto it : graph[vertex])
                 DFS(graph, curr, it);
         }
