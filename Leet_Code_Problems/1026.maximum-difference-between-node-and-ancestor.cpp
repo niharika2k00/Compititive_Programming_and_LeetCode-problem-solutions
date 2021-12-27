@@ -36,6 +36,7 @@ public:
         return max(leftSide, rightSide);
     }
 
+    // Ancestor means Parent
     int maxAncestorDiff(TreeNode *root)
     {
         if (!root)
