@@ -12,7 +12,6 @@ public:
     {
 
         //   DOUBLE POINTERS  //
-
         int sum = 0, r = people.size() - 1, l = 0; // indexes
         sort(people.begin(), people.end());
 
@@ -20,16 +19,9 @@ public:
         while (l <= r)
         {
             if (people[l] + people[r] <= limit)
-            {
-                sum++;
-                r--;
                 l++;
-            }
-            else
-            {
-                r--;
-                sum++;
-            }
+            r--;
+            sum++;
         }
 
         return sum;

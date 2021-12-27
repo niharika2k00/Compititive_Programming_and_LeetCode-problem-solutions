@@ -8,6 +8,10 @@
 class Solution
 {
 public:
+    /*
+         Approach used here is BitMasking.
+           Input + Mask = Output
+     */
     int bitwiseComplement(int n)
     {
         int ans = 0, mask = 0, num = n;

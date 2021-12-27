@@ -32,10 +32,10 @@ There are ‘m’ number of students and the task is to allocate all the books t
     2. Each book should be allocated to a student.
     3. Book allocation should be in a contiguous manner.
 
-You have to allocate the book to ‘m’ students such that the maximum number of pages assigned to a student is minimum.
+You have to allocate the book to ‘m’ students such that the MINIMUM number of pages assigned to a student is minimum.
 */
 
-bool isPossible(vector<int> &books, int m, int mid)
+bool isPossible(vector<int> &books, int student, int mid)
 {
     int i, totalPage = 0, studentCount = 1;
 
@@ -47,10 +47,10 @@ bool isPossible(vector<int> &books, int m, int mid)
         else
         {
             studentCount++;
-            if (studentCount > m || books[i] > mid)
+            if (studentCount > student || books[i] > mid)
                 return false;
 
-            totalPage = 0; // pages for the next student
+            totalPage = 0; // pages for the next student, reinitialises with 0.
             totalPage += books[i];
         }
     }
@@ -65,7 +65,7 @@ int main()
     cout.tie(NULL);
 
     vector<int> books{10, 20, 30, 40};
-    int m = 2, sum = 0, start = 0, end = 0, ans = INT_MIN, mid = 0;
+    int student = 2, sum = 0, start = 0, end = 0, ans = INT_MIN, mid = 0;
     sum = accumulate(books.begin(), books.end(), 0);
     end = sum;
 
@@ -74,7 +74,7 @@ int main()
     while (start <= end)
     {
         mid = (start + end) / 2;
-        if (isPossible(books, m, mid))
+        if (isPossible(books, student, mid)) //  Left Part
         {
             ans = mid;
             end = mid - 1;
