@@ -1,13 +1,14 @@
 {
-    "files.associations": {
-        "array": "cpp",
-        "any": "cpp",
-        "string_view": "cpp",
-        "ranges": "cpp",
-        "span": "cpp",
-        "regex": "cpp",
-        "iostream": "cpp",
-        "random": "cpp",
-        "ostream": "cpp"
-    }
+  "files.associations": {
+    "array": "cpp",
+    "any": "cpp",
+    "string_view": "cpp",
+    "ranges": "cpp",
+    "span": "cpp",
+    "regex": "cpp",
+    "iostream": "cpp",
+    "random": "cpp",
+    "ostream": "cpp",
+    "map": "cpp"
+  }
 }
