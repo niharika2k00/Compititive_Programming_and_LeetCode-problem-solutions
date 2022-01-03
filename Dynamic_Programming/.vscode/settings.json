@@ -11,6 +11,7 @@
     "regex": "cpp",
     "utility": "cpp",
     "unordered_set": "cpp",
-    "iostream": "cpp"
+    "iostream": "cpp",
+    "equal_partition_subset_ispossiblecpp": "cpp"
   }
 }

@@ -50,11 +50,11 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    int arr[] = {3, 34, 4, 12, 5, 2}, sum = 1, len = sizeof(arr) / sizeof(arr[0]);
+    int arr[] = {3, 34, 4, 12, 5, 2}, sum = 9, len = sizeof(arr) / sizeof(arr[0]);
     if (SubsetFinder(arr, sum, len))
         cout << "TRUE Subset is possible ";
     else
-        cout << "FALSE Not posssible";
+        cout << "FALSE Not posssible ";
 
     return 0;
 }
