@@ -46,7 +46,10 @@ int main()
         // if (currentSum - k) element is FOUND in the map
         // then take that value else by default val of any element in the map is 1
         if (hash.find(currentSum - k) != hash.end())
+        {
+            cout << "saf" << endl;
             count = count + hash[currentSum - k];
+        }
 
         hash[currentSum]++;
     }
@@ -62,4 +65,4 @@ int main()
    Sum = 8
 
    Output : 6
- */
+*/
