@@ -1,10 +1,10 @@
 
-/* 
+/*
 ________________________________________
 ----------------------------------------
  Author :  Niharika Dutta
  Code Link :    https://www.geeksforgeeks.org/number-subarrays-sum-exactly-equal-k/
- Time Complexity: O(n) 
+ Time Complexity: O(n)
  Auxiliary Space: O(n)
 ________________________________________
 ----------------------------------------
@@ -55,3 +55,11 @@ int main()
 
     return 0;
 }
+
+/*
+   Test Case :
+   arr = { 0 , 8 , 0, 8}
+   Sum = 8
+
+   Output : 6
+ */
