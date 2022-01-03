@@ -26,19 +26,19 @@ using namespace std;
     cin >> t; \
     while (t--)
 
-int knapSack(int Capacity, int weight[], int val[], int len)
+int knapSack(int Capacity, int weight[], int profit[], int len)
 {
     int consider = 0, notConsider = 0;
     if (len == 0 || Capacity == 0)
         return 0;
 
     if (weight[len - 1] > Capacity)
-        return knapSack(Capacity, weight, val, len - 1);
+        return knapSack(Capacity, weight, profit, len - 1);
 
     else
     {
-        consider = val[len - 1] + knapSack(Capacity - weight[len - 1], weight, val, len - 1);
-        notConsider = knapSack(Capacity, weight, val, len - 1);
+        consider = profit[len - 1] + knapSack(Capacity - weight[len - 1], weight, profit, len - 1);
+        notConsider = knapSack(Capacity, weight, profit, len - 1);
 
         return max(consider, notConsider);
     }
@@ -50,10 +50,10 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    int val[] = {60, 100, 120};
+    int profit[] = {60, 100, 120};
     int wt[] = {10, 20, 30};
-    int Capacity = 35, len = sizeof(val) / sizeof(val[0]);
-    cout << knapSack(Capacity, wt, val, len);
+    int Capacity = 35, len = sizeof(profit) / sizeof(profit[0]);
+    cout << knapSack(Capacity, wt, profit, len);
 
     return 0;
 }
