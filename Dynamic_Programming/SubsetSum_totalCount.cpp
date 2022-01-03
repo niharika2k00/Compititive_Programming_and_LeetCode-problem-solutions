@@ -25,10 +25,25 @@ using namespace std;
     cin >> t; \
     while (t--)
 
-int Subset_CountFinder(int arr[], int sum, int len)
+int Subset_CountFinder(int arr[], int start, int sum, int len)
 {
     int consider, notConsider;
-    if (len == 0 && sum == 0)
+
+    // Base Case
+    if (start == len && sum == 0) // when full traversed  | OR |  Array Size = 0.
+        return 1;
+
+    if (start == len && sum != 0)
+        return 0;
+
+    // When arr Element is Greater than SUM .
+    if (arr[start] > sum)
+        return Subset_CountFinder(arr, start + 1, sum, len); //  Not Consider
+
+    consider = Subset_CountFinder(arr, start + 1, sum - arr[start], len); //  Consider
+    notConsider = Subset_CountFinder(arr, start + 1, sum, len);           // Not Consider
+
+    /* if (len == 0 && sum == 0)
         return 1;
 
     if (len == 0 && sum != 0)
@@ -39,7 +54,7 @@ int Subset_CountFinder(int arr[], int sum, int len)
         return Subset_CountFinder(arr, sum, len - 1); //  Not Consider
 
     consider = Subset_CountFinder(arr, sum - arr[len - 1], len - 1); //  Consider
-    notConsider = Subset_CountFinder(arr, sum, len - 1);             // Not Consider
+    notConsider = Subset_CountFinder(arr, sum, len - 1);             // Not Consider */
 
     return consider + notConsider;
 }
@@ -50,10 +65,26 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    int arr[] = {1, 2, 1}, sum = 3, len = sizeof(arr) / sizeof(arr[0]), count = 0;
-    count = Subset_CountFinder(arr, sum, len);
+    int arr[] = {3, 0, 3, 3}, sum = 6, len = sizeof(arr) / sizeof(arr[0]), count = 0;
+    count = Subset_CountFinder(arr, 0, sum, len);
     cout << "Total Subset Present with the given Sum = " << count << endl;
     return 0;
 }
 
 // Draw a Recursive Tree for better understanding Refer to Copy.
+
+// int consider, notConsider;
+// if (len == 0 && sum == 0)
+//     return 1;
+
+// if (len == 0 && sum != 0)
+//     return 0;
+
+// // When arr Element is Greater than SUM .
+// if (arr[len - 1] > sum)
+//     return Subset_CountFinder(arr, sum, len - 1); //  Not Consider
+
+// consider = Subset_CountFinder(arr, sum - arr[len - 1], len - 1); //  Consider
+// notConsider = Subset_CountFinder(arr, sum, len - 1);             // Not Consider
+
+// return consider + notConsider;
