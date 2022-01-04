@@ -30,10 +30,10 @@ int Subset_CountFinder(int arr[], int start, int sum, int len)
     int consider, notConsider;
 
     // Base Case
-    if (start == len && sum == 0) // when full traversed  | OR |  Array Size = 0.
+    if (start == len && sum == 0 || len == 0 && sum == 0) // when full traversed  | OR |  Array Size = 0.
         return 1;
 
-    if (start == len && sum != 0)
+    if (start == len && sum != 0 || len == 0 && sum == 0)
         return 0;
 
     // When arr Element is Greater than SUM .
@@ -65,7 +65,7 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    int arr[] = {3, 0, 3, 3}, sum = 6, len = sizeof(arr) / sizeof(arr[0]), count = 0;
+    int arr[] = {-10, 20, -2, 2}, sum = -10, len = sizeof(arr) / sizeof(arr[0]), count = 0;
     count = Subset_CountFinder(arr, 0, sum, len);
     cout << "Total Subset Present with the given Sum = " << count << endl;
     return 0;
@@ -73,18 +73,11 @@ int main()
 
 // Draw a Recursive Tree for better understanding Refer to Copy.
 
-// int consider, notConsider;
-// if (len == 0 && sum == 0)
-//     return 1;
+/*
+       Test Case
+       { 3 0 3 3 } , sum = 6
+       ans : 6
 
-// if (len == 0 && sum != 0)
-//     return 0;
+       {}
 
-// // When arr Element is Greater than SUM .
-// if (arr[len - 1] > sum)
-//     return Subset_CountFinder(arr, sum, len - 1); //  Not Consider
-
-// consider = Subset_CountFinder(arr, sum - arr[len - 1], len - 1); //  Consider
-// notConsider = Subset_CountFinder(arr, sum, len - 1);             // Not Consider
-
-// return consider + notConsider;
+ */
