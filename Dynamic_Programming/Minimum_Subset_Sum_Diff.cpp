@@ -26,7 +26,7 @@ using namespace std;
     cin >> t; \
     while (t--)
 
-int MinimizeDiff(vector<int> vec, int len, int totalSum, int subArr1Sum)
+int MinimizeDiff(vector<vector<int>> Dp, vector<int> vec, int len, int totalSum, int subArr1Sum)
 {
     int consider, notConsider;
 
@@ -34,10 +34,13 @@ int MinimizeDiff(vector<int> vec, int len, int totalSum, int subArr1Sum)
     if (len == 0)
         return abs(totalSum - 2 * subArr1Sum);
 
-    consider = MinimizeDiff(vec, len - 1, totalSum, subArr1Sum + vec[len - 1]);
-    notConsider = MinimizeDiff(vec, len - 1, totalSum, subArr1Sum);
+    if (Dp[len][subArr1Sum] != -1) //  not -1 means it has value
+        return Dp[len][subArr1Sum];
 
-    return min(consider, notConsider);
+    consider = MinimizeDiff(Dp, vec, len - 1, totalSum, subArr1Sum + vec[len - 1]);
+    notConsider = MinimizeDiff(Dp, vec, len - 1, totalSum, subArr1Sum);
+
+    return Dp[len][subArr1Sum] = min(consider, notConsider);
 }
 
 int main()
@@ -46,10 +49,11 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    vector<int> vec{1, 6, 11, 5};
+    vector<int> vec{2, 8};
     int len = vec.size(), totalSum = accumulate(vec.begin(), vec.end(), 0);
+    vector<vector<int>> Dp(len + 1, vector<int>(1000, -1));
 
-    cout << MinimizeDiff(vec, len, totalSum, 0) << endl;
+    cout << " Minimum diff between 2 Subarray :=> " << MinimizeDiff(Dp, vec, len, totalSum, 0) << endl;
 
     return 0;
 }
