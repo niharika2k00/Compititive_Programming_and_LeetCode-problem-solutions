@@ -1,10 +1,10 @@
-/* 
+/*
 ________________________________________
 ----------------------------------------
  Author    :  Niharika Dutta
- Code Link :  https://leetcode.com/contest/biweekly-contest-60/problems/find-the-middle-index-in-array/  
+ Code Link :  https://leetcode.com/contest/biweekly-contest-60/problems/find-the-middle-index-in-array/
           https://www.geeksforgeeks.org/find-element-array-sum-left-array-equal-sum-right-array/
- Time Complexity :  
+ Time Complexity :
 ________________________________________
 ----------------------------------------
  */
@@ -32,27 +32,6 @@ int findElement(int arr[], int n)
 
     //  Time Complexity : O(n)
     //  Space Complexity :  O(n)
-    /*     int i, bf, af;
-    vector<int> prefix(n, 0), suffix(n, 0);
-    prefix[0] = arr[0];
-
-    suffix[n - 1] = arr[n - 1];
-
-    for (i = 1; i < n; i++)
-        prefix[i] = prefix[i - 1] + arr[i];
-
-    for (i = n - 2; i >= 0; i--)
-        suffix[i] = suffix[i + 1] + arr[i];
-
-    for (i = 0; i < n; i++)
-    {
-        bf = (i == 0) ? 0 : prefix[i - 1];
-        af = (i == n - 1) ? 0 : suffix[i + 1];
-        if (bf == af)
-            return i;
-    }
-    return -1; */
-
     //  -----------------------------------------------------
 
     //  Time Complexity : O(n)
@@ -72,6 +51,30 @@ int findElement(int arr[], int n)
     return ans;
 }
 
+int findEquilibrium(int arr[], int len)
+{
+    // Base Case
+    if (len == 1) //  True
+        return 0;
+
+    int i, ans, rightSum = 0, leftSum = 0, totalSum = accumulate(arr, arr + len, 0);
+    vector<int> prefixSum(len, 0);
+    prefixSum[0] = arr[0];
+
+    for (i = 1; i < len; i++)
+        prefixSum[i] = prefixSum[i - 1] + arr[i];
+
+    for (i = 0; i < len; i++)
+    {
+        leftSum = prefixSum[i] - arr[i];
+        rightSum = totalSum - prefixSum[i];
+
+        if (leftSum == rightSum)
+            return i;
+    }
+    return -1;
+}
+
 int main()
 {
     ios_base::sync_with_stdio(false);
@@ -80,22 +83,27 @@ int main()
 
     int arr[] = {2, 3, 4, 1, 4, 5};
     int n = sizeof(arr) / sizeof(arr[0]);
-    cout << findElement(arr, n);
+    cout << findElement(arr, n) << endl;
+    int result = findEquilibrium(arr, n);
+    if (result >= 0)
+        cout << "Equilibrium Point at Index " << result << endl;
+    else
+        cout << "Not Found!" << endl;
 
     return 0;
 }
 
-/* 
-TEST CASES :: 
+/*
+TEST CASES ::
 
 [0 0 0 0]
 ans : 0
 
 [0 4]
-ans : 1 
+ans : 1
 
 [1 -1 4]
-ans : 2 
+ans : 2
 
 [2 3 -1 8 4]
 ans : 3
