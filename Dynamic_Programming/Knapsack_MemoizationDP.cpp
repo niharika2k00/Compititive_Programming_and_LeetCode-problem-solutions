@@ -5,7 +5,7 @@ ______________________________________
 ----------------------------------------
  Author    :  Niharika Dutta
  Code Link :    https://www.geeksforgeeks.org/0-1-knapsack-problem-dp-10/
- Time Complexity :
+ Time Complexity :  Time Complexity: O(2^n).
 ________________________________________
 ----------------------------------------
  */
