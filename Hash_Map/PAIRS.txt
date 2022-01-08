@@ -20,4 +20,9 @@
          cout << sample.first << " " << sample.second << " " << endl;
 
 
+  for (auto i = HashMap.begin(); i != HashMap.end(); i++)
+       cout << i->first << "  " << i->second << endl;
+
+  for (auto i : HashMap)
+        cout << i.first << "  " << i.second << endl;       
 

@@ -1,9 +1,9 @@
-/* 
+/*
 ________________________________________
 ----------------------------------------
  Author    :  Niharika Dutta
- Code Link :  https://leetcode.com/contest/biweekly-contest-61/problems/count-number-of-pairs-with-absolute-difference-k/  
- Time Complexity :  
+ Code Link :  https://leetcode.com/contest/biweekly-contest-61/problems/count-number-of-pairs-with-absolute-difference-k/
+ Time Complexity :
 ________________________________________
 ----------------------------------------
  */
@@ -32,49 +32,57 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    vector<int> nums{3, 2, 2, 1};
-    int k = 1, i, count = 0, len = nums.size(), j = 0;
+    vector<int> nums{1, 5, 3, 4, 2};
+    int k = 3, i, count = 0, len = nums.size(), j = 0;
 
     // ----------------------------
     // ==  BRUTE FORCE  N^2  ==
     // ----------------------------
 
-    for (i = 0; i < len; i++)
-    {
-        for (j = i + 1; j < len; j++)
-            if (abs(nums[i] - nums[j]) == k || abs(nums[j] - nums[i]) == k)
-                count++;
-    }
+    /*    for (i = 0; i < len; i++)
+       {
+           for (j = i + 1; j < len; j++)
+               if (abs(nums[i] - nums[j]) == k || abs(nums[j] - nums[i]) == k)
+                   count++;
+       } */
 
     // ----------------------------
     //     HASH - MAP APPROACH
     // ----------------------------
 
-    unordered_map<int, int> freq;
-    for (i = 0; i < nums.size(); i++)
-    {
-        count = count + freq[nums[i] + k] + freq[nums[i] - k]; // means if num = 4 then (x - 4) = (4 - x) = K
-        freq[nums[i]]++;
-    }
+    /*
+            ::   ALGORITHM   ::
+        1) Store elements in a HashMap
+        2) DON'T USE THE DUPLICATE ELEMENT, thus instead of iterating through the Array we are iterating the HASHMAP as it contains Unique Ele
+        3) Check HashMap.find()      || OR ||     HashMap.count() exsist or not.
+     */
+
+    unordered_map<int, int> HashMap;
+    for (i = 0; i < len; i++)
+        HashMap[nums[i]]++;
+
+    for (auto it : HashMap)
+        if (HashMap.find(it.first + k) != HashMap.end()) //  OR    if (HashMap.count(it.first + k))
+            count++;
 
     // ----------------------------
     // == TWO POINTERS APPROACH ==
     // ----------------------------
 
-    int left = 0, right = 0;
+    int left = 0, right = len - 1;
     sort(nums.begin(), nums.end());
-    while (right <= len)
+    while (right >= left)
     {
-        if (abs(nums[right] - nums[left]) == k)
+        if (nums[right] - nums[left] == k)
         {
-            count++;
+            // count++;
             left++;
-            right++;
+            right--;
         }
-        else if (abs(nums[right] - nums[left]) > k)
-            left++;
+        else if (nums[right] - nums[left] > k) //  Diff Greater
+            right--;
         else
-            right++;
+            left++;
     }
 
     cout << count << endl;
@@ -82,10 +90,10 @@ int main()
     return 0;
 }
 
-/* 
+/*
               EXPLANATIONS ::
 
-    Sort the array 
+    Sort the array
     Take two pointers, l, and r, both pointing to 1st element
     Take the difference arr[r] – arr[l]
     If value diff is K, increment count and move both pointers to next element
