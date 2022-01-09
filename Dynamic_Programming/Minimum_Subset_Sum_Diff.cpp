@@ -4,7 +4,8 @@ ________________________________________
 ----------------------------------------
  Author    :  Niharika Dutta
  Code Link :
- Time Complexity :
+ Time Complexity :   O(2^n) <-- Exponenetial TC using Recursion
+                     O(n * sum)   <-- using DP + Recursion
 ________________________________________
 ----------------------------------------
  */
@@ -29,8 +30,7 @@ using namespace std;
 int MinimizeDiff(vector<vector<int>> Dp, vector<int> vec, int len, int totalSum, int subArr1Sum)
 {
     int consider, notConsider;
-
-    // Base Case            when iterator reaches the first Index  +   LEN  =  0 arr has nly 1 element
+    // Base Case            when iterator reaches the first Index  &&   LEN  =  0 arr has only 1 element
     if (len == 0)
         return abs(totalSum - 2 * subArr1Sum);
 
