@@ -53,7 +53,7 @@ int main()
     int len = vec.size(), totalSum = accumulate(vec.begin(), vec.end(), 0);
     vector<vector<int>> Dp(len + 1, vector<int>(1000, -1));
 
-    cout << " Minimum diff between 2 Subarray :=> " << MinimizeDiff(Dp, vec, len, totalSum, 0) << endl;
+    cout << " \nMinimum diff between 2 Subarray :=> " << MinimizeDiff(Dp, vec, len, totalSum, 0) << endl;
 
     return 0;
 }

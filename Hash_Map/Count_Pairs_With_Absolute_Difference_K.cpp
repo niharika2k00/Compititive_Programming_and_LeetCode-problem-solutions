@@ -36,20 +36,19 @@ int main()
     int k = 3, i, count = 0, len = nums.size(), j = 0;
 
     // ----------------------------
-    // ==  BRUTE FORCE  N^2  ==
+    // ==  BRUTE FORCE  O(n^2)  ==
     // ----------------------------
 
-    /*    for (i = 0; i < len; i++)
-       {
-           for (j = i + 1; j < len; j++)
-               if (abs(nums[i] - nums[j]) == k || abs(nums[j] - nums[i]) == k)
-                   count++;
-       } */
+    for (i = 0; i < len; i++)
+    {
+        for (j = i + 1; j < len; j++)
+            if (abs(nums[i] - nums[j]) == k || abs(nums[j] - nums[i]) == k)
+                count++;
+    }
 
     // ----------------------------
-    //     HASH - MAP APPROACH
+    //     HASH - MAP APPROACH   O(n)
     // ----------------------------
-
     /*
             ::   ALGORITHM   ::
         1) Store elements in a HashMap
