@@ -25,13 +25,19 @@ using namespace std;
     cin >> t; \
     while (t--)
 
-void TwoPointer(string str, int right, int left)
+void TwoPointer(vector<int> str, int right, int left)
 {
     if (right >= left)
         return;
 
-    swap(str[left], str[right]);
-    TwoPointer(str, right + 1, left - 1);
+    if (right > left)
+    {
+        swap(str[left], str[right]);
+        // for (auto it : str)
+        //     cout << it << " ";
+        TwoPointer(str, right + 1, left - 1);
+    }
+    // return str;
 }
 
 int main()
@@ -40,16 +46,19 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    string str = "Niharika";
-    int len = str.length();
+    // string str = "Niharika";
+    // int len = str.length();
+
+    vector<int> vec{1, 2, 3, 4, 5, 6};
+    int len = vec.size();
     cout << "Length of the string: " << len << endl;
 
     // Two Pointer Approach
     int left = 0, right = len - 1;
-    TwoPointer(str, right, left);
+    cout << TwoPointer(vec, right, left);
 
-    for (auto it : str)
-        cout << it << " ";
+    // for (auto it : str)
+    // cout << it << " ";
 
     return 0;
 }
