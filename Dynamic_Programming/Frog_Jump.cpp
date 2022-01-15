@@ -25,7 +25,7 @@ using namespace std;
     cin >> t; \
     while (t--)
 
-// Either can Jump 1 step or 2 step
+// Minimum Energy required to the FROG , Either can Jump 1 step or 2 step
 int Helper(int len, vector<int> &h, vector<int> &dp)
 {
     int twoStep = INT_MAX, oneStep;
