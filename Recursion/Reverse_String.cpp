@@ -25,19 +25,22 @@ using namespace std;
     cin >> t; \
     while (t--)
 
-void TwoPointer(vector<int> str, int right, int left)
+void TwoPointer_StringReverse(string &str, int left, int right)
 {
-    if (right >= left)
+    if (right <= left)
         return;
 
-    if (right > left)
-    {
-        swap(str[left], str[right]);
-        // for (auto it : str)
-        //     cout << it << " ";
-        TwoPointer(str, right + 1, left - 1);
-    }
-    // return str;
+    swap(str[left], str[right]);
+    TwoPointer_StringReverse(str, left + 1, right - 1);
+}
+
+bool CheckPalindrome(string &str, int front, int len)
+{
+    if (str[front] != str[len - front])
+        return false;
+
+    CheckPalindrome(str, front + 1, len);
+    return true;
 }
 
 int main()
@@ -46,19 +49,28 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    // string str = "Niharika";
-    // int len = str.length();
+    string str = "Niharika";
+    int len = str.length();
 
-    vector<int> vec{1, 2, 3, 4, 5, 6};
-    int len = vec.size();
     cout << "Length of the string: " << len << endl;
 
-    // Two Pointer Approach
+    // ----------------------------------------------
+    // Two Pointer Approach using RECURSION
+    // ----------------------------------------------
     int left = 0, right = len - 1;
-    cout << TwoPointer(vec, right, left);
+    TwoPointer_StringReverse(str, left, right);
 
-    // for (auto it : str)
-    // cout << it << " ";
+    for (auto it : str)
+        cout << it << " ";
+
+    // ----------------------------------------------
+    //  Check Palindromic using RECURSION
+    // ----------------------------------------------
+    bool ans = CheckPalindrome(str, 0, len - 1);
+    if (ans)
+        cout << "\nGiven string is Palindromic.";
+    else
+        cout << "\nNot a Palindromic String.";
 
     return 0;
 }
