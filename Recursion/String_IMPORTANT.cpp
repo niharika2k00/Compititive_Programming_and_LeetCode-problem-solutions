@@ -36,7 +36,7 @@ void TwoPointer_StringReverse(string &str, int left, int right)
 
 bool CheckPalindrome(string &str, int front, int len)
 {
-    if (str[front] != str[len - front])
+    if (str[front] != str[len - front]) //  (len - 1 - i)
         return false;
 
     CheckPalindrome(str, front + 1, len);
@@ -60,6 +60,7 @@ int main()
     int left = 0, right = len - 1;
     TwoPointer_StringReverse(str, left, right);
 
+    cout << "\nReversed String : ";
     for (auto it : str)
         cout << it << " ";
 
@@ -68,9 +69,9 @@ int main()
     // ----------------------------------------------
     bool ans = CheckPalindrome(str, 0, len - 1);
     if (ans)
-        cout << "\nGiven string is Palindromic.";
+        cout << "\n\nGiven string is Palindromic.";
     else
-        cout << "\nNot a Palindromic String.";
+        cout << "\n\nNot a Palindromic String.";
 
     return 0;
 }
