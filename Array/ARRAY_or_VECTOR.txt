@@ -1,0 +1,13 @@
+
+
+                                                                    VECTOR PROPERTIES
+                                                                ---------------------------    
+
+1) Initialize 1D - Vector    ==>
+                                   vector<int> vec (size) 
+                                   vector<int> vec (size , 0)
+      
+
+ 2) Initialize 2D - Vector   ==>
+                                    vector<vector<int>> vec( rows , vector<int> (cols)); 
+                                    vector<vector<int>> vec( rows , vector<int> (cols, 0));       <- initialised with 0
