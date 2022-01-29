@@ -34,7 +34,7 @@ class Solution {
             divide = piles[i] / mid; // 7 / 3 = 2
             totalHrs = totalHrs + divide;
 
-            if (piles[i] % mid != 0) // 7 % 3 = 1 (remainder) so 1 more totalHrs required
+            if (piles[i] % mid != 0) // 7 % 3 = 1 (remainder) so 1 more totalHrs required to complete Rest.
                 totalHrs++;
         }
 
