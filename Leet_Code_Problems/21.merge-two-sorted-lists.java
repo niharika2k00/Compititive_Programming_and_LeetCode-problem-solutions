@@ -18,8 +18,8 @@
 class Solution {
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
         {
-            ListNode dummy = new ListNode(-1); // null assigned to the dummy node.
-            ListNode newStart = dummy;
+            ListNode dummy = new ListNode(-1); // (-1) default value in the Newly Allocated / Created NODE.
+            ListNode newStart = dummy; // variable
 
             // Base Case
             if (list1 == null && list2 == null)
