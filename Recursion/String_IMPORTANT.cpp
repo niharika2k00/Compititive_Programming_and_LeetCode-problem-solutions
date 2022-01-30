@@ -31,7 +31,17 @@ void TwoPointer_StringReverse(string &str, int left, int right)
         return;
 
     swap(str[left], str[right]);
-    TwoPointer_StringReverse(str, left + 1, right - 1);
+    TwoPointer_StringReverse(str, left + 1, right - 1); // Shifts the Pointer
+}
+
+void UsingLoop(string &str, int left, int right)
+{
+    while (left < right)
+    {
+        swap(str[left], str[right]);
+        left++;
+        right--;
+    }
 }
 
 bool CheckPalindrome(string &str, int front, int len)
