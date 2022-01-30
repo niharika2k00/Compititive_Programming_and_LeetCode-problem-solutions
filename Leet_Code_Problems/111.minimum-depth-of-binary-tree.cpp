@@ -16,8 +16,8 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  *
- * The MINIMUM DEPTH is the minimum number of nodes along the shortest path from the root node down to the nearest leaf node.
-    Note: A leaf is a node with no children.
+ * The MINIMUM DEPTH is the minimum number of nodes along the shortest path from the ROOT node down to the nearest LEAF node.
+        Note: A leaf is a node with no children.
  */
 class Solution
 {
