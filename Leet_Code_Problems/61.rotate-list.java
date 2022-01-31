@@ -27,22 +27,24 @@ class Solution {
         // Lenght of the LinkedList
         while (curr.next != null) {
             curr = curr.next;
-            ++len;
+            len++;
         }
 
+        // len++;
         k = k % len;
+        k = len - k;
+
+        System.out.println(len);
 
         // Circular Linkedlist
         curr.next = head;
 
-        // k - times Shift
-        while (k-- != 0)
+        // Remaining K - times Shift
+        while (k-- > 0)
             curr = curr.next;
 
-        head = curr.next;
+        head = curr.next;   
         curr.next = null;
-
-        System.out.println(len);
 
         return head;
     }
