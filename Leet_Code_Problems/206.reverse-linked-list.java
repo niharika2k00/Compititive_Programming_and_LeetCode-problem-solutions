@@ -25,7 +25,7 @@ class Solution {
             temp = curr.next; // address
             curr.next = newHead;
             newHead = curr;
-            curr = temp;
+            curr = temp;    
         }
 
         return newHead;
