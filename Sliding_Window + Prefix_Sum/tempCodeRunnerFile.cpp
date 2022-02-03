@@ -1,5 +1,3 @@
- // if (arr[i] == arr[i + 1])
-        // {
-        //     currTrendLength = 1;
-        //     continue;
-        // }
+
+    if (freqA == freqStr)
+        result.push_back(0);

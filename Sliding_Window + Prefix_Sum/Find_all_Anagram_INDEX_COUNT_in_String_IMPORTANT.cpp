@@ -1,8 +1,8 @@
-/* 
+/*
 ________________________________________
 ----------------------------------------
  Author :  Niharika Dutta
- Code Link :    
+ Code Link :
 ________________________________________
 ----------------------------------------
  */
@@ -32,21 +32,22 @@ int main()
     // SLIDING WINDOW TECHNIQUE
     //  take window size as the size of the small string
 
-    string A = "abcdebacb";
-    string str = "cab";
-    int i, windowLength = str.size(), Alength = A.size();
+    string str = "abcdebacb";
+    string pattern = "cab";
+    int i, patternLen = pattern.size(), strLen = str.size();
+    int window = patternLen;
     vector<int> freqA(26, 0), freqStr(26, 0), result;
 
-    if (str.size() > A.size())
+    if (pattern.size() > str.size())
         cout << "Not possible as window length is more than original string ..." << endl;
 
-    // frequency array
-    for (i = 0; i < str.size(); i++)
+    // Frequency array
+    for (i = 0; i < pattern.size(); i++)
     {
-        int c1 = str[i] - 'a'; // small string (window)
+        int c1 = pattern[i] - 'a'; // pattern string (window)
         freqStr[c1]++;
 
-        int c2 = A[i] - 'a'; // latge string
+        int c2 = str[i] - 'a'; // main string
         freqA[c2]++;
     }
 
@@ -54,25 +55,24 @@ int main()
     if (freqA == freqStr)
         result.push_back(0);
 
-    int end = str.size(); // 3
-    for (i = 0; i + windowLength < Alength; i++)
+    //  Iterator starts after the FIRST WINDOW
+    //     Delete the Last Ele
+    //     Add Next Ele in the NEW WINDOW
+    for (i = patternLen; i < strLen; i++)
     {
-        int count = A[i] - 'a';
-        freqA[count]--;
-
-        int append = A[end] - 'a';
+        int append = str[i] - 'a';
         freqA[append]++;
 
-        end++;
+        int count = str[i - window] - 'a';
+        freqA[count]--;
 
         if (freqA == freqStr)
-            result.push_back(i);
+            result.push_back(i - window + 1);
     }
 
     cout << "\nStarting Index for ANAGRAM :  \n ";
-    for (i = 0; i < result.size(); i++)
-        cout << result[i] << "\t";
-
+    for (auto it : result)
+        cout << it << "\t";
     cout << "\n\nTotal Anagrams encountered : " << result.size() << "\n";
 
     return 0;
