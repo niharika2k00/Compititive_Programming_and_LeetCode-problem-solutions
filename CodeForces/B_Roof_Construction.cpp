@@ -25,11 +25,38 @@ using namespace std;
     cin >> t; \
     while (t--)
 
+//   Video :  https://www.youtube.com/watch?v=fnSWZlqWp4o
+void solve()
+{
+    int len, i;
+    cin >> len;
+
+    //  Max bit at the Last
+    int maxLSB = log2(len - 1);
+    maxLSB = pow(2, maxLSB);
+
+    // for (i = 1; i < maxLSB; i++)
+    for (i = maxLSB - 1; i >= 0; i--)
+        cout << i << " ";
+
+    // cout << "0 ";
+
+    for (i = maxLSB; i < len; i++)
+        cout << i << " ";
+
+    cout << endl;
+}
+
 int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
+
+    test
+    {
+        solve();
+    }
 
     return 0;
 }
