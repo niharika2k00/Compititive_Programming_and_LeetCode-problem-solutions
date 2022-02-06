@@ -1,6 +1,8 @@
 /*
  * @lc app=leetcode id=121 lang=cpp
  *
+ * https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+ *
  * [121] Best Time to Buy and Sell Stock
  */
 
@@ -10,7 +12,7 @@ class Solution
 public:
     int maxProfit(vector<int> &prices)
     {
-        // BRUTE FORCE APPROACH
+        // BRUTE FORCE APPROACH      O(n ^ 2)
         // Tle
 
         /*
@@ -26,13 +28,12 @@ public:
         return maxProfit;
          */
 
-        int ret = 0, maxProfit = 0;
-        for (int i = 1; i < prices.size(); i++)
+        int minPrice = INT_MAX, maxProfit = 0;
+        for (int i = 0; i < prices.size(); i++)
         {
-            ret += prices[i] - prices[i - 1];
-            if (ret < 0)
-                ret = 0;
-            maxProfit = max(maxProfit, ret);
+            //  difference between the MAX and MIN Price
+            minPrice = min(minPrice, prices[i]);
+            maxProfit = max(maxProfit, prices[i] - minPrice);
         }
         return maxProfit;
     }
