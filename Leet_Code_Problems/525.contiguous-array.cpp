@@ -3,7 +3,7 @@
  *
  * [525] Contiguous Array
  */
-
+//   Find MAXIMUM LENGTH of the Array with EQUAL NUMBER OF ZEROS and ONES
 // @lc code=start
 class Solution
 {
