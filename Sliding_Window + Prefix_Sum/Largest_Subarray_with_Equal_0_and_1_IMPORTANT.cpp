@@ -1,9 +1,9 @@
-/* 
+/*
 ________________________________________
 ----------------------------------------
  Author    :  Niharika Dutta
- Code Link :  https://www.geeksforgeeks.org/largest-subarray-with-equal-number-of-0s-and-1s/  
- Time Complexity :  
+ Code Link :  https://www.geeksforgeeks.org/largest-subarray-with-equal-number-of-0s-and-1s/
+ Time Complexity :
 ________________________________________
 ----------------------------------------
  */
@@ -65,3 +65,5 @@ int main()
 
     return 0;
 }
+
+//   Contiguous Array     <-------      LEETCODE PROBLEM similar

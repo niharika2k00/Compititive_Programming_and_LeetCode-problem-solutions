@@ -46,10 +46,13 @@ void UsingLoop(string &str, int left, int right)
 
 bool CheckPalindrome(string &str, int front, int len)
 {
-    if (str[front] != str[len - front]) //  (len - 1 - i)
-        return false;
+    if (front < len)
+    {
+        if (str[front] != str[len - front]) //  (len - 1 - i)
+            return false;
 
-    CheckPalindrome(str, front + 1, len);
+        CheckPalindrome(str, front + 1, len);
+    }
     return true;
 }
 
