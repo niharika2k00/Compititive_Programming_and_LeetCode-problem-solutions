@@ -25,6 +25,7 @@ public:
         //  Pair Finding
         for (auto it : hashMap)
         {
+            //  it.first alreasy exist so now cheking whether (it.first + K) also esist or NOT.
             if ((k > 0 && hashMap.find(it.first + k) != hashMap.end()) || k == 0 && hashMap[it.first + k] > 1)
                 ans++;
         }
