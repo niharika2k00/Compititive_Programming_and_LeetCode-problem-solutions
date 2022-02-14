@@ -11,3 +11,23 @@
  2) Initialize 2D - Vector   ==>
                                     vector<vector<int>> vec( rows , vector<int> (cols)); 
                                     vector<vector<int>> vec( rows , vector<int> (cols, 0));       <- initialised with 0
+                                    
+
+
+
+
+ //  Merge Two Arrays with O(1) Space - Complexity
+ -----------------------------------------------------
+class Solution {
+public:
+    void merge(vector<int>& arr1, int len1, vector<int>& arr2, int len2) {
+        
+        int i = 0 ;
+        for (i=0 ; i <len2 ; i++){
+            arr1[len1] = arr2[i];
+            len1 ++;
+        }
+        
+         sort(arr1.begin() ,  arr1.end());
+    }
+};                                    
