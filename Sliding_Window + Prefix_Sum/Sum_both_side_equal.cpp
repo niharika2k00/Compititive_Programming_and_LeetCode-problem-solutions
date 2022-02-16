@@ -25,17 +25,13 @@ using namespace std;
     cin >> t; \
     while (t--)
 
+//  Time Complexity : O(n)
+//  Space Complexity :  O(1)
 int findElement(int arr[], int n)
 {
     if (n == 1)
         return 0;
 
-    //  Time Complexity : O(n)
-    //  Space Complexity :  O(n)
-    //  -----------------------------------------------------
-
-    //  Time Complexity : O(n)
-    //  Space Complexity :  O(1)
     int sum, i, prefixSum = 0, ans = -1;
     sum = accumulate(arr, arr + n, 0);
 
@@ -51,6 +47,8 @@ int findElement(int arr[], int n)
     return ans;
 }
 
+//  Time Complexity : O(n)
+//  Space Complexity :  O(n)
 int findEquilibrium(int arr[], int len)
 {
     // Base Case
@@ -81,7 +79,7 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    int arr[] = {2, 3, 4, 1, 4, 5};
+    int arr[] = {2, 3, -1, 8, 4};
     int n = sizeof(arr) / sizeof(arr[0]);
     cout << findElement(arr, n) << endl;
     int result = findEquilibrium(arr, n);
