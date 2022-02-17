@@ -24,6 +24,7 @@ using namespace std;
     cin >> t; \
     while (t--)
 
+//  --------------------   TWO  POINTER APPROACH  --------------------
 //  Time Complexity :      O(n)
 //   Space Complexity :    O(1)
 void SubarrayFinder(int arr[], int n, int k)

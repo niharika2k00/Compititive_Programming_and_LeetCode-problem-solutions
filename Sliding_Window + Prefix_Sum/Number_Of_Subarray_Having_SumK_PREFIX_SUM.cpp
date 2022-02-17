@@ -4,6 +4,8 @@ ________________________________________
 ----------------------------------------
  Author :  Niharika Dutta
  Code Link :    https://www.geeksforgeeks.org/number-subarrays-sum-exactly-equal-k/
+ Utube :   https://www.youtube.com/watch?v=HbbYPQc-Oo4&t=563s
+
  Time Complexity: O(n)
  Auxiliary Space: O(n)
 ________________________________________
@@ -33,31 +35,32 @@ int main()
     cout.tie(NULL);
 
     int arr[] = {10, 2, -2, -20, 10};
-    int i, k = -10, n = sizeof(arr) / sizeof(arr[0]), count = 0, currentSum = 0;
+    int i, key = -10, n = sizeof(arr) / sizeof(arr[0]), count = 0, currentSum = 0;
 
     unordered_map<int, int> hash;
 
     for (i = 0; i < n; i++)
     {
         currentSum = currentSum + arr[i];
-        if (currentSum == k)
+        if (currentSum == key)
             count++;
 
-        // if (currentSum - k) element is FOUND in the map
-        // then take that value else by default val of any element in the map is 1
-        if (hash.find(currentSum - k) != hash.end())
-        {
-            cout << "saf" << endl;
-            count = count + hash[currentSum - k];
-        }
+        if (hash.find(currentSum - key) != hash.end()) //  default val of any element in the map is 1
+            count = count + hash[currentSum - key];
 
         hash[currentSum]++;
     }
 
-    cout << "Number of subarrays present whose SUM is equal to K :  " << count << endl;
-
+    cout << "Number of subarrays present whose SUM is equal to Key :  " << count << endl;
     return 0;
 }
+
+/*
+                              EXPLANATIONS  ::
+    1)  Store the Prefix Sum into the HashMap as TC to access an element from it : O(1) ,WHEREAS we can also use Prefix Array but there TC : O(n) (NOT OPTIMISED).
+    2)  Check : IF (currentSum - key) element is FOUND / EXIST in the MAP.
+
+ */
 
 /*
    Test Case :
