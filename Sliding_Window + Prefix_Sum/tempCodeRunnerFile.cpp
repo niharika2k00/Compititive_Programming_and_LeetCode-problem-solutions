@@ -1,1 +1,1 @@
-findEquilibrium
+ -20, 10};

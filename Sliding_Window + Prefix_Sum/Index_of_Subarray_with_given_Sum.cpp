@@ -24,31 +24,27 @@ using namespace std;
     cin >> t; \
     while (t--)
 
-void SubarrayFinder(int arr[], int n, int K)
+//  Time Complexity :      O(n)
+//   Space Complexity :    O(1)
+void SubarrayFinder(int arr[], int n, int k)
 {
-    int i, currentSum = 0;
-    unordered_map<int, int> mp;
-
-    for (i = 0; i < n; i++)
+    int i, currSum = 0, right = 0, left = 0;
+    currSum = currSum + arr[0];
+    while (currSum != k && right >= left)
     {
-        currentSum = currentSum + arr[i];
-        cout << i << " " << currentSum << endl;
-        if (currentSum == K)
+        if (currSum < k)
         {
-            cout << "Sum found between indexes " << 0 << " to " << i << endl;
-            return;
+            right++;
+            currSum = currSum + arr[right];
         }
 
-        // if (currentSum - K) element is FOUND in the map
-        // then take that value else by default val of any element in the map is 1
-        if (mp.find(currentSum - K) != mp.end()) // if exists
+        else if (currSum > k)
         {
-            cout << "Sum found between indexes " << mp[currentSum - K] + 1 << " to " << i << endl;
-            return;
+            currSum = currSum - arr[left];
+            left++;
         }
-        mp[currentSum] = i;
     }
-    cout << "No subarray with given sum exists";
+    cout << "Subarray found from index " << left << " to " << right << endl;
 }
 
 int main()
@@ -58,8 +54,8 @@ int main()
     cout.tie(NULL);
 
     // ********            THIS METHOD CAN DEAL WITH - ve nuber as well          ***********
-    int arr[] = {8, -2, -2, -20, 7};
-    int i, k = 10, n = sizeof(arr) / sizeof(arr[0]), count = 0, currentSum = 0, flag = 0;
+    int arr[] = {1, -4, 20, 3, 10, 5};
+    int i, k = 16, n = sizeof(arr) / sizeof(arr[0]);
 
     SubarrayFinder(arr, n, k);
     return 0;

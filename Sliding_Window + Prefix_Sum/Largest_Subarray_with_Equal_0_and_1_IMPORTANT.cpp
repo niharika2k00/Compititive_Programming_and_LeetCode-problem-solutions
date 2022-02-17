@@ -31,7 +31,8 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    int arr[] = {0, 1, 0, 0, 1}, size = sizeof(arr) / sizeof(arr[0]), sum = 0, maxLength = 0, endIndex = -1, i;
+    // 0, 1, 0, 0, 1
+    int arr[] = {0, 1, 1, 0, 1, 1}, size = sizeof(arr) / sizeof(arr[0]), sum = 0, maxLength = -1, endIndex = -1, i;
     unordered_map<int, int> map;
 
     for (i = 0; i < size; i++)
@@ -41,10 +42,10 @@ int main()
     {
         sum = sum + arr[i];
 
-        //  SUM  =  0 means  a subarray found with the given criteria
+        //  SUM  =  0  means a subarray found with the given criteria
         if (sum == 0)
         {
-            maxLength = i + 1;
+            maxLength = max(maxLength, i + 1);
             endIndex = i;
         }
 
