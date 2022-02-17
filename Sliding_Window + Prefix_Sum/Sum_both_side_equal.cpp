@@ -34,8 +34,7 @@ int findElement(int arr[], int n)
 
     int sum, i, prefixSum = 0, ans = -1;
     sum = accumulate(arr, arr + n, 0);
-
-    for (i = n - 1; i >= 0; i--)
+    for (i = 0; i < n; i++)
     {
         if (prefixSum == sum - (arr[i] + prefixSum))
         {
@@ -55,7 +54,7 @@ int findEquilibrium(int arr[], int len)
     if (len == 1) //  True
         return 0;
 
-    int i, ans, rightSum = 0, leftSum = 0, totalSum = accumulate(arr, arr + len, 0);
+    int i, ans = -1, rightSum = 0, leftSum = 0, totalSum = accumulate(arr, arr + len, 0);
     vector<int> prefixSum(len, 0);
     prefixSum[0] = arr[0];
 
