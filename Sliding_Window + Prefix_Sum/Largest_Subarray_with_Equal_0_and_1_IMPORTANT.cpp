@@ -49,7 +49,7 @@ int main()
             endIndex = i;
         }
 
-        //  If Sum exsist before in the MAP
+        //  If Sum exist before in the MAP
         if (map.find(sum) != map.end())
         {
             if (i - map[sum] > maxLength)
@@ -63,7 +63,6 @@ int main()
     }
 
     cout << " MaxLength of equal number of 0 & 1 : " << maxLength << "\n\n Start index : " << (endIndex - maxLength + 1) << "\n End index : " << endIndex << endl;
-
     return 0;
 }
 
