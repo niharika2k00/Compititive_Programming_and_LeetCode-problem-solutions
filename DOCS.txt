@@ -1,0 +1,9 @@
+
+
+ // Get ASCII values
+ ________________________
+ char c = 'A';
+        cout << int(c);
+
+ int a = 67;
+        cout << char(a);
