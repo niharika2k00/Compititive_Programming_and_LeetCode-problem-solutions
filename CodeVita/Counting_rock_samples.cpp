@@ -27,15 +27,27 @@ using namespace std;
 
 void solve()
 {
-    int totalSample = 0, totalRange = 0, i = 0, low = 0, high = 0;
+    int totalSample = 0, totalRange = 0, i = 0, low = 0, high = 0, count = 0;
     vector<int> samples{345, 604, 321, 433, 704, 470, 808, 718, 517, 811};
+    vector<int> res;
     int len = samples.size();
     totalSample = 10, totalRange = 2;
 
-    for (i = 0; i < len; i++)
+    while (totalRange--)
     {
-        cout << len << endl;
+        // low = 400, high = 700;
+        cin >> low >> high;
+        for (i = 0; i < len; i++)
+        {
+            if (samples[i] >= low && samples[i] <= high)
+                count++;
+        }
+        res.push_back(count);
+        count = 0;
     }
+
+    for (auto it : res)
+        cout << it << "\t";
 }
 
 int main()
