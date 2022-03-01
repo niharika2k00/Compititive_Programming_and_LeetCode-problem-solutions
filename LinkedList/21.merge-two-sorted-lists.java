@@ -6,20 +6,13 @@
 
 // @lc code=start
 /**
- * Definition for singly-linked list.
- * public class ListNode {
- * int val;
- * ListNode next;
- * ListNode() {}
- * ListNode(int val) { this.val = val; }
- * ListNode(int val, ListNode next) { this.val = val; this.next = next; }
- * }
+ * Definition for singly-linked list. public class ListNode { int val; ListNode next; ListNode() {} ListNode(int val) { this.val = val; } ListNode(int val, ListNode next) { this.val = val; this.next = next; } }
  */
 class Solution {
     public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
         {
-            ListNode dummy = new ListNode(-1); // null assigned to the dummy node.
-            ListNode newStart = dummy;
+            ListNode dummy = new ListNode(-1); // (-1) default value in the Newly Allocated / Created NODE.
+            ListNode newStart = dummy; // variable
 
             // Base Case
             if (list1 == null && list2 == null)
