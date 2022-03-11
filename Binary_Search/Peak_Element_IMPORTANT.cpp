@@ -33,7 +33,7 @@ int peakElement_Finder(int arr[], int start, int size)
         if (arr[mid] < arr[mid + 1])
             start = mid + 1;
         else
-            end = mid;
+            end = mid; // end shrink
     }
     return start;
 }
