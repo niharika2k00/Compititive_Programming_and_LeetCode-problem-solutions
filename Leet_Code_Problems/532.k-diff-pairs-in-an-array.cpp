@@ -15,9 +15,6 @@ public:
         int i, ans = 0, len = nums.size();
         unordered_map<int, int> hashMap;
 
-        if (k < 0)
-            return 0;
-
         //  Initialization
         for (i = 0; i < len; i++)
             hashMap[nums[i]]++;
@@ -26,7 +23,7 @@ public:
         for (auto it : hashMap)
         {
             //  it.first alreasy exist so now cheking whether (it.first + K) also esist or NOT.
-            if ((k > 0 && hashMap.find(it.first + k) != hashMap.end()) || k == 0 && hashMap[it.first + k] > 1)
+            if ((k > 0 && hashMap.find(it.first + k) != hashMap.end()) || k == 0 && hashMap[it.first] > 1)
                 ans++;
         }
 
@@ -39,5 +36,5 @@ public:
                  check whether (ele + K) is present in the MAP.
      Else If  K == 0 ,
                   check whether (ele + K) exsist  > 1
- */
+*/
 // @lc code=end
