@@ -1,5 +1,3 @@
-
-
 /*
 ______________________________________
 ----------------------------------------
@@ -34,7 +32,7 @@ int knapSack(int Capacity, int len, int weight[], int profit[], vector<vector<in
     if (len == 0 || Capacity == 0)
         return 0;
 
-    if (weight[len - 1] > Capacity) //  Not Possible / not consider
+    if (weight[len - 1] > Capacity) //  Not Possible / Not Consider
         return Dp[Capacity][len] = knapSack(Capacity, len - 1, weight, profit, Dp);
 
     if (Dp[Capacity][len] != -1) // means Value present
@@ -42,11 +40,14 @@ int knapSack(int Capacity, int len, int weight[], int profit[], vector<vector<in
 
     else
     {
-        consider = profit[len - 1] + knapSack(Capacity - weight[len - 1], len - 1, weight, profit, Dp);
+        // 01-Knapsack : item decreases (len - 1)   &&   Unbounded KnapSack remains Same.(means we can again consider that ITEM thus len doesn't decreases)
+        consider = profit[len - 1] + knapSack(Capacity - weight[len - 1], len, weight, profit, Dp);
         notConsider = knapSack(Capacity, len - 1, weight, profit, Dp);
 
         return Dp[Capacity][len] = max(consider, notConsider);
     }
+
+    return -1;
 }
 
 int main()
@@ -55,7 +56,7 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    int profit[] = {60, 100, 120};
+    int profit[] = {100, 60, 120};
     int wt[] = {10, 20, 30};
     int Capacity = 35, len = sizeof(profit) / sizeof(profit[0]);
 
@@ -63,14 +64,14 @@ int main()
     vector<vector<int>> Dp(Capacity + 1, vector<int>(len + 1, -1));
     // memset(dp, -1, sizeof(dp));
 
-    cout << knapSack(Capacity, len, wt, profit, Dp);
+    cout << "Maximum profit made : " << knapSack(Capacity, len, wt, profit, Dp);
 
     return 0;
 }
 
 /*
       We create a 2D vector containing "n" elements each having the value "vector<int> (m, 0)".
-    "vector<int> (m, 0)" means a vector having "m" elements each of value "0".
+       "vector<int> (m, 0)" means a vector having "m" elements each of value "0".
 
         vector<vector<int>> vec( 3 , vector<int> (4, 0));
 
