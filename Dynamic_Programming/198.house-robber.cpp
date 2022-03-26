@@ -4,6 +4,8 @@
  * [198] House Robber
  */
 
+//     MAXIMUM SUM OF NON ADJACENT ELEMENT      \\
+
 // @lc code=start
 class Solution
 {
@@ -14,6 +16,8 @@ public:
             return 0;
         if (dp[i] != -1)
             return dp[i];
+
+        //  If Pick then adjacent ele not possible so (i + 2), If NOT Pick then check the Next ele so (i + 1)
         return dp[i] = max(HelperFunction(A, dp, i + 1), A[i] + HelperFunction(A, dp, i + 2));
     }
 
