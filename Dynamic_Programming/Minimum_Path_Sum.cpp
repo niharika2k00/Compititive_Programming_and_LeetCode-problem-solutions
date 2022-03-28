@@ -2,7 +2,10 @@
 ________________________________________
 ----------------------------------------
  Author    :  Niharika Dutta
- Code Link :
+ Code Link :  https://www.codingninjas.com/codestudio/problems/minimum-path-sum_985349?source=youtube&campaign=striver_dp_videos&utm_source=youtube&utm_medium=affiliate&utm_campaign=striver_dp_videos
+
+                https://www.youtube.com/watch?v=_rgTlyky1uQ&list=PLgUwDviBIf0qUlt5H_kiKYaNSqJ81PMMY&index=11
+
  Time Complexity :
 ________________________________________
 ----------------------------------------
