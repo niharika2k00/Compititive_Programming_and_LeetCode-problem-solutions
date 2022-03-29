@@ -18,9 +18,9 @@ public:
     // Time Complexity : O(mn)
     // Space Complexity : O(mn)
 
-    // ---------------------------
+    // -----------------------------------
     // MEMOIZATION OR TOP-DOWN APPROACH
-    // ---------------------------
+    // -----------------------------------
     int path(int m, int n, vector<vector<int>> &dp)
     {
         if (m == 0 || n == 0 || dp.size() == 0)

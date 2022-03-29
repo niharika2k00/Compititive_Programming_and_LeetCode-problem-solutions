@@ -56,15 +56,23 @@ int path(int row, int col, vector<vector<int>> &matrix, vector<vector<int>> &Dp)
     return Dp[row][col] = (up + left) % mod;
 }
 
+int minSumPath(vector<vector<int>> &grid)
+{
+    int row = grid.size();
+    int col = grid[0].size();
+
+    //     cout << row << " " << col << endl;
+    vector<vector<int>> Dp(row, vector<int>(col, -1));
+    return minPath(row - 1, col - 1, Dp, grid);
+}
+
 int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
 
-    int m = 4, n = 4;
-    vector<vector<int>> Dp(m, vector<int>(n, -1)); // 2D vector initialised -1
-    return path(m - 1, n - 1, Dp);
+    minSumPath();
 
     return 0;
 }

@@ -28,6 +28,24 @@ using namespace std;
     cin >> t; \
     while (t--)
 
+//   Minimizes the sum of the cost of all the numbers along the path. You need to tell the minimum sum of that path.
+int minPath(int row, int col, vector<vector<int>> &Dp, vector<vector<int>> &grid)
+{
+    if (row == 0 && col == 0)
+        return grid[0][0];
+
+    if (row < 0 || col < 0)
+        return 9999999;
+
+    if (Dp[row][col] != -1)
+        return Dp[row][col];
+
+    int up = grid[row][col] + minPath(row - 1, col, Dp, grid);
+    int left = grid[row][col] + minPath(row, col - 1, Dp, grid);
+
+    return Dp[row][col] = min(up, left);
+}
+
 int main()
 {
     ios_base::sync_with_stdio(false);
