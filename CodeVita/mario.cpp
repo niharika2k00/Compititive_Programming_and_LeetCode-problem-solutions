@@ -45,14 +45,13 @@ int main()
     string s;
     vector<string> v(m);
     vector<vector<ll>> v1(m, vector<ll>(n, 0));
-    for (i = 0; i < m; i++)
-    {
-        cin >> v[i];
-    }
 
     for (i = 0; i < m; i++)
+        cin >> v[i];
+
+    for (i = 0; i < m; i++) //  row
     {
-        for (j = 0; j < n; j++)
+        for (j = 0; j < n; j++) //  column
         {
             if (i == 0)
             {
@@ -100,7 +99,7 @@ int main()
 
 void solve()
 {
-    int n, m;
+    int n, m, calories = 0;
     cin >> n >> m;
     vector<vector<char>> grid;
 
@@ -112,12 +111,11 @@ void solve()
         grid.pb(p);
     }
 
-    int calories = 0;
-
-    for (int j = 0; j < m; j++)
+    for (int j = 0; j < m; j++) // column
     {
         int firstSpace = -1;
         int lastCoin = -1;
+
         for (int i = n - 1; i >= 0; i--)
         {
             if (grid[i][j] == 'C')
@@ -125,14 +123,12 @@ void solve()
             if (grid[i][j] == '0' && firstSpace == -1)
                 firstSpace = i;
         }
+
         if (lastCoin != -1)
-        {
             calories += 2 * (n - 1 - lastCoin);
-        }
         else
-        {
             calories += 2 * (n - 1 - firstSpace);
-        }
     }
+
     cout << totalCoins << " " << calories;
 }

@@ -22,16 +22,13 @@ const int INF = 1e18;
 
 void dfs(int u, int head, vector<vi> &graph, vi &groups, vector<bool> &visited)
 {
-    if (visited[u])
-        return;
     visited[u] = true;
     groups[u] = head;
+
     for (int v : graph[u])
     {
         if (!visited[v])
-        {
             dfs(v, head, graph, groups, visited);
-        }
     }
 }
 
@@ -40,13 +37,14 @@ void solve()
     int n;
     cin >> n;
     vi arr(n);
+
     for (int i = 0; i < n; i++)
-    {
         cin >> arr[i];
-    }
+
     int m;
     cin >> m;
     vector<vi> graph(n);
+
     for (int i = 0; i < m; i++)
     {
         int u, v;
@@ -55,25 +53,28 @@ void solve()
         graph[u].pb(v);
         graph[v].pb(u);
     }
+
     vi groups(n);
     for (int i = 0; i < n; i++)
         groups[i] = i;
+
     vector<bool> visited(n, false);
+
     for (int i = 0; i < n; i++)
     {
         if (!visited[i])
             dfs(i, i, graph, groups, visited);
     }
+
     unordered_map<int, int> groupamount;
     for (int i = 0; i < n; i++)
-    {
         groupamount[groups[i]] += arr[i];
-    }
+
     int maxval = 0;
+
     for (auto it : groupamount)
-    {
         maxval = max(maxval, it.second);
-    }
+
     cout << maxval;
 }
 

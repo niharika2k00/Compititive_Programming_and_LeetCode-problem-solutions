@@ -42,7 +42,7 @@ lli checkNextNumber(lli lcm, lli minEle)
 {
     lli num, ans;
 
-    for (lli i = 1; num < 10000000000; i++)
+    for (lli i = 1; num < 10000000010; i++)
     {
         num = lcm * i + minEle;
         ans = isPrime(num);
@@ -59,6 +59,7 @@ lli gcd(lli a, lli b)
     if (b == 0)
         return a;
     return gcd(b, a % b);
+    //  return (a / __gcd(a, b)) * b;
 }
 
 lli find_LCM(vector<lli> &vec, lli n)

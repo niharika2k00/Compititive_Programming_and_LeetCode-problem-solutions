@@ -20,7 +20,7 @@ public:
 
         while (i < len)
         {
-            if (i == len - 1 || nums[i] + 1 != nums[i + 1]) //  when NEXT ele === prev + 1   (Skip)
+            if (i == len - 1 || nums[i] + 1 != nums[i + 1]) // when NEXT ele === prev + 1   (Skip)
             {
                 if (start == i)
                     ranges.push_back(to_string(nums[start]));
