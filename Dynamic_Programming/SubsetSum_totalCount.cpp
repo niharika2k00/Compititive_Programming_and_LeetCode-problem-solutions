@@ -30,10 +30,10 @@ int Subset_CountFinder(int arr[], int start, int sum, int len)
     int consider, notConsider;
 
     // Base Case
-    if (start == len && sum == 0 || len == 0 && sum == 0) // when full traversed  | OR |  Array Size = 0.
+    if (start == len && sum == 0) // when full traversed  | OR |  Array Size = 0.
         return 1;
 
-    if (start == len && sum != 0 || len == 0 && sum == 0)
+    if (start == len && sum != 0)
         return 0;
 
     // When arr Element is Greater than SUM .
@@ -72,12 +72,10 @@ int main()
 }
 
 // Draw a Recursive Tree for better understanding Refer to Copy.
-
 /*
        Test Case
        { 3 0 3 3 } , sum = 6
        ans : 6
 
        {}
-
  */
