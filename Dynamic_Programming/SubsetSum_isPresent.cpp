@@ -52,26 +52,26 @@ bool SubsetFinder(int arr[], int sum, int len)
 // OR
 // DYNAMIC PROGRAMMING                Time Complexity: O(2^n).
 // -----------------------------------------------------------------------------
-bool SubsetFinder(int arr[], int sum, int len, vector<vector<int>> Dp)
+bool SubsetFinder(int arr[], int target, int len, vector<vector<int>> Dp)
 {
     int consider, notConsider;
-    if (len == 0 && sum == 0 || sum == 0 && len != 0)
+    if (target == 0)
         return true;
 
-    if (len == 0 && sum != 0)
+    if (len == 0 && target != 0)
         return false;
 
-    if (Dp[len][sum] != false) // means Value present
-        return Dp[len][sum];
+    if (Dp[len][target] != -1) // means Value present
+        return Dp[len][target];
 
     // When Element is Greater than SUM
-    if (arr[len - 1] > sum)
-        return Dp[len][sum] = SubsetFinder(arr, sum, len - 1, Dp);
+    if (arr[len - 1] > target)
+        return Dp[len][target] = SubsetFinder(arr, target, len - 1, Dp);
 
-    consider = SubsetFinder(arr, sum - arr[len - 1], len - 1, Dp); //  Consider
-    notConsider = SubsetFinder(arr, sum, len - 1, Dp);             // Not Consider
+    consider = SubsetFinder(arr, target - arr[len - 1], len - 1, Dp); //  Consider
+    notConsider = SubsetFinder(arr, target, len - 1, Dp);             // Not Consider
 
-    return Dp[len][sum] = consider || notConsider;
+    return Dp[len][target] = consider || notConsider;
 }
 
 int main()
@@ -80,7 +80,7 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    int arr[] = {3, 34, 4, 12, 5, 2}, sum = 7, len = sizeof(arr) / sizeof(arr[0]);
+    int arr[] = {1, 2, 5}, sum = 4, len = sizeof(arr) / sizeof(arr[0]);
     // DP - array formed
     vector<vector<int>> Dp(len + 1, vector<int>(sum + 1, false));
 

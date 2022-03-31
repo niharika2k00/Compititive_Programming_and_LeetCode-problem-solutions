@@ -42,7 +42,7 @@ int main()
         If Even , then divide into 2 means SUM / 2
                   else END ;
         EVEN : find the subarray that have SUM/2 value. (as done in SubsetSum.cpp file )
-     */
+    */
 
     return 0;
 }
