@@ -3,6 +3,8 @@ ________________________________________
 ----------------------------------------
  Author    :  Niharika Dutta
  Code Link :  https://www.geeksforgeeks.org/subset-sum-problem-dp-25/
+
+              https://www.codingninjas.com/codestudio/problems/number-of-subsets_3952532?source=youtube&campaign=striver_dp_videos&utm_source=youtube&utm_medium=affiliate&utm_campaign=striver_dp_videos&leftPanelTab=0
  Time Complexity :
 ________________________________________
 ----------------------------------------
@@ -25,38 +27,34 @@ using namespace std;
     cin >> t; \
     while (t--)
 
-int Subset_CountFinder(int arr[], int start, int sum, int len)
+int Subset_CountFinder(vector<int> &arr, int len, int target, vector<vector<int>> &dp)
 {
-    int consider, notConsider;
-
     // Base Case
-    if (start == len && sum == 0) // when full traversed  | OR |  Array Size = 0.
+    if (target == 0) // sum of the subset == target
         return 1;
 
-    if (start == len && sum != 0)
-        return 0;
+    if (len == 0) // If the element is equal to the target we return 1 else we return 0.
+        return arr[0] == target;
 
-    // When arr Element is Greater than SUM .
-    if (arr[start] > sum)
-        return Subset_CountFinder(arr, start + 1, sum, len); //  Not Consider
+    //  Case when the array having element 0
+    if (len == 0)
+    {
+        if (target == 0 && arr[0] == 0)
+            return 2;
+        if (target == 0)
+            return 1;
+    }
 
-    consider = Subset_CountFinder(arr, start + 1, sum - arr[start], len); //  Consider
-    notConsider = Subset_CountFinder(arr, start + 1, sum, len);           // Not Consider
+    if (dp[len][target] != -1)
+        return dp[len][target];
 
-    /* if (len == 0 && sum == 0)
-        return 1;
+    int consider = 0;
+    if (arr[len] <= target)
+        consider = Subset_CountFinder(arr, len - 1, target - arr[len], dp); //  Consider
 
-    if (len == 0 && sum != 0)
-        return 0;
+    int notConsider = Subset_CountFinder(arr, len - 1, target, dp); // Not Consider
 
-    // When arr Element is Greater than SUM .
-    if (arr[len - 1] > sum)
-        return Subset_CountFinder(arr, sum, len - 1); //  Not Consider
-
-    consider = Subset_CountFinder(arr, sum - arr[len - 1], len - 1); //  Consider
-    notConsider = Subset_CountFinder(arr, sum, len - 1);             // Not Consider */
-
-    return consider + notConsider;
+    return dp[len][target] = consider + notConsider;
 }
 
 int main()
@@ -65,8 +63,11 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    int arr[] = {-10, 20, -2, 2}, sum = -10, len = sizeof(arr) / sizeof(arr[0]), count = 0;
-    count = Subset_CountFinder(arr, 0, sum, len);
+    int arr[] = {-10, 20, -2, 2}, target = -10, len = sizeof(arr) / sizeof(arr[0]), count = 0;
+
+    vector<vector<int>> dp(len, vector<int>(target + 1, -1));
+    count = Subset_CountFinder(num, len - 1, target, dp);
+
     cout << "Total Subset Present with the given Sum = " << count << endl;
     return 0;
 }

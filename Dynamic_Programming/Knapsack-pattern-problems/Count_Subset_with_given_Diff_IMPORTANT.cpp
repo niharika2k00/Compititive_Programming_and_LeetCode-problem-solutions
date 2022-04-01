@@ -2,7 +2,7 @@
 ________________________________________
 ----------------------------------------
  Author    :  Niharika Dutta
- Code Link :
+ Code Link :  https://www.codingninjas.com/codestudio/problems/partitions-with-given-difference_3751628?source=youtube&campaign=striver_dp_videos&utm_source=youtube&utm_medium=affiliate&utm_campaign=striver_dp_videos
  Time Complexity :
 ________________________________________
 ----------------------------------------
@@ -66,6 +66,7 @@ int main()
     //  Count the num of subset having totalSum === SUM.
     cout << "\nNumbers of subset  =>  " << SubsetCounter(Dp, vec, subset1Sum, len) << " ,\t Having Sum  =>  " << subset1Sum << endl;
 
+    //  Dp table display
     for (int i = 0; i < len; i++)
     {
         for (int j = 0; j < subset1Sum; j++)
