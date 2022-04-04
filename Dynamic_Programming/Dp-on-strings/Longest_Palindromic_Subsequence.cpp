@@ -26,9 +26,9 @@ using namespace std;
     while (t--)
 
 //  Memoization - Dp Approach  (Top - Down)
-int palindromicLCS(string x, string y, int m, int rev, vector<vector<int>> Dp)
+int palindromicLCS(string &x, string &y, int m, int rev, vector<vector<int>> &Dp)
 {
-    if (m == 0 || rev == 0)
+    if (m == 0)
         return 0;
 
     if (Dp[m][rev] != -1)
