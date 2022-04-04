@@ -2,7 +2,7 @@
 ________________________________________
 ----------------------------------------
  Author    :  Niharika Dutta
- Code Link :
+ Code Link :  https://www.codingninjas.com/codestudio/problems/longest-palindromic-subsequence_842787
  Time Complexity :
 ________________________________________
 ----------------------------------------
@@ -26,19 +26,19 @@ using namespace std;
     while (t--)
 
 //  Memoization - Dp Approach  (Top - Down)
-int palindromicLCS(string x, string y, int m, int n, vector<vector<int>> Dp)
+int palindromicLCS(string x, string y, int m, int rev, vector<vector<int>> Dp)
 {
-    if (m == 0 || n == 0)
+    if (m == 0 || rev == 0)
         return 0;
 
-    if (Dp[m][n] != -1)
-        return Dp[m][n];
+    if (Dp[m][rev] != -1)
+        return Dp[m][rev];
 
-    if (x[m - 1] == y[n - 1]) // check last character
-        return Dp[m][n] = 1 + palindromicLCS(x, y, m - 1, n - 1, Dp);
+    if (x[m - 1] == y[rev - 1]) // check last character
+        return Dp[m][rev] = 1 + palindromicLCS(x, y, m - 1, rev - 1, Dp);
 
     else
-        return Dp[m][n] = max(palindromicLCS(x, y, m - 1, n, Dp), palindromicLCS(x, y, m, n - 1, Dp));
+        return Dp[m][rev] = max(palindromicLCS(x, y, m - 1, rev, Dp), palindromicLCS(x, y, m, rev - 1, Dp));
 }
 
 int main()
@@ -47,15 +47,17 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    string x = "bbabcbcab";
-    int m = x.length(), n = y.length();
+    string x = "bbbab";
+    int m = x.length();
+
+    string rev = x;
+    reverse(rev.begin(), rev.end());
 
     //  M  x  N  Dp matrix  initialises to -1
-    vector<vector<int>> Dp(m + 1, vector<int>(n + 1, -1));
+    vector<vector<int>> Dp(m + 1, vector<int>(m + 1, -1));
 
-    int lenMemoizedWay = palindromicLCS(x, y, m, n, Dp);
-
-    cout << "Length of the Longest Common Subsequence: " << lenMemoizedWay << endl;
+    int len = palindromicLCS(x, rev, m, m, Dp); // same as LCS just return the reverse of the string.
+    cout << "Length of the Longest Palindromic Subsequence: " << len << endl;
 
     return 0;
 }
