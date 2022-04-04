@@ -54,7 +54,7 @@ int main()
 
     int lenRecursiveWay = LCS_Recursive(x, y, m, n, 0);
 
-    cout << "Length of the Longest Common Subsequence: " << lenRecursiveWay << endl;
+    cout << "Length of the Longest Common Substring: " << lenRecursiveWay << endl; //  Continuous Order
 
     return 0;
 }
