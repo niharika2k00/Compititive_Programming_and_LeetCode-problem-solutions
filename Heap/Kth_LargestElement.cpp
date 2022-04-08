@@ -30,7 +30,7 @@ int main()
 
     /* ----------------------
        By using Max Heap
-      ---------------------- 
+      ----------------------
     */
     priority_queue<int, vector<int>> maxHeap;
 
@@ -44,8 +44,10 @@ int main()
 
     /* ----------------------
        By using Min Heap
-      ---------------------- 
+      ----------------------
     */
+
+    //    priority_queue <Type, vector<Type>, ComparisonType > min_heap;
     priority_queue<int, vector<int>, greater<int>> minHeap;
 
     // for (auto i = vec.begin(); i != vec.end(); i++)

@@ -1,5 +1,5 @@
 
-/* 
+/*
 ________________________________________
   - By Niharika Dutta
  Code Link : https://www.geeksforgeeks.org/largest-sum-contiguous-subarray/
@@ -37,6 +37,7 @@ int main()
         currentSum += a[i];
         if (currentSum > maxSum)
             maxSum = currentSum;
+
         if (currentSum < 0) // negative sum
             currentSum = 0;
     }
