@@ -1,0 +1,29 @@
+
+
+//  Length of the Linked List
+---------------------------------
+   int len = 0 ;
+   Listnode *curr = head;
+
+   while( curr != head ){     //  Iterative Method
+       len ++;
+       curr = curr->next;
+   }
+
+
+   int getCount(Node* head)    // Using Recursion
+   {
+        if (head == NULL) 
+        return 0;
+
+        else 
+        return 1 + getCount(head->next);
+    }
+
+
+
+
+
+
+
+    

@@ -74,22 +74,23 @@ class Solution {
  * For Algorithm refer to copy
  */
 
-/*        *****       We can also use STACK , but then  SPACE COMPLEXITY  : O(n)         *****
-   
-    bool isPalindrome(ListNode* head) {
-        stack<int> s;
-        ListNode* temp = head;
-        while(temp!=NULL){
-            s.push(temp->val);
-            temp = temp->next;
-        }
-        temp = head;
-        while(temp!=NULL || !s.empty()){
-            int val = s.top();
-            s.pop();
-            if(val!=temp->val) return false;
-            temp = temp->next;
-        }
-        return true;
-    }
-*/
+/*
+ * ***** We can also use STACK , but then SPACE COMPLEXITY : O(n) *****
+ * 
+ * bool isPalindrome(ListNode* head) {
+ * stack<int> s;
+ * ListNode* temp = head;
+ * while(temp!=NULL){
+ * s.push(temp->val);
+ * temp = temp->next;
+ * }
+ * temp = head;
+ * while(temp!=NULL || !s.empty()){
+ * int val = s.top();
+ * s.pop();
+ * if(val!=temp->val) return false;
+ * temp = temp->next;
+ * }
+ * return true;
+ * }
+ */
