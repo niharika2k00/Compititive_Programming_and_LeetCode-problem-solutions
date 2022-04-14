@@ -28,7 +28,7 @@ using namespace std;
 //  Memoization - Dp Approach  (Top - Down)
 int palindromicLCS(string &x, string &y, int m, int rev, vector<vector<int>> &Dp)
 {
-    if (m == 0)
+    if (m == 0 || rev == 0)
         return 0;
 
     if (Dp[m][rev] != -1)
@@ -52,6 +52,7 @@ int main()
 
     string rev = x;
     reverse(rev.begin(), rev.end());
+    cout << rev << endl;
 
     //  M  x  N  Dp matrix  initialises to -1
     vector<vector<int>> Dp(m + 1, vector<int>(m + 1, -1));
@@ -61,3 +62,12 @@ int main()
 
     return 0;
 }
+
+/*
+            Intuition of the Algorithm
+         ---------------------------------
+
+         Similar to the LCS algorithm, but here we have only 1 string.
+         So, REVERSE the string and find the LONGEST Similar/Common subsequence among both of them.
+
+ */
