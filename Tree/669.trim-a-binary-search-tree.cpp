@@ -27,7 +27,7 @@ public:
         if (!root)
             return nullptr;
 
-        if (root->val < low) //  Only RIGHT SUBTREE return
+        if (root->val < low) //  Only RIGHT SUBTREE return  NO NEED to see the left side as it will be More LESS.
             return trimBST(root->right, low, high);
 
         if (root->val > high) // No chance to visit RIGHT SUBTREE, means return ONLY LEFT SUBTREE.
