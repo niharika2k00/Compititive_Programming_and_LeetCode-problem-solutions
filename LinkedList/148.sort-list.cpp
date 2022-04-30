@@ -73,7 +73,7 @@ public:
             fast = fast->next->next;
         }
 
-        //   2 Linked List created :  0  -  (slow - 1)    &&    slow  -  NULL
+        //  2 Linked List created :  0  -  (slow - 1)    &&    slow  -  NULL
         //  Last Element of the First Half
         temp->next = NULL;
 
@@ -84,6 +84,7 @@ public:
         return mergeBothLists(list1, list2);
     }
 };
+
 // @lc code=end
 
 /*
@@ -92,5 +93,4 @@ public:
     1)  First  find the MIDDLE of the Linked List
     2)  Divide & Conquer Rule  ==>  Divide into 2 Lists from the MID .
     3)  Then Merge in ASCENDING ORDER .
-
- */
+*/
