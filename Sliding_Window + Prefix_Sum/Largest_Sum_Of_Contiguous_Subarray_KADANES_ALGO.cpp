@@ -33,15 +33,16 @@ int main()
     int i, size = sizeof(arr) / sizeof(arr[0]), maxSum = 0, currentSum = 0;
 
     // -----------------------------------
-    //           BRUTE FORCE    TC :   O(n ^ 3)
+    //           BRUTE FORCE  Unoptimised Code   TC :   O(n ^ 3)
     // -----------------------------------
     for (i = 0; i < size; i++)
     {
         for (int j = i; j < size; j++)
         {
             int sum = 0;
-            for (int k = i; k <= j; k++)
+            for (int k = i; k <= j; k++) // add from  i --- j
                 sum = sum + arr[k];
+
             if (sum > maxSum)
                 maxSum = sum;
         }
