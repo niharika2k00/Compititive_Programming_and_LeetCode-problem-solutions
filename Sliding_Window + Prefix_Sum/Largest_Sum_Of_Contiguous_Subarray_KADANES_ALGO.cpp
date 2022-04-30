@@ -1,5 +1,5 @@
 
-/* 
+/*
 ________________________________________
   - By Niharika Dutta
  Code Link : https://www.geeksforgeeks.org/largest-sum-contiguous-subarray/
@@ -29,12 +29,30 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    int a[] = {5, -4, -2, 6, -1};
-    int i, size = sizeof(a) / sizeof(a[0]), maxSum = 0, currentSum = 0;
+    int arr[] = {5, -4, -2, 6, -1};
+    int i, size = sizeof(arr) / sizeof(arr[0]), maxSum = 0, currentSum = 0;
 
+    // -----------------------------------
+    //           BRUTE FORCE    TC :   O(n ^ 3)
+    // -----------------------------------
     for (i = 0; i < size; i++)
     {
-        currentSum += a[i];
+        for (int j = i; j < size; j++)
+        {
+            int sum = 0;
+            for (int k = i; k <= j; k++)
+                sum = sum + arr[k];
+            if (sum > maxSum)
+                maxSum = sum;
+        }
+    }
+
+    // -----------------------------------
+    //           BEST OPTIMISED (Kadane's Algorithm)    TC :   O(n)
+    // -----------------------------------
+    for (i = 0; i < size; i++)
+    {
+        currentSum += arr[i];
         if (currentSum > maxSum)
             maxSum = currentSum;
         if (currentSum < 0) // negative sum

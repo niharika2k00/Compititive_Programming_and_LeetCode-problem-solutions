@@ -30,6 +30,12 @@ using namespace std;
 //   Space Complexity :  O(1)
 //   Counting Sort || Dutch National FLag Algorithm
 
+/*                     Intuition
+                  -------------------
+        If num = 0 ; swap with start [so that it occurs at the beginning of the array]
+        If num = 2 ; swap with last
+ */
+
 void dutchNationalFlag(int *arr, int n)
 {
     cout << "size = " << n << endl;

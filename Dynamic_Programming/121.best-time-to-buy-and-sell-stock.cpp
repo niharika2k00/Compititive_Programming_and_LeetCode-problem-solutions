@@ -2,7 +2,8 @@
  * @lc app=leetcode id=121 lang=cpp
  *
  * https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
- *
+ * https://www.youtube.com/watch?v=eMSfBgbiEjk&list=PLgUwDviBIf0rPG3Ictpu74YWBQ1CaBkm2&index=12
+
  * [121] Best Time to Buy and Sell Stock
  */
 
@@ -29,12 +30,14 @@ public:
          */
 
         int minPrice = INT_MAX, maxProfit = 0;
+
         for (int i = 0; i < prices.size(); i++)
         {
             //  difference between the MAX and MIN Price
             minPrice = min(minPrice, prices[i]);
             maxProfit = max(maxProfit, prices[i] - minPrice);
         }
+
         return maxProfit;
     }
 };
