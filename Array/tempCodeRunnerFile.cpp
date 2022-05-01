@@ -1,0 +1,2 @@
+
+                arr[line][i] = a
