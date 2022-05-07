@@ -25,6 +25,8 @@ using namespace std;
     cin >> t; \
     while (t--)
 
+//   Time Complexity :  O(n)
+//    Space Complexity : O(n)
 pair<int, int> missingAndRepeating(vector<int> &arr, int n)
 {
     // Write your code here
@@ -52,6 +54,10 @@ pair<int, int> missingAndRepeating(vector<int> &arr, int n)
 
     return {missing, repeat}; // make_pair(a . b) also valid
 }
+
+//   Time Complexity :  O(n)
+//    Space Complexity : O(1)
+// https : // takeuforward.org/data-structure/find-the-repeating-and-missing-numbers/           <------  Method 2
 
 int main()
 {
