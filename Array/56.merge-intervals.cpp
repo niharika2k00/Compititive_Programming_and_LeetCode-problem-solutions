@@ -11,13 +11,12 @@
 class Solution
 {
 public:
+    //    O(NlogN) + O(N). O(NlogN) for sorting and O(N) for traversing through the array.
+    //    Space Complexity : O(n)
     vector<vector<int>> merge(vector<vector<int>> &intervals)
     {
         int i = 0, len = intervals.size();
         vector<vector<int>> mergedResult;
-
-        if (len == 0)
-            return mergedResult;
 
         if (len == 1)
             return intervals;
@@ -27,11 +26,11 @@ public:
 
         for (i = 1; i < len; i++)
         {
-            if (end >= intervals[i][0]) //  IF 2nd ele of an arr >= 1st ele of the next arr  ===>  then Update END (means overlap).
+            if (intervals[i][0] <= end) //  IF 1st ele of arr[i + 1] <= end ele of arr[i]   ===>  then Update END (means override).
                 end = max(intervals[i][1], end);
             else
             {
-                mergedResult.push_back({start, end});
+                mergedResult.push_back({start, end}); // push the previous Pair
                 start = intervals[i][0];
                 end = intervals[i][1];
             }
