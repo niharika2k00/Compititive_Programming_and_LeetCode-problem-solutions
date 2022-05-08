@@ -50,7 +50,7 @@ void printPascal(int rows)
 //  Find the element at ROW 5 and Col 3
 /*
      Formula :
-     n C r  = (row -1) C (Col - 1)  =  4 C 2 =   4! / 2! * 2! = 4 * 3 * 2! / 2! * 2! =  6 ans
+     n C r  = (row - 1) C (Col - 1)  =  4 C 2 =   4! / 2! * 2! = 4 * 3 * 2! / 2! * 2! =  6 ans
 */
 
 int factorial(int n)
