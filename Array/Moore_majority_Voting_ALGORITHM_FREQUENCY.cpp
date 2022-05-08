@@ -1,5 +1,5 @@
 
-/* 
+/*
 ________________________________________
   - By Niharika Dutta
  Code Link :   https://www.geeksforgeeks.org/boyer-moore-majority-voting-algorithm/
