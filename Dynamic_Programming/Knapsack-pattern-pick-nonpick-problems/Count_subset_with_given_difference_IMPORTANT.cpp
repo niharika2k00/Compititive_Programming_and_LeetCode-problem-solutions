@@ -42,7 +42,7 @@ int SubsetCounter(vector<vector<int>> &Dp, vector<int> &vec, int sum, int len) /
         return Dp[len][sum] = SubsetCounter(Dp, vec, sum, len - 1); //  Not Consider
 
     consider = SubsetCounter(Dp, vec, sum - vec[len - 1], len - 1); //  Consider
-    notConsider = SubsetCounter(Dp, vec, sum, len - 1);             // Not Consider */
+    notConsider = SubsetCounter(Dp, vec, sum, len - 1);             // Not Consider
 
     return Dp[len][sum] = consider + notConsider;
 }
@@ -78,6 +78,8 @@ int main()
 }
 
 /*
+    Divide the array into 2 parts subset1 & subset2 such that their diff is DIFFERENCE(given).
+
              EXPLAINATION
  1)    SubsetA + SubsetB  =  TotalSum
        SubsetA - SubsetB  =  Difference

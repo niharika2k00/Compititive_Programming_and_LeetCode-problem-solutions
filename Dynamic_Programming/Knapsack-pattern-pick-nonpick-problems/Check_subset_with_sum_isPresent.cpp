@@ -25,19 +25,19 @@ using namespace std;
     cin >> t; \
     while (t--)
 
-// -----------------------------------------------------------------------------
-// RECURSIVE METHOD
-// -----------------------------------------------------------------------------
+// -------------------------------------------------
+//           RECURSIVE METHOD
+// -------------------------------------------------
 bool SubsetFinder(int arr[], int sum, int len)
 {
     int consider, notConsider;
-    if (len == 0 && sum == 0)
+    if (sum == 0)
         return true;
 
-    if (len == 0 && sum != 0)
-        return false;
+    if (len == 0) //  means at arr[0] when index = 0, still Sum != 0 , so assuming the remaining sum will be at arr[0]
+        return (sum == arr[0]);
 
-    // When Element is Greater than SUM
+    // When Element is Greater than SUM  ---  Not Pick
     if (arr[len - 1] > sum)
         return SubsetFinder(arr, sum, len - 1);
 
@@ -52,20 +52,20 @@ bool SubsetFinder(int arr[], int sum, int len)
 // OR
 // DYNAMIC PROGRAMMING                Time Complexity: O(2^n).
 // -----------------------------------------------------------------------------
-bool SubsetFinder(int arr[], int target, int len, vector<vector<int>> Dp)
+bool SubsetFinder(int arr[], int target, int len, vector<vector<int>> &Dp)
 {
     int consider, notConsider;
     if (target == 0)
         return true;
 
-    if (len == 0 && target != 0)
-        return false;
+    if (len == 0) //  means at arr[0] when index = 0, still Sum != 0 , so assuming the remaining target will be at arr[0]
+        return (target == arr[0]);
 
-    if (Dp[len][target] != -1) // means Value present
+    if (Dp[len][target] != false) // means Value present
         return Dp[len][target];
 
     // When Element is Greater than SUM
-    if (arr[len - 1] > target)
+    if (arr[len - 1] >= target)
         return Dp[len][target] = SubsetFinder(arr, target, len - 1, Dp);
 
     consider = SubsetFinder(arr, target - arr[len - 1], len - 1, Dp); //  Consider
@@ -80,7 +80,7 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    int arr[] = {1, 2, 5}, sum = 4, len = sizeof(arr) / sizeof(arr[0]);
+    int arr[] = {3, 34, 4, 12, 5, 2}, sum = 9, len = sizeof(arr) / sizeof(arr[0]);
     // DP - array formed
     vector<vector<int>> Dp(len + 1, vector<int>(sum + 1, false));
 

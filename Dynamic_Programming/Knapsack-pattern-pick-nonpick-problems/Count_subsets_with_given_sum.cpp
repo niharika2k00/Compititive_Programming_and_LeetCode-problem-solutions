@@ -4,6 +4,8 @@ ________________________________________
  Author    :  Niharika Dutta
  Code Link :  https://www.geeksforgeeks.org/subset-sum-problem-dp-25/
 
+              https://www.geeksforgeeks.org/number-subarrays-sum-exactly-equal-k/
+
               https://www.codingninjas.com/codestudio/problems/number-of-subsets_3952532?source=youtube&campaign=striver_dp_videos&utm_source=youtube&utm_medium=affiliate&utm_campaign=striver_dp_videos&leftPanelTab=0
  Time Complexity :
 ________________________________________
@@ -29,6 +31,7 @@ using namespace std;
 
 int Subset_CountFinder(vector<int> &arr, int len, int target, vector<vector<int>> &dp)
 {
+    int consider = 0, notConsider = 0;
     // Base Case
     if (target == 0) // sum of the subset == target
         return 1;
@@ -48,11 +51,10 @@ int Subset_CountFinder(vector<int> &arr, int len, int target, vector<vector<int>
     if (dp[len][target] != -1)
         return dp[len][target];
 
-    int consider = 0;
     if (arr[len] <= target)
-        consider = Subset_CountFinder(arr, len - 1, target - arr[len], dp); //  Consider
+        consider = Subset_CountFinder(arr, len - 1, target - arr[len], dp); //  Consider OR  Pick
 
-    int notConsider = Subset_CountFinder(arr, len - 1, target, dp); // Not Consider
+    notConsider = Subset_CountFinder(arr, len - 1, target, dp); // Not Consider
 
     return dp[len][target] = consider + notConsider;
 }
@@ -63,10 +65,11 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    int arr[] = {-10, 20, -2, 2}, target = -10, len = sizeof(arr) / sizeof(arr[0]), count = 0;
+    vector<int> vec{1, 2, 2, 3};
+    int target = 3, len = vec.size(), count = 0; // (1,2)  (1,2)  (3)
 
     vector<vector<int>> dp(len, vector<int>(target + 1, -1));
-    count = Subset_CountFinder(num, len - 1, target, dp);
+    count = Subset_CountFinder(vec, len - 1, target, dp);
 
     cout << "Total Subset Present with the given Sum = " << count << endl;
     return 0;
@@ -76,7 +79,7 @@ int main()
 /*
        Test Case
        { 3 0 3 3 } , sum = 6
-       ans : 6
+       ans : 5
 
        {}
- */
+*/
