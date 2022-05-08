@@ -30,7 +30,7 @@ int main()
     cout.tie(NULL);
 
     int a[] = {5, -4, -2, 6, -1};
-    int i, size = sizeof(a) / sizeof(a[0]), maxSum = 0, currentSum = 0;
+    int i, size = sizeof(a) / sizeof(a[0]), maxSum = INT_MIN, currentSum = 0;
 
     for (i = 0; i < size; i++)
     {

@@ -33,8 +33,8 @@ using namespace std;
 /*                     Intuition
                   -------------------
         If num = 0 ; swap with start [so that it occurs at the beginning of the array]
-        If num = 2 ; swap with last
- */
+        If num = 2 ; swap with last[end]
+*/
 
 void dutchNationalFlag(int *arr, int n)
 {

@@ -10,24 +10,25 @@ class Solution
 public:
     //  METHOD - 1
     //  Using the Build - in function
-    void nextPermutation(vector<int> &nums)
+    /* void nextPermutation(vector<int> &nums)
     {
         int len = nums.size();
-        bool val = next_permutation(nums.begin(), nums.end());
+        bool val = next_permutation(nums.begin(), nums.end()); // rearrange the num array
+
         if (val)
         {
             for (auto it : nums)
                 cout << it << " ";
         }
-    }
+    } */
 
     //  METHOD - 2
     // Using Customized function
     /*
            Steps :
-        1) find the element before peak from END where  arr[i] < arr[i + 1]
-        2) find an element(j) JUST greater than arr[i]. So search from Right Side
-        3) swap ( i , j )
+        1) find the element before peak from END where  arr[i] < arr[i + 1].
+        2) find an element(j) JUST greater than arr[i]. So search from Right Side.
+        3) swap ( i , j ).
         4) then reverse the elements.
 
         Like in arr = [1 3 5 4 2]
@@ -46,8 +47,11 @@ public:
         int len = nums.size(), i = len - 2, j = len - 1; // [1 3 5 4 2]
 
         //  Find the element before Peak
-        while (i >= 0 && nums[i] >= nums[i + 1]) //  to find  arr[i] < arr[i + 1]
-            i--;
+        for (i = len - 2; i >= 0; i--)
+        {
+            if (nums[i] < nums[i + 1])
+                break;
+        }
 
         if (i >= 0)
         {

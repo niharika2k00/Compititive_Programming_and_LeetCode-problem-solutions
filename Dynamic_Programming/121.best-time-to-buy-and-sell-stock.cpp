@@ -13,11 +13,8 @@ class Solution
 public:
     int maxProfit(vector<int> &prices)
     {
-        // BRUTE FORCE APPROACH      O(n ^ 2)
-        // Tle
-
-        /*
-        int maxProfit = 0, i, j, len = prices.size(), flag = 0;
+        // BRUTE FORCE APPROACH      O(n ^ 2)             Time Limit Exceeded.
+        /* int maxProfit = 0, i, j, len = prices.size(), flag = 0;
 
         for (i = 0; i < len - 1; i++)
             for (j = i + 1; j < len; j++)
@@ -26,8 +23,7 @@ public:
                     maxProfit = max(maxProfit, prices[j] - prices[i]);
             }
 
-        return maxProfit;
-         */
+        return maxProfit; */
 
         int minPrice = INT_MAX, maxProfit = 0;
 
@@ -41,4 +37,10 @@ public:
         return maxProfit;
     }
 };
+
 // @lc code=end
+
+/*
+          Test Case :
+    arr[]  =  {7 1 5 3 6 4}   ans : 5
+*/

@@ -15,7 +15,7 @@ public:
 
         //  Transpose of the Matrix   arr[i][j] convert to arr[j][i]
         for (i = 0; i < len; i++)
-            for (j = 0; j < i; j++)
+            for (j = 0; j <= i; j++)
                 swap(matrix[i][j], matrix[j][i]);
 
         //  Reverse the ROWS
