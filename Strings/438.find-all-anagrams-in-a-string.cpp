@@ -38,7 +38,7 @@ public:
                 stringMap.erase(s[i - windowLen]);
 
             if (stringMap == patternMap)
-                result.push_back(i - windowLen + 1);
+                result.push_back(i - windowLen + 1); //  push the starting index
         }
 
         return result;
