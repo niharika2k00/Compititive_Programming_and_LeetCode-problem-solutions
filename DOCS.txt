@@ -7,3 +7,7 @@
 
  int a = 67;
         cout << char(a);
+
+
+// Substring Find 
+  s.substr(start_index , len_of_substring)       
