@@ -31,7 +31,7 @@
     8   7  9 
 
 
-    3) PERFECT BINARY TREE -->  When all the internal nodes have two children and all leaf nodes are at the same level. 
+      3) PERFECT BINARY TREE -->  When all the internal nodes have two children and all leaf nodes are at the same level. 
     
                10
            /       \  
