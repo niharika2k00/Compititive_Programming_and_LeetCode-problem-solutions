@@ -44,16 +44,15 @@ void UsingLoop(string &str, int left, int right)
     }
 }
 
-bool CheckPalindrome(string &str, int front, int len)
+bool CheckPalindrome(string &str, int start, int end)
 {
-    if (front < len)
-    {
-        if (str[front] != str[len - front]) //  (len - 1 - i)
-            return false;
+    if (end <= start)
+        return true;
 
-        CheckPalindrome(str, front + 1, len);
-    }
-    return true;
+    if (str[start] != str[end])
+        return false;
+
+    return CheckPalindrome(str, start + 1, end - 1);
 }
 
 int main()
@@ -62,7 +61,7 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    string str = "Niharika";
+    string str = "maoam";
     int len = str.length();
 
     cout << "Length of the string: " << len << endl;
