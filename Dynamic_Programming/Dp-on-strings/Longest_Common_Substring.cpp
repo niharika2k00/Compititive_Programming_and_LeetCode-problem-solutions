@@ -35,9 +35,9 @@ int LCS_Recursive(string x, string y, int m, int n, int count)
         count = LCS_Recursive(x, y, m - 1, n - 1, count + 1);
 
     else
-        count = 0;
+        count = 0; //  if not same then Count Break means again start from 0
 
-    int maxLength = max(LCS_Recursive(x, y, m - 1, n, 0), LCS_Recursive(x, y, m, n - 1, 0)); //  if not same then Count Break means again start from 0
+    int maxLength = max(LCS_Recursive(x, y, m - 1, n, 0), LCS_Recursive(x, y, m, n - 1, 0));
     count = max(count, maxLength);
 
     return count;
@@ -49,12 +49,12 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    string x = "abcdgh", y = "abedfh";
+    string x = "abcdgh", y = "eabdfh"; //  ab
     int m = x.length(), n = y.length();
 
-    int lenRecursiveWay = LCS_Recursive(x, y, m, n, 0);
+    int result = LCS_Recursive(x, y, m, n, 0);
 
-    cout << "Length of the Longest Common Substring: " << lenRecursiveWay << endl; //  Continuous Order
+    cout << "Length of the Longest Common Substring: " << result << endl; //  Continuous Order
 
     return 0;
 }

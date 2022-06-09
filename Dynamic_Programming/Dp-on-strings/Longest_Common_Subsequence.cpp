@@ -61,15 +61,15 @@ int main()
     cout.tie(NULL);
 
     string x = "abcdgh", y = "abedfh"; // abdh
-    int m = x.length(), n = y.length();
+    int m = x.size(), n = y.size();
 
     //  M  x  N  Dp matrix  initialises to -1
     vector<vector<int>> Dp(m + 1, vector<int>(n + 1, -1));
 
-    int lenRecursiveWay = LCS_Recursive(x, y, m, n);
-    int lenMemoizedWay = LCS_Memoized(x, y, m, n, Dp);
+    int RecursiveWay = LCS_Recursive(x, y, m, n);
+    // int MemoizedWay = LCS_Memoized(x, y, m, n, Dp);
 
-    cout << "Length of the Longest Common Subsequence: " << lenMemoizedWay << endl;
+    cout << "Length of the Longest Common Subsequence: " << RecursiveWay << endl;
 
     return 0;
 }
