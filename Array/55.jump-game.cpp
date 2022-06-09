@@ -25,6 +25,9 @@ public:
                 return false;
 
             reachable = max(reachable, i + nums[i]); //  Index Trace
+
+            if (reachable >= len)
+                return true;
         }
 
         return true;

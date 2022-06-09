@@ -21,12 +21,13 @@ public:
         // Peak Valley Approach  <------  GREEDY APPROACH
         for (i = 0; i < len; i++)
         {
-            if (reachable < i)
+            if (i > reachable) // could not react Index
                 return false;
 
-            reachable = max(reachable, i + nums[i]);
+            reachable = max(reachable, i + nums[i]); //  Index Trace
+
             if (reachable >= len)
-                break;
+                return true;
         }
 
         return true;
