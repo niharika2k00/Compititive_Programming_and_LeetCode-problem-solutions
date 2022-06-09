@@ -60,7 +60,7 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    string x = "abcdgh", y = "abedfh";
+    string x = "abcdgh", y = "abedfh"; // abdh
     int m = x.length(), n = y.length();
 
     //  M  x  N  Dp matrix  initialises to -1
