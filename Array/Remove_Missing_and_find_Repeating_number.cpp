@@ -25,19 +25,19 @@ using namespace std;
     cin >> t; \
     while (t--)
 
-//   Time Complexity :  O(n)
+//   Time Complexity :   O(n)
 //    Space Complexity : O(n)
 pair<int, int> missingAndRepeating(vector<int> &arr, int n)
 {
     // Write your code here
-    vector<bool> freq(n + 1, false);
+    vector<int> freq(n + 1, 0);
     int repeat, missing;
 
     // traversing the arr
     for (int i = 0; i < n; i++)
     {
-        if (freq[arr[i]] != true)
-            freq[arr[i]] = true;
+        if (freq[arr[i]] != 1)
+            freq[arr[i]] = 1;
         else
             repeat = arr[i];
     }
@@ -45,7 +45,7 @@ pair<int, int> missingAndRepeating(vector<int> &arr, int n)
     // traversing the freq
     for (int i = 1; i < n + 1; i++)
     {
-        if (freq[i] == false)
+        if (freq[i] == 0)
         {
             missing = i;
             break;
@@ -57,7 +57,7 @@ pair<int, int> missingAndRepeating(vector<int> &arr, int n)
 
 //   Time Complexity :  O(n)
 //    Space Complexity : O(1)
-// https : // takeuforward.org/data-structure/find-the-repeating-and-missing-numbers/           <------  Method 2
+//    https : // takeuforward.org/data-structure/find-the-repeating-and-missing-numbers/           <------  Method 2
 
 int main()
 {

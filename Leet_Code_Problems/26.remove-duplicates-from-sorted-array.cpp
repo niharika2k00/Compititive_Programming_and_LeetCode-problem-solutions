@@ -1,7 +1,7 @@
 /*
  * @lc app=leetcode id=26 lang=cpp
  *
- * https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/
+ * https://leetcode.com/problems/find-the-duplicate-number/
  *
  * [26] Remove Duplicates from Sorted Array
  */

@@ -1,7 +1,7 @@
 /*
  * @lc app=leetcode id=26 lang=cpp
  *
- * https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/
+ * https://leetcode.com/problems/find-the-duplicate-number/
  *
  * [26] Remove Duplicates from Sorted Array
  */
@@ -12,6 +12,11 @@ class Solution
 public:
     int removeDuplicates(vector<int> &nums)
     {
+        /*
+            METHOD - I
+            TIME COMPLEXITY :  O(n)
+            SPACE COMPLEXITY : O(1)
+         */
         int i, len = nums.size(), index = 1; // 1 as one Unique Element ,  INDEX is the position for the NEXT Unique Element
 
         if (len == 0)
@@ -25,7 +30,6 @@ public:
                 index++;
             }
         }
-
         return index;
     }
 };
