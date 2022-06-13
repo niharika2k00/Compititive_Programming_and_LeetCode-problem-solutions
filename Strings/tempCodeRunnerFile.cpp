@@ -1,1 +1,1 @@
- s.substr(start_index , len_of_substring)
+ if (map[str[i]] ==

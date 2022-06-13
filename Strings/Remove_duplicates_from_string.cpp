@@ -26,6 +26,7 @@ using namespace std;
     while (t--)
 
 //  METHOD - I
+//  Using HashMapp   O(n)
 string Method_1(string &str, int len)
 {
     unordered_map<char, int> map;
@@ -38,9 +39,33 @@ string Method_1(string &str, int len)
             map[str[i]]++;
             str[k++] = str[i];
         }
+        else if (map[str[i]] > 0)
+        {
+            // erase ( idx,  len )
+            str.erase(str.begin() + i); // delete char @ position
+            i--;
+            // cout << str << endl;
+        }
     }
 
     return str;
+    // return str.erase(k, len - k);
+}
+
+//  METHOD - II
+//  Using Set   O(n)
+string Method_2(string &str, int len)
+{
+    unordered_set<char> s;
+
+    for (auto it : str)
+        s.insert(it);
+
+    int i = 0;
+    for (auto val : s)
+        str[i++] = val;
+
+    return str.erase(i, len - i);
 }
 
 int main()
@@ -51,10 +76,12 @@ int main()
 
     string str = "geeksforgeeks";
     int len = str.length();
+    string str1;
 
-    string str1 = Method_1(str, len);
+    // str1 = Method_1(str, len);
+    // str1 = Method_2(str, len);
 
-    cout << "\nAfter removing duplicated from the String  ==>  " << Method_1(str, len) << "\n\n";
+    cout << "\nAfter removing duplication from the String  ==>  " << Method_1(str, len) << "\n\n";
 
     return 0;
 }
