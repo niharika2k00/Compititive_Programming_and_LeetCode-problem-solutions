@@ -44,7 +44,7 @@ string Method_1(string &str, int len)
             // erase ( idx,  len )
             str.erase(str.begin() + i); // delete char @ position
             i--;
-            // cout << str << endl;
+            cout << str << endl;
         }
     }
 
