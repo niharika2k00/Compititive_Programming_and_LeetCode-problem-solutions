@@ -15,13 +15,7 @@ void subString(string s, int n)
 int main()
 {
     string s = "abcd";
-    // subString(s, s.length());
-    int a;
-    // a=printf("one")+printf("\ntwo")*printf("\nthree");
-    // printf("\n%d",a);
-
-    a = printf("%d  Snehomoy   %d", 10, 200);
-    printf("\n%d", a);
+    subString(s, s.length());
 
     return 0;
 }
