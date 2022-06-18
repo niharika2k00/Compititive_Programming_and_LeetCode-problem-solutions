@@ -49,7 +49,7 @@ int main()
     // Time Complexity  :      O(n)
     // Space Complexity :      O(1)
 
-    int votes = 0, candidates = 0, freq = 0;
+    int votes = 0, candidates = 0;
     for (i = 0; i < len; i++)
     {
         if (votes == 0)
@@ -66,6 +66,7 @@ int main()
         }
     }
 
+    int freq = 0;
     for (i = 0; i < len; i++)
         if (vec[i] == candidates)
             freq++;
