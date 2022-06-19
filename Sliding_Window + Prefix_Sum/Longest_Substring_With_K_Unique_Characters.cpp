@@ -1,9 +1,11 @@
-/* 
+/*
 ________________________________________
 ----------------------------------------
  Author    :  Niharika Dutta
- Code Link : https://www.geeksforgeeks.org/find-the-longest-substring-with-k-unique-characters-in-a-given-string/   
- Time Complexity :  
+ Code Link : https://www.geeksforgeeks.org/find-the-longest-substring-with-k-unique-characters-in-a-given-string/
+
+             https://practice.geeksforgeeks.org/problems/longest-k-unique-characters-substring0853/1#
+ Time Complexity :
 ________________________________________
 ----------------------------------------
  */
@@ -28,26 +30,26 @@ using namespace std;
 void longestSubstring_K_uniqueCharacters(string s, int k)
 {
     unordered_map<char, int> map; // all index of map is initialised with 0 by default
-    int end = 0, i = 0, maxLenghtSubstring = 0;
+    int end = 0, i = 0, maxLenghtSubstring = -1;
 
     for (end = 0; end < s.size(); end++)
     {
         map[s[end]]++;
-        cout << "Size of map = " << map.size() << endl;
+        // cout << "Size of map = " << map.size() << endl;
 
         if (map.size() == k)
             maxLenghtSubstring = max(maxLenghtSubstring, end - i + 1);
 
         else if (map.size() > k)
         {
-            int in = i;
-            while (map[s[in]] != 0)
+            //  Remove elements from the start of the Window so that the size of map decreases by 1.
+            while (map.size() > k)
             {
                 map[s[i]]--;
+                if (map[s[i]] == 0)
+                    map.erase(s[i]);
                 i++;
             }
-            auto a = map.find(s[in]);
-            map.erase(a);
         }
     }
 
@@ -67,16 +69,17 @@ int main()
     return 0;
 }
 
-/* 
+/*
     ALGORITHM ::
 
-  1) start = 0 , end = 0 ,  maxLenghtSubstring = 0
-  2)  if (mp.size() == k)
-         MAX of [ maxLenghtSubstring  OR end -  start + 1]   
+  1) start = 0 , end = 0 ,  maxLenghtSubstring = -1
+
+  2)  if (mp.size() == k)   UPDATE maxLen
+         MAX of [ maxLenghtSubstring  OR end -  start + 1]
 
   3) if (mp.size() > k)
-                // when unique characters exceeds K
-                // Remove one element from the start (BEGINNING)
+                // when unique characters means map.size() exceeds K as map contains the count of the unique ele.
+                // Remove one element from the start (BEGINNING) , shift i(start)
                 // map[s[start]] -- ;    means -1 from the Count
-                // Increament start 
+                // Increament start
  */

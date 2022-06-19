@@ -41,14 +41,13 @@ void longestSubstringWithoutRepeatingCharacters(string s)
 
         else if (map.size() < windowSize)
         {
-            int in = start; //  Pop() from the start
-            while (map[s[in]] != 0)
+            while (map.size() < windowSize)
             {
                 map[s[start]]--;
+                if (map[s[start]] == 0)
+                    map.erase(s[start]);
                 start++;
             }
-            auto a = map.find(s[in]);
-            map.erase(a);
         }
     }
 
