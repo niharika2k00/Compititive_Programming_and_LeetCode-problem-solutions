@@ -27,6 +27,29 @@ using namespace std;
 
 // https://www.codingninjas.com/codestudio/problems/920321?topList=striver-sde-sheet-problems&utm_source=striver&utm_medium=website&leftPanelTab=0
 
+//  brute Force  -  all the subarray find.
+//  Time Complexity :  O(n ^ 2)
+//  Space Complexity :  O(1)
+int BruteForce(vector<int> &arr)
+{
+    int mex = 0, len = arr.size();
+
+    for (int i = 0; i < len; ++i)
+    {
+        int sum = 0;
+        for (int j = i; j < len; ++j)
+        {
+            sum += a[j];
+            if (sum == 0)
+                max = Math.max(max, j - i + 1);
+        }
+    }
+
+    return max;
+}
+
+//  Time Complexity :  O(n)
+//  Space Complexity :  O(n)
 int LongestSubsetWithZeroSum(vector<int> arr)
 { // Prefix Sum Concept
     unordered_map<int, int> hashMap;
