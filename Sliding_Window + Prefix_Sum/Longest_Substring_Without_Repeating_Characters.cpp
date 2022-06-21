@@ -3,6 +3,8 @@ ________________________________________
 ----------------------------------------
  Author    :  Niharika Dutta
  Code Link :  https://www.geeksforgeeks.org/length-of-the-longest-substring-without-repeating-characters/
+
+              https://leetcode.com/problems/longest-substring-without-repeating-characters/
  Time Complexity :
 ________________________________________
 ----------------------------------------
@@ -33,7 +35,7 @@ void longestSubstringWithoutRepeatingCharacters(string s)
     for (end = 0; end < s.size(); end++)
     {
         map[s[end]]++;
-        cout << "Size of map = " << map.size() << endl;
+        // cout << "Size of map = " << map.size() << endl;
         windowSize = end - start + 1;
 
         if (map.size() == windowSize)
@@ -44,9 +46,12 @@ void longestSubstringWithoutRepeatingCharacters(string s)
             while (map.size() < windowSize)
             {
                 map[s[start]]--;
+
                 if (map[s[start]] == 0)
                     map.erase(s[start]);
+
                 start++;
+                windowSize = end - start + 1;
             }
         }
     }
@@ -60,7 +65,7 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    string s = "pwwekw";
+    string s = "aabbacd"; //  pwwekw  -->  3
     longestSubstringWithoutRepeatingCharacters(s);
 
     return 0;

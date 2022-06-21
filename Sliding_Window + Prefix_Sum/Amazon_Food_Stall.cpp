@@ -25,7 +25,7 @@ using namespace std;
     cin >> t; \
     while (t--)
 
-int coupons(int n, int m, int stallCoupons[1][10], int personCoupons[1][10], int q, int queries[1][2])
+int coupons(int n, int m, int (*stallCoupons)[10], int (*personCoupons)[10], int q, int queries[1][2])
 {
     int res = 0;
 
@@ -47,13 +47,6 @@ int coupons(int n, int m, int stallCoupons[1][10], int personCoupons[1][10], int
     return res;
 }
 
-void print1(int arr[2][3], int r, int c)
-{
-    int i, j;
-    for (i = 0; i < r; i++)
-        for (j = 0; j < c; j++)
-            cout << arr[i][j] << "\t";
-}
 int main()
 {
     ios_base::sync_with_stdio(false);
@@ -68,12 +61,6 @@ int main()
 
     int ans = coupons(n, m, stallCoupons, personCoupons, q, queries);
     cout << "Sum of the queries: " << ans << endl;
-
-    int a[2][3] = {{10, 20, 30}, {40, 50, 60}};
-
-    int r = 2;
-    int c = 3;
-    // print1(a, r, c);
 
     return 0;
 }
