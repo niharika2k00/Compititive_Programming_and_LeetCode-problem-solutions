@@ -22,17 +22,17 @@ class Solution
 public:
     ListNode *reverseList(ListNode *head)
     {
-        ListNode *curr = head, *temp, *newHead = NULL; // newHead stores the previous address.
+        ListNode *curr = head, *temp, *prevNode = NULL; // prevNode stores the previous address.
 
         while (curr != NULL)
         {
             temp = curr->next; // address
-            curr->next = newHead;
-            newHead = curr;
+            curr->next = prevNode;
+            prevNode = curr;
             curr = temp;
         }
 
-        return newHead;
+        return prevNode; //  curr / last Node
     }
 };
 // @lc code=end
