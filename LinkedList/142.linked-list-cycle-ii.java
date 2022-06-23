@@ -2,6 +2,9 @@
  * @lc app=leetcode id=142 lang=java
  *
  * [142] Linked List Cycle II
+ * 
+ * https://leetcode.com/problems/linked-list-cycle-ii/
+ * 
  */
 
 // @lc code=start
@@ -21,6 +24,7 @@ public class Solution {
 
         ListNode slow = head, fast = head;
 
+        // Loop Detection
         while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
@@ -32,7 +36,7 @@ public class Solution {
         if (fast == null || fast.next == null)
             return null;
 
-    //  Meeting point of Slow   &   Head  is the Starting of the cycle in Linked List 
+        // Meeting point of Slow & Head is the Starting of the cycle in Linked List
         while (head != slow) {
             head = head.next;
             slow = slow.next;
