@@ -36,7 +36,7 @@ class Solution {
 
         while (curr != null) {
             temp = curr.next;
-            curr.next = newPtr;
+            curr.next = newPtr; // newPtr store address of the prev node
             newPtr = curr;
             curr = temp;
         }

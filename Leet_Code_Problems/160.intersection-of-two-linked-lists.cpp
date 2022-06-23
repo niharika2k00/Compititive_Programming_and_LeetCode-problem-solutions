@@ -21,11 +21,10 @@ class Solution
 public:
     ListNode *getIntersectionNode(ListNode *headA, ListNode *headB)
     {
-        //  METHOD - I
+        //  METHOD - I   (Hashing)
         //  Time Complexity :  O(len1 + len2)
         //  Space Complexity :  O(n)
-        // for storing the address of the nodes
-        unordered_set<ListNode *> hashSet;
+        unordered_set<ListNode *> hashSet; // for storing the address of the nodes
 
         while (headA != NULL)
         {
@@ -61,3 +60,16 @@ public:
     }
 };
 // @lc code=end
+
+/*
+                   Method 1 [Hashing]
+               ----------------------------
+    Use unordered_set for storing the address of the Nodes for a LL.
+    Then traverse the LL2 and find whether it exists previously or not.
+
+
+                  Method 2 [Length]
+               -----------------------
+    https://takeuforward.org/data-structure/find-intersection-of-two-linked-lists/
+
+ */
