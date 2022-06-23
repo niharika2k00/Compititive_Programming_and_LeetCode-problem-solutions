@@ -21,6 +21,43 @@ class Solution
 public:
     ListNode *getIntersectionNode(ListNode *headA, ListNode *headB)
     {
+        //  METHOD - I
+        //  Time Complexity :  O(len1 + len2)
+        //  Space Complexity :  O(n)
+        // for storing the address of the nodes
+        unordered_set<ListNode *> hashSet;
+
+        while (headA != NULL)
+        {
+            hashSet.insert(headA);
+            headA = headA->next;
+        }
+
+        while (headB != NULL)
+        {
+            if (hashSet.find(headB) != hashSet.end()) // if found
+                return headB;
+
+            headB = headB->next;
+        }
+
+        return NULL;
+
+        //  METHOD - II
+        //  Time Complexity: O(2*max(length of list1,length of list2))
+        //  Space Complexity : O(1)
+        if (!headA || !headB)
+            return NULL;
+
+        ListNode *a = headA, *b = headB;
+
+        while (a != b)
+        {
+            a = a == NULL ? headB : a->next;
+            b = b == NULL ? headA : b->next;
+        }
+
+        return b;
     }
 };
 // @lc code=end
