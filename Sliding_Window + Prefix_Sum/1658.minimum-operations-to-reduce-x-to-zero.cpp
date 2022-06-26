@@ -21,7 +21,7 @@ public:
             return -1;
         int remain = sum - x; //  11 - 5 = 6
 
-        // Now we have to find the Longest Subarray with  SUM  = 6
+        // Intuition : Find the Longest Subarray with  SUM  =  6 [remain]
         for (i = 0; i < len; i++)
         {
             subArrSum += nums[i];
@@ -50,4 +50,6 @@ public:
     2) Means we got the remaining SUM = (total - X) . So now find the LONGEST SUBARRAY with remaining SUM
                 using the sliding window method.
 
+
+    Similar Problem : https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards/
  */
