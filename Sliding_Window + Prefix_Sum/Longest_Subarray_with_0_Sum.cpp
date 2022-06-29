@@ -48,12 +48,12 @@ int BruteForce(vector<int> &arr)
     return max;
 }
 
-// Prefix Sum Concept
+//  Prefix Sum Concept
 //  Time Complexity :  O(n)
 //  Space Complexity :  O(n)
 int LongestSubsetWithZeroSum(vector<int> arr)
 {
-    unordered_map<int, int> hashMap;
+    unordered_map<int, int> hashMap; // <sum , index>
     int len = arr.size(), sum = 0, maxi = 0;
 
     for (int i = 0; i < len; i++)
