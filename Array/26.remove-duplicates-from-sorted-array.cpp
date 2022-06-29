@@ -17,7 +17,7 @@ public:
             TIME COMPLEXITY :  O(n)
             SPACE COMPLEXITY : O(1)
          */
-        int i, len = nums.size(), index = 1; // 1 as one Unique Element ,  INDEX is the position for the NEXT Unique Element
+        int i, len = nums.size(), index = 1; // trak the last Unique Element
 
         if (len == 0)
             return 0;
