@@ -11,9 +11,14 @@
 class Solution
 {
 public:
+    static bool compare(vector<int> a, vector<int> b)
+    {
+        return a[1] > b[1];
+    }
+
     int maximumUnits(vector<vector<int>> &boxTypes, int truckSize)
     {
-        //  Using MultiMap
+        //   METHOD  - I   ||    Using MultiMap
         //  Time Complexity :  O(n)
         //  Space Complexity :  O(n)
         int len = boxTypes.size(), res = 0;
@@ -24,7 +29,7 @@ public:
 
         for (auto it : multiMap)
         {
-            if (truckSize >= it.second) // more than box number
+            if (truckSize >= it.second) //  means need 10 box but present 3, so obviously will take all of them
             {
                 res = res + (it.first * it.second);
                 truckSize = truckSize - it.second;
@@ -32,17 +37,30 @@ public:
             else
             {
                 res = res + (truckSize * it.first);
-                truckSize = 0;
+                return res;
             }
-
-            if (truckSize == 0) // 0
-                break;
         }
         return res;
 
-        //  Using MultiMap
-        //  Time Complexity :  O(n)
-        //  Space Complexity :  O(n)
+        //      METHOD  - II   ||    Using Normal Sort
+        //  Time Complexity :  O(nlogn)
+        //  Space Complexity :  O(1)
+        sort(boxTypes.begin(), boxTypes.end(), compare); //  Sort by Box Units
+
+        for (int i = 0; i < len; i++)
+        {
+            if (truckSize >= boxTypes[i][0])
+            {
+                res = res + (boxTypes[i][0] * boxTypes[i][1]);
+                truckSize = truckSize - boxTypes[i][0];
+            }
+            else
+            {
+                res = res + (truckSize * boxTypes[i][1]);
+                return res;
+            }
+        }
+        return res;
     }
 };
 // @lc code=end
