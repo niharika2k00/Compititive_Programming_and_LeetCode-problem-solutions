@@ -10,6 +10,7 @@
 class Solution
 {
 public:
+    //  Using Sort Functionality
     //  Time Complexity :  O(nlogn)
     //  Space Complexity : O(1)
     int longestConsecutive(vector<int> &nums)
@@ -39,8 +40,44 @@ public:
         }
 
         store = max(store, maxLen);
-
         return store;
+
+        //  Using Hash Map
+        //  Time Complexity :  O(n)
+        //  Space Complexity :  O(n)
+
+        unordered_map<int, int> hashMap;
+
+        for (int i = 0; i < len; i++)
+            hashMap[arr[i]]++;
+
+        for (int i = 0; i < len; i++)
+        {
+            if (hashMap.find(arr[i] - 1) != hashMap.end()) //  prev term if found
+                continue;
+            else
+            {
+                currNum = arr[i];
+                currStreak = 1;
+
+                while (hashMap.find(currNum + 1) != hashMap.end())
+                {
+                    currNum += 1;
+                    currStreak += 1;
+                }
+            }
+            res = max(res, currStreak);
+        }
+
+        return res;
     }
 };
 // @lc code=end
+
+/*                       Intuition
+                   ----------------------
+
+    #  Search for the previous term in the hashMap  ==> if found CONTINUE
+    #  ELSE search for the next term.
+    #  Track the longest streak
+ */
