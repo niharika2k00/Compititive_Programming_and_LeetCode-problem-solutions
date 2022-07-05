@@ -2,6 +2,9 @@
  * @lc app=leetcode id=226 lang=cpp
  *
  * [226] Invert Binary Tree
+ *
+ * https://leetcode.com/problems/invert-binary-tree/
+ *
  */
 
 // @lc code=start
@@ -23,7 +26,6 @@ public:
     // USING RECURSION METHOD INVERTING THE EXSISTING TREE
     TreeNode *invertTree(TreeNode *root)
     {
-
         if (!root)
             return NULL;
 

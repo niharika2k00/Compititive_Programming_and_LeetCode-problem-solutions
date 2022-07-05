@@ -26,7 +26,9 @@ public:
     {
         if (root->left)
             Inorder_Traversal(root->left, inorderArr);
+
         inorderArr.push_back(root->val);
+
         if (root->right)
             Inorder_Traversal(root->right, inorderArr);
         return;
@@ -36,8 +38,10 @@ public:
     {
         if (!root)
             return 0;
+
         vector<int> inorderArr;
         Inorder_Traversal(root, inorderArr);
+
         return inorderArr[k - 1];
     }
 };
