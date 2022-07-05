@@ -4,7 +4,7 @@
  * [101] Symmetric Tree
  */
 // https://leetcode.com/problems/symmetric-tree/
-// @lc code=start
+
 /**
  * Definition for a binary tree node.
  * struct TreeNode {

@@ -15,6 +15,9 @@
  *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
+ *
+ * https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/
+ *
  */
 class Solution
 {
@@ -25,7 +28,7 @@ public:
             return NULL;
 
         int mid = (start + end) / 2;
-        TreeNode *node = new TreeNode(arr[mid]);
+        TreeNode *node = new TreeNode(arr[mid]); // root node
 
         node->left = CreateBST(arr, start, mid - 1);
         node->right = CreateBST(arr, mid + 1, end);

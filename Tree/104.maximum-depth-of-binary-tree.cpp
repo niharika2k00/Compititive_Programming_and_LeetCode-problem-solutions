@@ -2,6 +2,9 @@
  * @lc app=leetcode id=104 lang=cpp
  *
  * [104] Maximum Depth of Binary Tree
+ *
+ * https://leetcode.com/problems/maximum-depth-of-binary-tree/
+ *
  */
 
 // @lc code=start
@@ -24,13 +27,13 @@ public:
         int rightSubTree = 0, leftSubTree = 0;
         if (root == NULL)
             return 0;
-        else
-        {
-            if (root->right)
-                rightSubTree = maxDepth(root->right);
-            if (root->left)
-                leftSubTree = maxDepth(root->left);
-        }
+
+        if (root->right)
+            rightSubTree = maxDepth(root->right);
+
+        if (root->left)
+            leftSubTree = maxDepth(root->left);
+
         return (max(rightSubTree, leftSubTree) + 1);
     }
 };
