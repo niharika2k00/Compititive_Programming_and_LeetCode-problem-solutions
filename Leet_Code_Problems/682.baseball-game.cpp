@@ -2,6 +2,9 @@
  * @lc app=leetcode id=682 lang=cpp
  *
  * [682] Baseball Game
+ *
+ * https://leetcode.com/problems/baseball-game/
+ *
  */
 
 // @lc code=start
@@ -28,11 +31,11 @@ public:
         {
             if (ops[i] == "+")
             {
-                int a = stack.top();
+                int prev1 = stack.top();
                 stack.pop();
-                int b = stack.top();
-                stack.push(a);
-                stack.push(a + b);
+                int prev2 = stack.top();
+                stack.push(prev1);
+                stack.push(prev1 + prev2);
             }
 
             else if (ops[i] == "D")
@@ -54,7 +57,7 @@ public:
 
         while (!stack.empty())
         {
-            sum = sum + stack.top();
+            sum += stack.top();
             stack.pop();
         }
 
