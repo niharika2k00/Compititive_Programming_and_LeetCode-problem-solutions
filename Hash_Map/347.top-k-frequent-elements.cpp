@@ -13,7 +13,7 @@ class Solution
 {
 
 private:
-    static bool compare(pair<int, int> &a, pair<int, int> &b) //  Descending Sort
+    static bool compare(pair<int, int> &a, pair<int, int> &b) // Descending Sort
     {
         return a.second > b.second;
     }
@@ -24,11 +24,11 @@ public:
     // -----------------------
     vector<int> sortedPriorityQueue(unordered_map<int, int> &mp, int k)
     {
-        priority_queue<pair<int, int>> pq; // MaxHeap
+        priority_queue<pair<int, int>> pq; // Max-Heap
         vector<int> result;
 
         for (auto it : mp)
-            pq.push({it.second, it.first});
+            pq.push({it.second, it.first}); // as MaxHeap so SORT acc to the pq.first
 
         while (k--)
         {
@@ -88,7 +88,7 @@ public:
 
     vector<int> topKFrequent(vector<int> &nums, int k)
     {
-        unordered_map<int, int> hashMap; // sort by value
+        unordered_map<int, int> hashMap; // sort by value decreasing order
         int len = nums.size(), i = 0;
 
         if (k == len)
