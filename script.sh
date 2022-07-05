@@ -1,13 +1,20 @@
+
+# -------------------------------------
+#  SCRIPT FOR AUTO PUSH CODE IN GITHUB
+# -------------------------------------
+
 git add .
 
-echo -n 'Enter the commit message --> '
+echo -n 'Enter the commit message  -->  '
 read  commitMessage
 
 git commit -m "$commitMessage"
 
-# echo 'Enter the name of the branch:'
+# echo 'Enter Branch Name  -->  '
 # read branch
-
 git push origin main
 
-# read
+
+
+
+#  -n  remove new line
