@@ -25,14 +25,14 @@ public:
     int maxDepth(TreeNode *root)
     {
         int rightSubTree = 0, leftSubTree = 0;
-        if (root == NULL)
+        if (!root)
             return 0;
-
-        if (root->right)
-            rightSubTree = maxDepth(root->right);
 
         if (root->left)
             leftSubTree = maxDepth(root->left);
+
+        if (root->right)
+            rightSubTree = maxDepth(root->right);
 
         return (max(rightSubTree, leftSubTree) + 1);
     }

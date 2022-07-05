@@ -21,25 +21,27 @@
  */
 class Solution
 {
-    // A BINARY TREE in which the Left & Right Subtrees of every node differ in height by NO more than 1.
+    //  Check Balanced Binary Tree
+    //  Check whether A BINARY TREE in which the Left & Right Subtrees of every node differ in height by NO more than 1.
 public:
-    int Checking(TreeNode *root)
+    //  Code of Height of the Binary Tree
+    int helper(TreeNode *root)
     {
-        int left, right, diff;
+        int leftHt = 0, rightHt = 0;
+
         if (!root)
             return 0;
 
-        left = Checking(root->left);
-        if (left == -1)
-            return -1;
-        right = Checking(root->right);
-        if (right == -1)
+        leftHt = helper(root->left);
+        rightHt = helper(root->right);
+
+        if (abs(leftHt - rightHt) > 1)
             return -1;
 
-        diff = abs(left - right);
-        if (diff > 1)
+        if (leftHt == -1 || rightHt == -1)
             return -1;
-        return 1 + max(left, right);
+
+        return max(leftHt, rightHt) + 1;
     }
 
     bool isBalanced(TreeNode *root)
@@ -47,10 +49,8 @@ public:
         if (!root)
             return true;
 
-        auto result = Checking(root);
-        if (result == -1)
-            return false;
-        return true;
+        int res = helper(root);
+        return (res == -1) ? false : true;
     }
 };
 // @lc code=end
