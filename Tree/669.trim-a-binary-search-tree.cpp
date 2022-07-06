@@ -25,7 +25,7 @@ public:
     TreeNode *trimBST(TreeNode *root, int low, int high)
     {
         if (!root)
-            return nullptr;
+            return NULL;
 
         if (root->val < low) //  Only RIGHT SUBTREE return  NO NEED to see the left side as it will be More LESS.
             return trimBST(root->right, low, high);

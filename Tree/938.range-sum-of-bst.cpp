@@ -33,7 +33,7 @@ public:
             sum = sum + root->val;
 
         if (root->left)
-            rangeSumBST(root->left, low, high);
+            rangeSumBST(root->left, low, high); // sum is returned
 
         if (root->right)
             rangeSumBST(root->right, low, high);

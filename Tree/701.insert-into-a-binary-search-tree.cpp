@@ -24,9 +24,10 @@ class Solution
 public:
     TreeNode *BinarySearch(TreeNode *root, TreeNode *NewNode, int val)
     {
-        if (root == NULL)
+        if (!root)
             return NewNode;
 
+        // Right Subtree Traversal
         if (val > root->val)
             root->right = BinarySearch(root->right, NewNode, val);
 
@@ -36,10 +37,7 @@ public:
         return root;
     }
 
-    adsfaf
-
-        TreeNode *
-        insertIntoBST(TreeNode *root, int val)
+    TreeNode *insertIntoBST(TreeNode *root, int val)
     {
         TreeNode *NewNode = new TreeNode(val); //  Node Creation
         NewNode->left = NewNode->right = NULL;
