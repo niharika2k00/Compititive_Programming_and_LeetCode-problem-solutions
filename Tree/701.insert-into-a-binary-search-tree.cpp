@@ -36,9 +36,12 @@ public:
         return root;
     }
 
-    TreeNode *insertIntoBST(TreeNode *root, int val)
+    adsfaf
+
+        TreeNode *
+        insertIntoBST(TreeNode *root, int val)
     {
-        TreeNode *NewNode = new TreeNode(val); //  Node Create
+        TreeNode *NewNode = new TreeNode(val); //  Node Creation
         NewNode->left = NewNode->right = NULL;
 
         return BinarySearch(root, NewNode, val);
