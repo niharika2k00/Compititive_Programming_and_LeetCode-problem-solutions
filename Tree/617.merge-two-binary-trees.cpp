@@ -26,11 +26,13 @@ public:
 
     TreeNode *mergeTrees(TreeNode *root1, TreeNode *root2)
     {
-        if (root1 == NULL && root2 == NULL)
+        if (!root1 && !root2)
             return NULL;
-        if (root1 == NULL && root2)
+
+        if (!root1)
             return root2;
-        if (root2 == NULL && root1)
+
+        if (!root2)
             return root1;
 
         TreeNode *resultant = new TreeNode(root1->val + root2->val);
@@ -38,6 +40,31 @@ public:
         resultant->right = mergeTrees(root1->right, root2->right);
 
         return resultant;
+
+        // ------------------------------------
+        // Time Complexity :   O(n)
+        //  Space Complexity :  O(1)
+        // ------------------------------------
+        if (!root1 && !root2)
+            return NULL;
+
+        if (!root1)
+            return root2;
+
+        if (!root2)
+            return root1;
+
+        root1->val = root1->val + root2->val;
+
+        // Left DFS traversal
+        if (root1->left || root2->left)
+            root1->left = mergeTrees(root1->left, root2->left);
+
+        // Right DFS traversal
+        if (root1->right || root2->right)
+            root1->right = mergeTrees(root1->right, root2->right);
+
+        return root1;
     }
 };
 // @lc code=end

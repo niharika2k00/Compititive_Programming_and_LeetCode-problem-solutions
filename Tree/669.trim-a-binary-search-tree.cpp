@@ -33,6 +33,7 @@ public:
         if (root->val > high) // No chance to visit RIGHT SUBTREE, means return ONLY LEFT SUBTREE.
             return trimBST(root->left, low, high);
 
+        //  Within Range.
         if (root->val >= low && root->val <= high)
         {
             root->left = trimBST(root->left, low, high);
