@@ -21,6 +21,7 @@
  */
 class Solution
 {
+    // Return the MINIMUM absolute difference between the values of any two different nodes in the tree.
 public:
     void preOrder(TreeNode *root, vector<int> &arr)
     {

@@ -15,6 +15,9 @@
  *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
+ *
+ * https://leetcode.com/problems/delete-node-in-a-bst/
+ *
  */
 class Solution
 {
