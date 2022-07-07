@@ -18,11 +18,11 @@ public:
 
     int maximumUnits(vector<vector<int>> &boxTypes, int truckSize)
     {
-        //   METHOD  - I   ||    Using MultiMap
+        //        METHOD  - I   ||    Using MultiMap (auto sort acc value ASC Order)
         //  Time Complexity :  O(n)
         //  Space Complexity :  O(n)
         int len = boxTypes.size(), res = 0;
-        multimap<int, int, greater<int>> multiMap; //  sort desc units
+        multimap<int, int, greater<int>> multiMap; //  sort DESC units
 
         for (int i = 0; i < len; i++)
             multiMap.insert({boxTypes[i][1], boxTypes[i][0]}); // store  {boxUnit , numOfBox}     insert(pair<int, int>(3, 60));
@@ -45,7 +45,7 @@ public:
         //      METHOD  - II   ||    Using Normal Sort
         //  Time Complexity :  O(nlogn)
         //  Space Complexity :  O(1)
-        sort(boxTypes.begin(), boxTypes.end(), compare); //  Sort by Box Units
+        sort(boxTypes.begin(), boxTypes.end(), compare); // Sort by Box Units
 
         for (int i = 0; i < len; i++)
         {

@@ -39,13 +39,30 @@
                 hashtable["key"].push_back("value");
 
 
-  4)  unordered_map<int , string , greater<int> > hashMap;     --->  This will SORT by DESC , by KEYS. 
+  4)  unordered_map<int , string , greater<int> > hashMap;     --->  This will SORT by DESC , by KEYS.  (Default Sort)
               hashMap.insert(make_pair(10, "queen"));
               hashMap.insert(make_pair(20, "rose"));
               hashMap.insert(make_pair(5, " lion"));     
-
 
               OUTPUT :
               (20, "rose")
               (10, "queen")
               (5, " lion")
+
+
+  Auto Sort  ASCENDING ORDER by KEYS : 
+-------------------------------------
+      multimap<int , int> MM ;
+
+
+  Sort  DESCENDING ORDER :
+-------------------------------------
+      multimap<int , int , greater<int> > MM ;
+
+
+  Sort  ASCENDING acc to the first element.
+-------------------------------------
+      vector<pair<int, int>> vec;
+      sort(vec.begin() , vec.end()); 
+
+ https://www.geeksforgeeks.org/sorting-a-map-by-value-in-c-stl/
