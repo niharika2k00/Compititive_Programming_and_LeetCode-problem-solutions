@@ -30,7 +30,7 @@ public:
                 vec.push_back(nums[i]);
         }
 
-        //  METHOD - II
+        //  METHOD - II    ||   this logic is possible bcz elej present [ 1 , n]
         //  Time Complexity :  O(N)
         //   Space Complexity :  O(1)
         for (int i = 0; i < len; i++)
