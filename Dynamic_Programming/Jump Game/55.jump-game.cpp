@@ -2,6 +2,9 @@
  * @lc app=leetcode id=55 lang=cpp
  *
  * [55] Jump Game
+ *
+ * https://leetcode.com/problems/jump-game/
+ *
  */
 
 // @lc code=start
@@ -12,10 +15,10 @@ public:
     {
         int len = nums.size(), i, reachable = 0, count = 0;
 
-        if (nums[0] == 0 && len == 1) // [0]
+        if (arr[0] == 0 && len == 1 || len == 1) // [0]
             return true;
 
-        if (nums[0] == 0)
+        if (arr[0] == 0)
             return false;
 
         // Peak Valley Approach  <------  GREEDY APPROACH
@@ -26,11 +29,11 @@ public:
 
             reachable = max(reachable, i + nums[i]); //  Index Trace
 
-            if (reachable >= len)
+            if (reachable >= len - 1)
                 return true;
         }
 
-        return true;
+        return false;
     }
 };
 // @lc code=end
