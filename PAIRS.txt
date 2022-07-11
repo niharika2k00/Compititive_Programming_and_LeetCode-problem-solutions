@@ -50,6 +50,14 @@
               (5, " lion")
 
 
+ https://www.geeksforgeeks.org/sorting-a-map-by-value-in-c-stl/
+     
+      Perform SORT in hashMap we can use DS :
+              vector<pair<int, int>>
+              multimap
+              heap (max / min)    
+
+
   Auto Sort  ASCENDING ORDER by KEYS : 
 -------------------------------------
       multimap<int , int> MM ;
@@ -65,4 +73,3 @@
       vector<pair<int, int>> vec;
       sort(vec.begin() , vec.end()); 
 
- https://www.geeksforgeeks.org/sorting-a-map-by-value-in-c-stl/
