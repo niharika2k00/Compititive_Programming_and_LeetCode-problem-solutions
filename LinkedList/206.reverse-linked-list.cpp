@@ -22,7 +22,7 @@ class Solution
 public:
     ListNode *reverseList(ListNode *head)
     {
-        ListNode *curr = head, *temp, *prevNode = NULL; // prevNode stores the previous address.
+        ListNode *curr = head, *temp, *prevNode = NULL; // prevNode var stores the previous address.
 
         while (curr != NULL)
         {

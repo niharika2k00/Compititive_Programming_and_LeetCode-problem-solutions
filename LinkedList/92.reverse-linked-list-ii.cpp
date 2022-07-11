@@ -23,7 +23,7 @@ class Solution
 public:
     ListNode *reverseBetween(ListNode *head, int left, int right)
     {
-        ListNode *dummy = new ListNode(NULL);
+        ListNode *dummy = new ListNode(NULL); // dummy is a node having both address & value part.
         ListNode *prev = dummy;
         dummy->next = head;
 
