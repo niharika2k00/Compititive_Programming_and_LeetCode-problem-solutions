@@ -13,24 +13,36 @@ ________________________________________
 
 using namespace std;
 
-#define ll long long
-#define lli long long int
-#define vi vector<int>
-#define vll vector<ll>
-#define pb push_back
-#define mp make_pair
-#define loop1(n) for (ll i = 0; i < (n); i++)
-#define loop2(n) for (ll i = 1; i <= (n); i++)
-#define test  \
-    ll t;     \
-    cin >> t; \
-    while (t--)
-
-int main()
+vector<int> mergeKSortedArrays(vector<vector<int>> &kArr, int k)
 {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    cout.tie(NULL);
+    // Sort in ASC Order so take Min-Heap     kArrays = [[] [] []]
+    priority_queue<int, vector<int>, greater<int>> minHeap;
+    vector<int> res;
 
-    return 0;
+    for (int i = 0; i < k; i++)
+    {
+        // Loop runs for size of subarray times
+        for (int j = 0; j < kArr[i].size(); j++)
+            minHeap.push(kArr[i][j]);
+    }
+
+    while (!minHeap.empty())
+    {
+        int ele = minHeap.top();
+        minHeap.pop();
+        res.push_back(ele);
+    }
+
+    return res;
 }
+
+/*
+         Example :
+         2 arrays
+         3  size1
+         3 5 9
+         4  size2
+         1 2 3 8
+
+    ANS :  [1 2 3 3 5 8 9]
+ */
