@@ -41,7 +41,10 @@ int main()
         Calculate total sum
         If Even , then divide into 2 means SUM / 2
                   else END ;
-        EVEN : find the subarray that have SUM/2 value. (as done in SubsetSum.cpp file )
+
+        EVEN : find the subarray that have SUM/2 value. (as done in Check_subset_with_sum_isPresent.cpp file )
+
+        LeetCode Problem :  416. in same repository
     */
 
     return 0;

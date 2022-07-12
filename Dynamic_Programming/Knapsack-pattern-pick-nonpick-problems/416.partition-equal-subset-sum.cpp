@@ -2,6 +2,9 @@
  * @lc app=leetcode id=416 lang=cpp
  *
  * [416] Partition Equal Subset Sum
+ *
+ * https://leetcode.com/problems/partition-equal-subset-sum/
+ *
  */
 
 // @lc code=start
@@ -28,7 +31,7 @@ public:
         return Dp[len][target] = consider || notConsider;
     }
 
-    bool canPartition(vector<int> &nums)
+    bool canPartition(vector<int> &nums) //  [1,5,11,5]
     {
         int len = nums.size();
 

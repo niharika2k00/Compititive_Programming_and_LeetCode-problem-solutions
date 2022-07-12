@@ -31,3 +31,12 @@ public:
          sort(arr1.begin() ,  arr1.end());
     }
 };                                    
+
+
+ //  SUM OF THE ARRAY / VECTOR 
+ -------------------------------------
+
+     Syntax : accumulate(first, last, sum);
+
+     accumulate(vec.begin(), vec.end() , 0);
+     accumulate(a, a + 3, sum)
