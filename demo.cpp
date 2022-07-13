@@ -35,29 +35,39 @@ int main()
     // printf("\b si");
     // printf("\r ha");
 
-    int arr[] = {10, 20, 30, 40, 50};
-    int *p = arr;
-    int *q = (arr + 1);
+    printf("Hello");
+    char s[4] = {'\b', '\r', '\t', '\n'};
+    for (int i = 0; i < 4; i++)
+        printf("%c", s[i]);
 
-    //  *(arr + 1)  -->  a[1] ele
+    //  *(arr + 1)  -->   ValueOf( Base address + 4 bytes for 1 index)  means  Value( address a[1] ) ele
+    //  *arr + 4   -->   ValueOf(a[0])  +  4
     //  (arr + 1)  -->  address of a[1]
-    // p = arr;  // points to the 0th index.
-    // int *z =  (&arr + 2)  --> address of the a[0] + 1,
+
+    int arr[] = {10, 20, 30, 40, 50};
+    int *p = arr; // points to the 0th index.
+    int *q = (arr + 1);
+    int *z = arr; //   --> address of the a[0] + 2,
     /*
        means address of a[0] = 1000 , a[1] = 1004 ...
         z =  points to the next location after all the addressess of values in an array arr[] means 5 elements having size 4 each (5 * 4 = 20)
                (1000 + 20) + 8 = 1028.
-     */
+    */
     // p = (&arr + 1);
 
-    cout << "p  = " << p << " *p  = " << *p << endl;
-    cout << "sizeof(p) = " << sizeof(p) << " sizeof(*p) = " << sizeof(*p) << endl;
-    cout << (&arr + 2) << endl;
+    cout << "\nZ ==> " << *z << "\tAfter add 3  ==> " << *z + 3 << endl;
+    cout << "p  = " << p << " \t*p  = " << *p << endl;
+    cout << "sizeof(p) = " << sizeof(p) << "\tsizeof(*p) = " << sizeof(*p) << endl;
+    cout << (*arr + 6) << "\t" << (&arr + 2) << endl;
 
-    int temp;
-    int arr1[10] = {1, 2, 3, 4, 5, 6, 9, 8};
-    temp = (arr1 + 1)[3]; //  address of a[1]  =  1004[3]  = means index val of from address 1004
-    cout << temp << endl; //  5
+    cout << (arr + 1)[3] << endl; //  address of a[1]  =  1004[3]  = means index val of from address 1004
 
-       return 0;
+    int a, b, c;
+    int ARR[5] = {1, 2, 3, 25, 7};
+    a = ++ARR[1];
+    b = ARR[1]++;
+    c = ARR[a++];
+    printf("a = %d , b = %d , c = %d\n", a, b, c);
+
+    return 0;
 }
