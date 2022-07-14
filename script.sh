@@ -14,7 +14,7 @@ git commit -m "$commitMessage"
 # read branch
 git push origin main
 
-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
+# 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
 
 
 #  -n  remove new line
