@@ -5,8 +5,6 @@
  *
  * https://leetcode.com/problems/next-greater-element-i/
  *
- * https://www.codingninjas.com/codestudio/problems/799354?topList=striver-sde-sheet-problems&utm_source=striver&utm_medium=website&leftPanelTab=0
- *
  */
 
 // @lc code=start
@@ -25,10 +23,11 @@ public:
             while (!st.empty() && st.top() <= arr2[i])
                 st.pop();
 
-            if (!st.empty() && st.top() > arr2[i]) // means nge exsist in the Stack
+            if (!st.empty() && i < len2) // means nge exsist in the Stack
             {
                 int nge = st.top();
                 hashMap.insert({arr2[i], nge});
+                st.push(arr2[i]);
             }
 
             st.push(arr2[i]);
@@ -36,6 +35,7 @@ public:
 
         for (int i = 0; i < len1; i++)
         {
+            // cout << arr1[i] << endl;
             int ele = hashMap[arr1[i]]; //  hashMap[4]
             cout << ele << endl;
             res.push_back(ele ? ele : -1);
