@@ -18,4 +18,3 @@ git push origin main
 #  -n  remove new line
 
 
-# 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   
