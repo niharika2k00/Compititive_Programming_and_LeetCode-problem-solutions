@@ -13,7 +13,9 @@ class Solution
 public:
     int maxArea(vector<int> &height)
     {
-        asdfasdf
+        int len = height.size(), result = 0;
+
+        return result;
     }
 };
 // @lc code=end
