@@ -80,5 +80,3 @@ vector<int> kMaxSumCombination(vector<int> &a, vector<int> &b, int len, int k)
 }
 
 // https://placewit.medium.com/k-max-sum-combinations-2c6d67a3acb
-
-// https://www.geeksforgeeks.org/k-maximum-sum-combinations-two-arrays/#:~:text=Given%20two%20equally%20sized%20arrays,all%20the%20possible%20sum%20combinations.

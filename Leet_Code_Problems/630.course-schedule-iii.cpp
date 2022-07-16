@@ -5,6 +5,8 @@
  *
  * https://leetcode.com/problems/course-schedule-iii/
  *
+ * VIDEO : https://www.youtube.com/watch?v=i95fpO1z2Fo
+ *
  */
 
 // @lc code=start
