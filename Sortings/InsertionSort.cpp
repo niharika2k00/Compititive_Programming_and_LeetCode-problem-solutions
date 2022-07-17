@@ -3,7 +3,7 @@ ________________________________________
 ----------------------------------------
  Author    :  Niharika Dutta
  Code Link :
- Time Complexity :  O(n^2)
+ Time Complexity :   O(n^2)
 ________________________________________
 ----------------------------------------
  */
@@ -25,31 +25,11 @@ using namespace std;
     cin >> t; \
     while (t--)
 
-void BubbleSort(int arr[], int len) // OR  int *arr        pass by reference
-{
-    for (int i = 0; i < len; i++)
-    {
-        for (int j = 0; j < len - i; j++)
-        {
-            if (arr[j] > arr[j + 1])
-                swap(arr[j], arr[j + 1]);
-        }
-    }
-}
-
 int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-
-    int arr[] = {5, 1, 4, 2, 8};
-    int len = sizeof(arr) / sizeof(arr[0]);
-
-    BubbleSort(arr, len);
-
-    for (auto ele : arr)
-        cout << ele << "\t";
 
     return 0;
 }
