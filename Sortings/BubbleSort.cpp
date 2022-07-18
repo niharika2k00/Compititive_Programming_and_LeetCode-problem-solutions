@@ -27,14 +27,20 @@ using namespace std;
 
 void BubbleSort(int arr[], int len) // OR  int *arr        pass by reference
 {
+    int count = 0;
     for (int i = 0; i < len; i++)
     {
         for (int j = 0; j < len - i; j++)
         {
             if (arr[j] > arr[j + 1])
+            {
+                count++;
                 swap(arr[j], arr[j + 1]);
+            }
         }
     }
+
+    cout << "Number of swaps => " << count << endl;
 }
 
 int main()
@@ -53,3 +59,10 @@ int main()
 
     return 0;
 }
+
+/*
+         Number of Swaps in Bubble Sort  ==  Inversion Sort
+
+            means in [5 1 4 2 8], the INVERSION PAIRS are --->   4
+                (5 1) , (5 4) , (5 2) , (4 2)
+ */

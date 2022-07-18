@@ -25,22 +25,20 @@ using namespace std;
     cin >> t; \
     while (t--)
 
-void InsertionSort(int *arr, int len)
+void SelectionSort(int *arr, int len)
 {
-    int hole, value, i;
+    int minIdx = 0;
 
-    for (i = 1; i < len; i++)
+    for (int i = 0; i < len; i++)
     {
-        hole = i;
-        value = arr[i];
-
-        while (hole > 0 && arr[hole - 1] > value) // Previous ele >  value
+        minIdx = i;
+        for (int j = i + 1; j < len; j++)
         {
-            arr[hole] = arr[hole - 1]; // hole shift to Left by  1 idx
-            hole--;
+            if (arr[j] < arr[minIdx])
+                minIdx = j; //  Stores the MINIMUM index
         }
 
-        arr[hole] = value;
+        swap(arr[minIdx], arr[i]);
     }
 }
 
@@ -53,7 +51,7 @@ int main()
     int arr[] = {7, 2, 4, 1, 5, 3};
     int len = sizeof(arr) / sizeof(arr[0]);
 
-    InsertionSort(arr, len);
+    SelectionSort(arr, len);
 
     for (auto ele : arr)
         cout << ele << "\t";
