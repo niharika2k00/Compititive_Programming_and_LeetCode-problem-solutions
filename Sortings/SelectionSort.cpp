@@ -34,7 +34,7 @@ void SelectionSort(int *arr, int len)
         minIdx = i;
         for (int j = i + 1; j < len; j++)
         {
-            if (arr[j] < arr[minIdx])
+            if (arr[minIdx] > arr[j])
                 minIdx = j; //  Stores the MINIMUM index
         }
 

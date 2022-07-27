@@ -25,6 +25,7 @@ using namespace std;
     cin >> t; \
     while (t--)
 
+//  AIM : Try to make elements at the LEFT of the hole Minimum.
 void InsertionSort(int *arr, int len)
 {
     int hole, value, i;
