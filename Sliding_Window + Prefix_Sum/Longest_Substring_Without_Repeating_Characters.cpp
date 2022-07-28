@@ -27,6 +27,7 @@ using namespace std;
     cin >> t; \
     while (t--)
 
+//   Means Longest Substring With Unique Characters
 void longestSubstringWithoutRepeatingCharacters(string s)
 {
     int i, start = 0, end = 0, maxLength = 0, temp = 0, windowSize;
@@ -45,7 +46,7 @@ void longestSubstringWithoutRepeatingCharacters(string s)
         {
             while (map.size() < windowSize)
             {
-                map[s[start]]--;
+                map[s[start]]--;           
 
                 if (map[s[start]] == 0)
                     map.erase(s[start]);

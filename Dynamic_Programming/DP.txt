@@ -1,5 +1,4 @@
 
-
                                                                  Dynamic  Programming
                                                           __________________________________
 
@@ -7,13 +6,13 @@
     VARIATIONS OF DP ON STRINGS
   --------------------------------
 
- 1) Minimum insertions to form a palindrome  ===>  Len - (LCS)
-        : 
+ 1) Minimum insertions to form a palindrome  ===>  Len - (LCS)       : 
+
         Length of the string - LCS[ longest common subsequence]
 
 
- 2) Minimum number of insertions/deletion to form a palindrome    https://www.codingninjas.com/codestudio/problems/can-you-make_4244510?source=youtube&campaign=striver_dp_videos&utm_source=youtube&utm_medium=affiliate&utm_campaign=striver_dp_videos&leftPanelTab=0
-        :
+ 2) Minimum number of insertions/deletion to form a palindrome    https://www.codingninjas.com/codestudio/problems/can-you-make_4244510?source=youtube&campaign=striver_dp_videos&utm_source=youtube&utm_medium=affiliate&utm_campaign=striver_dp_videos&leftPanelTab=0        :
+ 
         Given : str1 , str2 ;
          x = str1.size() , y = str2.size() ;
 
@@ -27,8 +26,8 @@
             Answer =  [(4 - 2) + (3 - 2)] = 3
 
 
- 3) Shortest common super sequence (means the sequence that contains both the string)
-        :
+ 3) Shortest common super sequence (means the sequence that contains both the string)       :
+
         [x + y - LCS] 
 
 

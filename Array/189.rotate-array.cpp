@@ -31,7 +31,7 @@ public:
 
         1) Reverse the whole vector
         2) Reverse First K elements
-        3) Reverse the rest elements.
+        3) Reverse the rest elements.   
 
 
           //  Manual Reverse Function \\

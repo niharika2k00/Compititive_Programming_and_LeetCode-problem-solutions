@@ -1,9 +1,9 @@
-/* 
+/*
 ________________________________________
 ----------------------------------------
  Author :  Niharika Dutta
- Code Link :  https://www.geeksforgeeks.org/sliding-window-maximum-maximum-of-all-subarrays-of-size-k/  
- Time Complexity :      O(n). 
+ Code Link :  https://www.geeksforgeeks.org/sliding-window-maximum-maximum-of-all-subarrays-of-size-k/
+ Time Complexity :      O(n).
  Auxiliary Space:       O(k).  -- for the queue
 ________________________________________
 ----------------------------------------
@@ -61,8 +61,7 @@ int main()
     return 0;
 }
 
-/* 
-
+/*
 EXPLAINATION ::
 
 - Use Queue or Dequeue STL functions
@@ -71,8 +70,7 @@ EXPLAINATION ::
 - main LOOP from K to N
             print element
             Check if !Q.empty() && Q.front() element is not a member of the current window ?  Q.pop()   -- REmoves the FRONT ELEMENT
-            Again compare with the previous/y pushed element 
+            Again compare with the previous/y pushed element
 
 - print the element of the last window
-
  */
