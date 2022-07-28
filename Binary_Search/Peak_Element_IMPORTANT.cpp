@@ -24,18 +24,37 @@ using namespace std;
     cin >> t; \
     while (t--)
 
-int peakElement_Finder(int arr[], int start, int size)
+// ----------------------------------------
+//     Binary Search   O(n logn)
+// ----------------------------------------
+int peakElement_Finder(int *arr, int len)
 {
-    int mid, end = size - 1;
-    while (start < end)
+    int high = len - 1, low = 0;
+
+    while (low <= high)
     {
-        mid = (start + end) / 2;
-        if (arr[mid] < arr[mid + 1])
-            start = mid + 1;
+        int mid = low + (high - low) / 2;
+
+        if (arr[mid] < arr[mid + 1]) //  means right e big ele present
+            low = mid + 1;
+
         else
-            end = mid; // end shrink
+            high = mid - 1;
     }
-    return start;
+
+    return low;
+}
+
+// ----------------------------------------
+//    Brute Force   O(n)
+// ----------------------------------------
+int peakElement_Finder(int *arr, int len)
+{
+    int i = 0;
+    while (arr[i] < arr[i + 1])
+        i++;
+
+    return i;
 }
 
 //   OR
@@ -48,7 +67,7 @@ int main()
     cout.tie(NULL);
 
     int arr[] = {4, 6, 20, 16}, res = 0, size = sizeof(arr) / sizeof(arr[0]);
-    res = peakElement_Finder(arr, 0, size);
+    res = peakElement_Finder(arr, size - 1);
     cout << "Peak Element of the Array : " << arr[res] << " at Index " << res << endl;
 
     return 0;
@@ -57,7 +76,7 @@ int main()
 /*
 EXPLANATION ::
 
-        # PEAK ELEMENT  : an element which is MORE than its left ans right side number ( More than 1 PEAK ele can be present )
+        # PEAK ELEMENT  : an element which is MORE than its left and right side number ( More than 1 PEAK ele can be present )
         # Here we are applying Binary Search in an UNSORTED Array to find the peak element
         # If MID element is greater than both its neighbour on either side ?  if YES then return it.
            ELSE

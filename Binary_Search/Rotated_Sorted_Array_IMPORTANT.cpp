@@ -1,9 +1,9 @@
-/* 
+/*
 ________________________________________
 ----------------------------------------
  Author    :  Niharika Dutta
- Code Link :    
- Time Complexity :   O (logn) ---- using Binary Search 
+ Code Link :
+ Time Complexity :   O (logn) ---- using Binary Search
 ________________________________________
 ----------------------------------------
  */
@@ -24,48 +24,44 @@ using namespace std;
     cin >> t; \
     while (t--)
 
-/* 
-               
+/*
            Logic is to Find the INDEX of the MINUMUM element in the array.
 
         PART - 1 ::
            - Bcz we know that the array in Binary_Search is always SORTED
-           - Hence, MINIMUM ele is the Start of the Array 
-           - So, we can use LINEAR SEARCH (to find the min ele)   --------->   Time Complexity : O (n) 
-           - Using Binary_Search                                  --------->   Time Complexity : O (log n) (preferred as more optimisec)
-
+           - Hence, MINIMUM ele is the Start of the Array
+           - So, we can use LINEAR SEARCH (to find the min ele)   --------->   Time Complexity : O (n)
+           - Using Binary_Search                                  --------->   Time Complexity : O (log n) (preferred as more optimised)
 
 
         PART - 2 ::
             - Find an element in the Rotated Sorted Array
-            -
-    
+
 */
 
+//  Minimum Element
 int minimumNumberOfRotation(int arr[], int start, int end)
 {
     int mid = (start + end) / 2;
-    // cout << "MID = " << mid << endl;
 
-    // when already Sorted
-    if (end < start)
-        return 0;
+    if (end >= start)
+    {
+        // minimum element lis  MID
+        if (arr[mid - 1] > arr[mid] && arr[mid] < arr[mid + 1] && start < mid)
+            return mid;
 
-    // if the minimum element lies in the MID
-    if (arr[mid - 1] > arr[mid] && arr[mid] < arr[mid + 1] && start < mid)
-        return mid;
+        // when (mid + 1) element is MIN
+        if (arr[mid] > arr[mid + 1] && mid < end)
+            return (mid + 1);
 
-    // when (mid + 1) element is MIN
-    if (arr[mid] > arr[mid + 1] && mid < end)
-        return (mid + 1);
+        // if min on Right part  --- means left side Sorted
+        if (arr[start] < arr[mid])
+            return minimumNumberOfRotation(arr, mid + 1, end);
 
-    // if min on Right part  --- means left side Sorted
-    if (arr[start] < arr[mid])
-        return minimumNumberOfRotation(arr, mid + 1, end);
-
-    // if min on Left part  --- means right side Sorted
-    if (arr[mid] < arr[end])
-        return minimumNumberOfRotation(arr, start, mid - 1);
+        // if min on Left part  --- means right side Sorted
+        if (arr[mid] < arr[end])
+            return minimumNumberOfRotation(arr, start, mid - 1);
+    }
 
     return 0;
 }
@@ -100,7 +96,7 @@ int main()
     rotationTimes = minimumNumberOfRotation(arr, 0, n - 1); // n-1 as 0 ZERO indexing
 
     if (!rotationTimes)
-        cout << "NO ROTATION NEEDED .... YEAhhhhh .. ";
+        cout << "NO ROTATION NEEDED .... YEAhhhhh ..\n";
     else
         cout << "\n Array rotated  " << rotationTimes << " Times \n\n";
 

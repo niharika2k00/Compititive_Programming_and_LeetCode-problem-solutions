@@ -1,9 +1,9 @@
-/* 
+/*
 ________________________________________
 ----------------------------------------
  Author    :  Niharika Dutta
- Code Link :    
- Time Complexity :  
+ Code Link :
+ Time Complexity :
 ________________________________________
 ----------------------------------------
  */
@@ -24,17 +24,18 @@ using namespace std;
     cin >> t; \
     while (t--)
 
-/* 
-Nearly Sorted Array :: 
+/*
+Nearly Sorted Array ::
 
 - Nor Fully sorted .
 - the ith element can be in (i + 1 )th position , i th position or (i - 1)th position.
 
  */
 
+//  Recursive Binary Search
 int searchNearlySortedArray(int arr[], int start, int end, int findNum)
 {
-    int mid = (start + end) / 2;
+    int mid = start + (end - start) / 2;
     if (end >= start)
     {
         if (findNum == arr[mid])
@@ -46,10 +47,10 @@ int searchNearlySortedArray(int arr[], int start, int end, int findNum)
         else if (mid + 1 <= end && arr[mid + 1] == findNum)
             return mid + 1;
 
-        else if (start <= mid && mid < end && findNum < arr[mid])
+        else if (findNum < arr[mid])
             return searchNearlySortedArray(arr, start, mid - 2, findNum);
 
-        else if (start <= mid && mid < end && findNum > arr[mid])
+        else if (findNum > arr[mid])
             return searchNearlySortedArray(arr, mid + 2, end, findNum);
     }
     return 0;
@@ -61,7 +62,7 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    int arr[] = {42, 55, 6, 10, 16}, findNum = 55, res = 0, size = sizeof(arr) / sizeof(arr[0]);
+    int arr[] = {42, 55, 6, 10, 16}, findNum = 10, res = 0, size = sizeof(arr) / sizeof(arr[0]);
     res = searchNearlySortedArray(arr, 0, size - 1, findNum);
     cout << res << endl;
     return 0;

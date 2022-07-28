@@ -2,12 +2,16 @@
  * @lc app=leetcode id=189 lang=cpp
  *
  * [189] Rotate Array
+ *
+ * https://www.geeksforgeeks.org/program-for-array-rotation-continued-reversal-algorithm/
+ * https://leetcode.com/problems/rotate-array/
  */
 
 // @lc code=start
 class Solution
 {
 public:
+    //  Rotate from Right -> Left
     void rotate(vector<int> &nums, int k)
     {
         int len = nums.size();
@@ -40,4 +44,22 @@ public:
             j--;
         }
     }
+
+
+        //  Rotate from  Left  -->  Right       input :  1 2 3 4 5      output : 3 4 5 1 2
+        ----------------------------------------
+        func(){
+
+        reverse(nums.begin(), nums.begin() + k);  // vector
+        reverse(nums.begin() + k, nums.end());
+        reverse(nums.begin(), nums.end());
+
+        OR
+
+        reverse(arr, arr + 2);    // plain array
+        reverse(arr + 2, arr + n);
+        reverse(arr, arr + n);
+
+        }
+
  */
