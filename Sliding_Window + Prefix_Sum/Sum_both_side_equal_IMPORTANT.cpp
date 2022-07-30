@@ -36,11 +36,9 @@ int findElement(int arr[], int n)
     sum = accumulate(arr, arr + n, 0);
     for (i = 0; i < n; i++)
     {
-        if (prefixSum == sum - (arr[i] + prefixSum))
-        {
-            ans = i;
-            break;
-        }
+        if (prefixSum == sum - arr[i] - prefixSum)
+            return i;
+
         prefixSum += arr[i];
     }
     return ans;
@@ -69,6 +67,7 @@ int findEquilibrium(int arr[], int len)
         if (leftSum == rightSum)
             return i;
     }
+
     return -1;
 }
 
@@ -80,7 +79,7 @@ int main()
 
     int arr[] = {2, 3, -1, 8, 4};
     int n = sizeof(arr) / sizeof(arr[0]);
-    cout << findElement(arr, n) << endl;
+    // cout << findElement(arr, n) << endl;
     int result = findEquilibrium(arr, n);
     if (result >= 0)
         cout << "Equilibrium Point at Index " << result << endl;

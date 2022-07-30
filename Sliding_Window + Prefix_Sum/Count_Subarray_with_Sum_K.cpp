@@ -4,7 +4,10 @@ ________________________________________
 ----------------------------------------
  Author :  Niharika Dutta
  Code Link :    https://www.geeksforgeeks.org/number-subarrays-sum-exactly-equal-k/
- Utube :   https://www.youtube.com/watch?v=HbbYPQc-Oo4&t=563s
+
+                https://leetcode.com/problems/subarray-sum-equals-k/
+
+ Utube :        https://www.youtube.com/watch?v=HbbYPQc-Oo4&t=563s
 
  Time Complexity: O(n)
  Auxiliary Space: O(n)
@@ -35,13 +38,13 @@ int main()
     cout.tie(NULL);
 
     int arr[] = {10, 2, -2, -20, 10};
-    int i, key = -10, n = sizeof(arr) / sizeof(arr[0]), count = 0, currentSum = 0;
+    int i, key = 10, n = sizeof(arr) / sizeof(arr[0]), count = 0, currentSum = 0;
 
     unordered_map<int, int> hash;
 
     for (i = 0; i < n; i++)
     {
-        currentSum = currentSum + arr[i];
+        currentSum += arr[i];
         if (currentSum == key)
             count++;
 
@@ -68,4 +71,7 @@ int main()
    Sum = 8
 
    Output : 6
+
+
+   REFER IN DP REPO : for Count_Subsets_with_K_sum.cpp
 */
