@@ -42,8 +42,7 @@ int main()
     {
         sum = sum + arr[i];
 
-        //  SUM  =  0  means a subarray found with the given criteria
-        if (sum == 0)
+        if (sum == 0) //   subarray found with the given criteria
         {
             maxLength = max(maxLength, i + 1);
             endIndex = i;
@@ -63,6 +62,7 @@ int main()
     }
 
     cout << " MaxLength of equal number of 0 & 1 : " << maxLength << "\n\n Start index : " << (endIndex - maxLength + 1) << "\n End index : " << endIndex << endl;
+
     return 0;
 }
 

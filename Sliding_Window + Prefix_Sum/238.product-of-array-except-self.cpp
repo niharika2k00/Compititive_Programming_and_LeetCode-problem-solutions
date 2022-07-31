@@ -14,7 +14,7 @@ public:
     vector<int> productExceptSelf(vector<int> &arr)
     {
         //  Brute Force Approach  TC : n2   SC : 1
-        //  / Divide Operator use in place TC : O(n)
+        //  Divide Operator use in place TC : O(n)
         //  Using Prefix && Suffix Product   TC : O(n)    SC : O(n)
 
         int len = arr.size();

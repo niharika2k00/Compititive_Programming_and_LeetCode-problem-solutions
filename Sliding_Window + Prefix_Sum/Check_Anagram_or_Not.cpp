@@ -1,5 +1,5 @@
 
-/* 
+/*
 ________________________________________
 ----------------------------------------
  Author :  Niharika Dutta
@@ -28,7 +28,7 @@ using namespace std;
 // Time Complexity :  O(nlogn)
 bool anagram_usingSorting(string s1, string s2)
 {
-    /* 
+    /*
     value > 0 : s1[0] > s2[0]
     value < 0 : s1[1] < s2[0]
      */

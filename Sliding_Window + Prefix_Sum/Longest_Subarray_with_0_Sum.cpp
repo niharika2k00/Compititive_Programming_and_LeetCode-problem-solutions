@@ -59,9 +59,9 @@ int LongestSubsetWithZeroSum(vector<int> arr)
         sum = sum + arr[i]; // continuous SUM
 
         if (sum == 0)
-            maxi = i + 1; //  means the subarray len will be from the beginning
+            maxi = max(maxi, i + 1); //  means the subarray len will be from the beginning
 
-        if (hashMap.find(sum) != hashMap.end()) // found
+        if (hashMap.find(sum) != hashMap.end()) // prev encountered index
             maxi = max(maxi, i - hashMap[sum]);
         else
             hashMap[sum] = i; // ( prefixSum , index)

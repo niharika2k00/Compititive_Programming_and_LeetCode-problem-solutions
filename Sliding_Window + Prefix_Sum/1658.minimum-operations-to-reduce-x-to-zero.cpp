@@ -26,14 +26,14 @@ public:
         {
             subArrSum += nums[i];
 
+            if (subArrSum == remain)
+                maxLength = max(maxLength, i - j + 1);
+
             while (subArrSum > remain)
             {
                 subArrSum = subArrSum - nums[j]; // delete the first element from the window
                 j++;
             }
-
-            if (subArrSum == remain)
-                maxLength = max(maxLength, i - j + 1);
         }
 
         return maxLength == -1 ? -1 : len - maxLength;
