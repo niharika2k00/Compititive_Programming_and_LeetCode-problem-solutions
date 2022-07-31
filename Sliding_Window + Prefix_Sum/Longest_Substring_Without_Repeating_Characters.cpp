@@ -27,6 +27,31 @@ using namespace std;
     cin >> t; \
     while (t--)
 
+//  Time Complexity :  O(n ^ 2)
+int BruteForceApproach(string s)
+{
+    int len = s.size(), maxLength = 0;
+
+    for (int i = 0; i < len; i++)
+    {
+        vector<bool> visited(256, false);
+        for (int j = i; j < len; j++)
+        {
+            if (visited[s[j]] == true) // already exsist
+                break;
+
+            else
+            {
+                visited[s[j]] = true;
+                maxLength = max(maxLength, j - i + 1);
+            }
+        }
+    }
+
+    return maxLength;
+}
+
+//  Time Complexity :  O(n +  d)
 //   Means Longest Substring With Unique Characters
 void longestSubstringWithoutRepeatingCharacters(string s)
 {
@@ -39,14 +64,14 @@ void longestSubstringWithoutRepeatingCharacters(string s)
         // cout << "Size of map = " << map.size() << endl;
         windowSize = end - start + 1;
 
-        if (map.size() == windowSize)
+        if (map.size() == windowSize) // all unique
             maxLength = max(maxLength, windowSize);
 
-        else if (map.size() < windowSize)
+        else if (map.size() < windowSize) // repeated elements
         {
             while (map.size() < windowSize)
             {
-                map[s[start]]--;           
+                map[s[start]]--;
 
                 if (map[s[start]] == 0)
                     map.erase(s[start]);
@@ -66,8 +91,10 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    string s = "aabbacd"; //  pwwekw  -->  3
-    longestSubstringWithoutRepeatingCharacters(s);
+    string s = "pwwekw"; //  pwwekw  -->  3
+
+    cout << " Max Length Substring Without Repeating Characters : " << BruteForceApproach(s) << endl;
+    // longestSubstringWithoutRepeatingCharacters(s);
 
     return 0;
 }

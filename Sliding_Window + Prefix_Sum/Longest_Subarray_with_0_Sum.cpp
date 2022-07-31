@@ -2,8 +2,8 @@
 /*
 ________________________________________
 ----------------------------------------
- Author    :  Niharika Dutta
- Code Link :
+ Author    :    Niharika Dutta
+ Code Link :    https://www.codingninjas.com/codestudio/problems/920321?topList=striver-sde-sheet-problems&utm_source=striver&utm_medium=website&leftPanelTab=0
  Time Complexity :  O(log n)    but unordered SET is O(1)
 ________________________________________
 ----------------------------------------
@@ -25,27 +25,25 @@ using namespace std;
     cin >> t; \
     while (t--)
 
-// https://www.codingninjas.com/codestudio/problems/920321?topList=striver-sde-sheet-problems&utm_source=striver&utm_medium=website&leftPanelTab=0
-
-//  brute Force  -  all the subarray find.
+//  Brute Force  -  all the subarray find.
 //  Time Complexity :  O(n ^ 2)
 //  Space Complexity :  O(1)
 int BruteForce(vector<int> &arr)
 {
-    int mex = 0, len = arr.size();
+    int maxi = 0, len = arr.size();
 
     for (int i = 0; i < len; ++i)
     {
         int sum = 0;
         for (int j = i; j < len; ++j)
         {
-            sum += a[j];
+            sum += arr[j];
             if (sum == 0)
-                max = Math.max(max, j - i + 1);
+                maxi = max(maxi, j - i + 1);
         }
     }
 
-    return max;
+    return maxi;
 }
 
 //  Prefix Sum Concept
@@ -54,7 +52,7 @@ int BruteForce(vector<int> &arr)
 int LongestSubsetWithZeroSum(vector<int> arr)
 {
     unordered_map<int, int> hashMap; // <sum , index>
-    int len = arr.size(), sum = 0, maxi = 0;
+    int len = arr.size(), sum = 0, maxi = INT_MIN;
 
     for (int i = 0; i < len; i++)
     {
