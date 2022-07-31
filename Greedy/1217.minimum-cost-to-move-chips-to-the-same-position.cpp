@@ -2,6 +2,9 @@
  * @lc app=leetcode id=1217 lang=cpp
  *
  * [1217] Minimum Cost to Move Chips to The Same Position
+ *
+ * https://leetcode.com/problems/minimum-cost-to-move-chips-to-the-same-position/#:~:text=Return%20the%20minimum%20cost%20needed,position%201%20with%20cost%20%3D%201.
+ *
  */
 
 // @lc code=start

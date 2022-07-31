@@ -49,10 +49,10 @@ int main()
       ----------------------
     */
 
-    //    priority_queue <Type, vector<Type>, ComparisonType > min_heap;
+    //  priority_queue <Type, vector<Type>, ComparisonType > min_heap;
     priority_queue<int, vector<int>, greater<int>> minHeap;
 
-    // for (auto i = vec.begin(); i != vec.end(); i++)
+    //  for (auto i = vec.begin(); i != vec.end(); i++)
     for (i = 0; i < vec.size(); i++)
     {
         minHeap.push(vec[i]);

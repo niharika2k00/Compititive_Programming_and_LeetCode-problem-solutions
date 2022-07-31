@@ -13,7 +13,17 @@
                                     vector<vector<int>> vec( rows , vector<int> (cols, 0));       <- initialised with 0
                                     
 
-    Max_Element   =     maxEle = *max_element(vec.begin(), vec.end());
+    Max_Element   =   *max_element(vec.begin(), vec.end());
+
+
+//  Search in a String 
+---------------------------
+  if( str.find(c) != string::npos )    
+
+    | OR |
+
+   int pos = str.find(':');          ---->  returns the index if found else ( -1 ) not found.  
+
 
 
  //  Merge Two Arrays with O(1) Space - Complexity

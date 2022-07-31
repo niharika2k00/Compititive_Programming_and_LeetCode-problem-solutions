@@ -14,7 +14,6 @@ public:
         int i, count = 0;
         vector<int> CopyVec(arr); // coping the vector
         sort(arr.begin(), arr.end());
-        // CopyVec =  arr;
 
         for (i = 0; i < CopyVec.size; i++)
         {
