@@ -1,9 +1,9 @@
-/* 
+/*
 ________________________________________
 ----------------------------------------
  Author    :  Niharika Dutta
- Code Link :  https://practice.geeksforgeeks.org/problems/maximize-sum-after-k-negations1149/1#  
- Time Complexity :  
+ Code Link :  https://practice.geeksforgeeks.org/problems/maximize-sum-after-k-negations1149/1#
+ Time Complexity :
 ________________________________________
 ----------------------------------------
  */
@@ -24,9 +24,9 @@ using namespace std;
     cin >> t; \
     while (t--)
 
-/* 
+/*
 
-TEST CASE :: 
+TEST CASE ::
 
 N = 10, K = 5
 arr[] = {5, -2, 5, -4, 5, -12, 5, 5, 5, 20}
@@ -41,12 +41,8 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    ll n, k, i, maxSum = 0;
-    cin >> n >> k;
-    vector<int> vec(n);
-
-    for (i = 0; i < n; i++)
-        cin >> vec[i];
+    int n = 5, k = 5, i, maxSum = 0;
+    vector<int> vec{1, 2, 3, 4, 5};
 
     sort(vec.begin(), vec.end());
 
@@ -61,12 +57,9 @@ int main()
     sort(vec.begin(), vec.end());
 
     if (k > 0 && k % 2 != 0) // if ODD number of K remains.
-        vec[1] = -vec[1];
+        vec[0] = -vec[0];
 
-    // Summ of all the elements of the vector.
-    for (i = 0; i < n; i++)
-        maxSum = maxSum + vec[i];
-
+    maxSum = accumulate(vec.begin(), vec.end(), 0);
     cout << maxSum << endl;
 
     return 0;

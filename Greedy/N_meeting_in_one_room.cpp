@@ -43,7 +43,7 @@ int main()
     for (i = 0; i < n; i++)
         vec.push_back({end[i], start[i]});
 
-    sort(vec.begin(), vec.end()); // sort on the basis of 1st element
+    sort(vec.begin(), vec.end()); // sort by 1st element
 
     // [ End, Start ]
     for (i = 0; i < n; i++)
@@ -59,24 +59,3 @@ int main()
 
     return 0;
 }
-
-int lastMeetEnd = -1, len = start.size(), count = 0;
-vector<int> res;
-vector<pair<int, int>> meet;
-
-for (int i = 0; i < len; i++)
-    //         meet.push_back({start[i] , end[i]});
-    meet.push_back({end[i], start[i]});
-
-for (int i = 0; i < len; i++)
-{
-    if (meet[i].second > lastMeetEnd) // start >  lastMeetEnd
-    {
-        lastMeetEnd = meet[i].first;
-        res.push_back(i + 1);
-        count++;
-    }
-}
-
-cout << count << endl;
-return res;

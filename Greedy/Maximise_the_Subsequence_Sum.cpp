@@ -1,9 +1,9 @@
-/* 
+/*
 ________________________________________
 ----------------------------------------
  Author    :  Niharika Dutta
- Code Link :  https://www.codechef.com/START10C/problems/SIGNFLIP  
- Time Complexity :  
+ Code Link :  https://www.codechef.com/START10C/problems/SIGNFLIP
+ Time Complexity :
 ________________________________________
 ----------------------------------------
  */
@@ -63,10 +63,10 @@ int main()
     return 0;
 }
 
-/* 
-EXPLANATIONS :: 
+/*
+EXPLANATIONS ::
 
-6 2 
+6 2
 6 -10  -1 0 -4 2
 
 

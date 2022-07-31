@@ -1,9 +1,9 @@
-/* 
+/*
 ________________________________________
 ----------------------------------------
  Author    :  Niharika Dutta
- Code Link :  https://www.geeksforgeeks.org/survival/  
- Time Complexity :  
+ Code Link :  https://www.geeksforgeeks.org/survival/
+ Time Complexity :
 ________________________________________
 ----------------------------------------
  */
@@ -24,11 +24,11 @@ using namespace std;
     cin >> t; \
     while (t--)
 
-/* 
+/*
  N – Maximum unit of food you can buy each day.
  S – Number of days you are required to survive.
  M – Unit of food required each day to survive. ( Food/day)
- 
+
  Find the minimum number of days on which you need to buy food from the shop so that you can survive the next S days
 
   */
@@ -41,7 +41,7 @@ int main()
     int n, s, m, totalFoodReq, days;
     cin >> n >> s >> m;
 
-    // if per day food >  buy /day
+    // if per day food req >  buy /day
     if (m > n)
         cout << "Cannot SURVIVE for " << s << " days. " << endl;
 
@@ -61,8 +61,8 @@ int main()
     return 0;
 }
 
-/* 
-TestCase :: 
+/*
+TestCase ::
 16 10 2
-Can SURVIVE for 10 days. 
- */
+Can SURVIVE for 10 days.
+*/
