@@ -10,7 +10,7 @@ class Solution
 public:
     int lengthOfLongestSubstring(string s)
     {
-        int i, start = 0, end = 0, maxLength = 0, temp = 0, windowSize;
+        int start = 0, end = 0, maxLen = -1, windowSize = 0;
 
         if (s.size() == 0)
             return 0;
@@ -24,7 +24,7 @@ public:
             windowSize = end - start + 1;
 
             if (map.size() == windowSize)
-                maxLength = max(maxLength, windowSize);
+                maxLen = max(maxLen, windowSize);
 
             else if (map.size() < windowSize)
             {
@@ -41,7 +41,7 @@ public:
             }
         }
 
-        return maxLength;
+        return maxLen;
     }
 };
 // @lc code=end

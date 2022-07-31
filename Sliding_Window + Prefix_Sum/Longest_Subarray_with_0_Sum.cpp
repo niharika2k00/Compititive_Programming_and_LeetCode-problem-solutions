@@ -56,7 +56,7 @@ int LongestSubsetWithZeroSum(vector<int> arr)
 
     for (int i = 0; i < len; i++)
     {
-        sum = sum + arr[i];
+        sum = sum + arr[i]; // continuous SUM
 
         if (sum == 0)
             maxi = i + 1; //  means the subarray len will be from the beginning

@@ -55,7 +55,7 @@ int BruteForceApproach(string s)
 //   Means Longest Substring With Unique Characters
 void longestSubstringWithoutRepeatingCharacters(string s)
 {
-    int i, start = 0, end = 0, maxLength = 0, temp = 0, windowSize;
+    int start = 0, end = 0, maxLen = -1, windowSize = 0;
     unordered_map<char, int> map;
 
     for (end = 0; end < s.size(); end++)

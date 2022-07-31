@@ -27,6 +27,31 @@ using namespace std;
     cin >> t; \
     while (t--)
 
+//  Time Complexity :  O(n ^ 2)
+//   BruteForce Approach    TLE
+int BruteForce(string s, int k)
+{
+    int len = s.size(), maxLen = -1;
+
+    for (int i = 0; i < len; i++)
+    {
+        unordered_map<char, int> hashMap;
+
+        for (int j = i; j < len; j++)
+        {
+            hashMap[s[j]]++;
+
+            if (hashMap.size() == k)
+                maxLen = max(maxLen, j - i + 1);
+
+            if (hashMap.size() > k)
+                break;
+        }
+    }
+
+    return maxLen;
+}
+
 void longestSubstring_K_uniqueCharacters(string s, int k)
 {
     unordered_map<char, int> map; // all index of map is initialised with 0 by default
