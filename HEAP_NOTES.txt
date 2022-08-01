@@ -15,7 +15,18 @@
 
 
  // Creates a max heap (default)
+ ---------------------------------------
     priority_queue <int> pq;
 
+
+
   // Creates a min heap
+ ---------------------------------------
     priority_queue <int, vector<int>, greater<int> > pq;   
+
+
+
+  // Create a min heap of pair 
+ ---------------------------------------
+  typedef pair<int, int> P;
+  priority_queue< P, vector<P>, greater<P> > minHeap ;   

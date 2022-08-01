@@ -38,7 +38,7 @@ vector<int> kMaxSumCombination(vector<int> &a, vector<int> &b, int len, int k)
 
     // ------------------------------------------------------------------------------
     //  OPTIMIZED APPROACH
-    //  Time-Complexity : O(n)
+    //  Time-Complexity : O(nlogn)
     //  Space Complexity :  O(n)
 
     // Reverse sort - max ele @begin
@@ -62,14 +62,14 @@ vector<int> kMaxSumCombination(vector<int> &a, vector<int> &b, int len, int k)
 
         result.push_back(sum);
 
-        // Search in the set whether pair exsist previously or not.Then gradually increment i , j.
+        // Search in the set whether pair exist previously or not.Then gradually increment i , j.
         if (mySet.find({i + 1, j}) == mySet.end())
         {
             maxHeap.push({a[i + 1] + b[j], {i + 1, j}});
             mySet.insert({i + 1, j});
         }
 
-        if (mySet.find({j + 1, j}) == mySet.end())
+        if (mySet.find({i, j + 1}) == mySet.end())
         {
             maxHeap.push({a[i] + b[j + 1], {i, j + 1}});
             mySet.insert({i, j + 1});

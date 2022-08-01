@@ -2,6 +2,9 @@
  * @lc app=leetcode id=1046 lang=cpp
  *
  * [1046] Last Stone Weight
+ *
+ * https://leetcode.com/problems/last-stone-weight/
+ *
  */
 
 // @lc code=start

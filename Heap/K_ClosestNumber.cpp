@@ -1,8 +1,8 @@
 
-/* 
+/*
 ________________________________________
   - By Niharika Dutta
- Code Link : 
+ Code Link :
 ________________________________________
  */
 #include <bits/stdc++.h>
@@ -22,6 +22,8 @@ using namespace std;
     cin >> t; \
     while (t--)
 
+typedef pair<int, int> pint;
+
 // find the  K  closest value from the X number in the given array
 
 int main()
@@ -30,9 +32,11 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    int arr[] = {5, 6, 7, 8, 9};
+    int arr[] = {5, 16, 7, 8, 9};
     int k = 3, x = 7, i, size = sizeof(arr) / sizeof(arr[0]), diff;
-    priority_queue<pair<int, int>> maxHeap;
+
+    // priority_queue<pair<int, int>> maxHeap;
+    priority_queue<pint, vector<pint>, greater<pint>> maxHeap;
 
     // --------   ALGORITHM  -------
     /*
@@ -44,22 +48,13 @@ int main()
     {
         diff = abs(arr[i] - x);
         maxHeap.push(make_pair(diff, arr[i]));
-        if (maxHeap.size() > k)
-            maxHeap.pop();
     }
 
-    // while (!maxHeap.empty())
-    // {
-    //     cout << maxHeap.top().first << " " << maxHeap.top().second << endl;
-    //     maxHeap.pop();
-    // }
-
-    // Actuall answer .....
-    while (!maxHeap.empty())
+    while (k--)
     {
         cout << maxHeap.top().second << "\t";
         maxHeap.pop();
     }
 
-    return 0;
+     return 0;
 }

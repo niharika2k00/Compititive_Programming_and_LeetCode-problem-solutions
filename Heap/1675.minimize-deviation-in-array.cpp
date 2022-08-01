@@ -2,6 +2,9 @@
  * @lc app=leetcode id=1675 lang=cpp
  *
  * [1675] Minimize Deviation in Array
+ *
+ * https://leetcode.com/problems/minimize-deviation-in-array/
+ *
  */
 
 // @lc code=start

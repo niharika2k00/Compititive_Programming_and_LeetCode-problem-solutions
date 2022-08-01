@@ -1,5 +1,5 @@
 
-/* 
+/*
 ________________________________________
   - By Niharika Dutta
  Code Link : https://www.geeksforgeeks.org/maximum-distinct-elements-removing-k-elements/
