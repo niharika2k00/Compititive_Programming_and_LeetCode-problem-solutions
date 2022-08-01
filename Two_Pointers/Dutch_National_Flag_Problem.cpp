@@ -25,7 +25,7 @@ using namespace std;
     cin >> t; \
     while (t--)
 
-//  Sort an array consisting of 0s, 1s and 2s WITHOUT USING inbuild func. The functions should put all 0s first, then all 1s and all 2s in last.
+//   Sort an array consisting of 0s, 1s and 2s WITHOUT USING inbuild func. The functions should put all 0s first, then all 1s and all 2s in last.
 //   Time Complexity :  O(n)
 //   Space Complexity :  O(1)
 //   Counting Sort || Dutch National FLag Algorithm

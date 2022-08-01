@@ -27,6 +27,8 @@
 
     auto it = find(ans.begin(), ans.end(), 6 ); 
 
+     s.substr(start_index , len_of_substring)  // Substring find 
+
 
  //  Merge Two Arrays with O(1) Space - Complexity
  -----------------------------------------------------
