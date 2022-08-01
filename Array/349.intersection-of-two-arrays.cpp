@@ -2,6 +2,9 @@
  * @lc app=leetcode id=349 lang=cpp
  *
  * [349] Intersection of Two Arrays
+ *
+ * https://leetcode.com/problems/intersection-of-two-arrays/
+ *
  */
 
 // @lc code=start
@@ -10,7 +13,6 @@ class Solution
 public:
     vector<int> intersection(vector<int> &nums1, vector<int> &nums2)
     {
-
         vector<int> ans;
         unordered_map<int, int> map;
         int i;

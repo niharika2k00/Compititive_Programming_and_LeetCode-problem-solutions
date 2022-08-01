@@ -2,7 +2,8 @@
  * @lc app=leetcode id=56 lang=cpp
  *
  * https://leetcode.com/problems/merge-intervals/
- * Similar Problem :  https://leetcode.com/problems/summary-ranges/
+ *
+ *  Similar Problem :  https://leetcode.com/problems/summary-ranges/
  *
  * [56] Merge Intervals
  */

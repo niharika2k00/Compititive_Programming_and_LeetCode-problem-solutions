@@ -12,11 +12,10 @@ class Solution
 public:
     int removeDuplicates(vector<int> &nums)
     {
-        /*
-            METHOD - I
-            TIME COMPLEXITY :  O(n)
-            SPACE COMPLEXITY : O(1)
-         */
+
+        // METHOD - I
+        // TIME COMPLEXITY :  O(n)
+        // SPACE COMPLEXITY : O(1)
         int i, len = nums.size(), index = 1; // trak the last Unique Element
 
         if (len == 0)
@@ -31,6 +30,14 @@ public:
             }
         }
         return index;
+
+        // METHOD - II
+        // TIME COMPLEXITY :  O(n)
+        // SPACE COMPLEXITY : O(1)
+        while (nums[0] != nums[nums[0]])
+            swap(nums[0], nums[nums[0]]);
+
+        return nums[0];
     }
 };
 

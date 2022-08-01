@@ -15,7 +15,7 @@ public:
 
     int missingNumber(vector<int> &nums) // [3,0,1]
     {
-        int len = nums.size(), i = 0, result = 0;
+        int len = nums.size(), i = 0, result = len;
         //  Method - I
         sort(nums.begin(), nums.end());
 
