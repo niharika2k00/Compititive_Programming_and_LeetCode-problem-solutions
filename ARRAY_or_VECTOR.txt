@@ -25,6 +25,8 @@
    int pos = str.find(':');          ---->  returns the index if found else ( -1 ) not found.  
 
 
+    auto it = find(ans.begin(), ans.end(), 6 ); 
+
 
  //  Merge Two Arrays with O(1) Space - Complexity
  -----------------------------------------------------

@@ -17,7 +17,7 @@ public:
         int j = len - 1;
 
         // ------------------------------
-        //  Two Pointers   TC : O(n)
+        //  Two Pointers   TC : O(n)   [ as the array is sorted so we are doing Two Pointer directly otherwise we have to sort it.]
         // ------------------------------
         while (i < j)
         {

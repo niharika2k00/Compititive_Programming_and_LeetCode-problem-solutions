@@ -23,10 +23,9 @@ public:
 
         for (int i = 0; i < len; i++)
         {
-            if (map[nums[i]] == 0)
-                map[nums[i]]++;
+            map[nums[i]]++;
 
-            else
+            if (map.find(nums[i]) != map.end())
                 vec.push_back(nums[i]);
         }
 

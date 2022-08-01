@@ -2,7 +2,7 @@
 ________________________________________
 ----------------------------------------
  Author    :  Niharika Dutta
- Code Link :  https://leetcode.com/contest/biweekly-contest-60/problems/find-the-middle-index-in-array/
+ Code Link :
           https://www.geeksforgeeks.org/find-element-array-sum-left-array-equal-sum-right-array/
  Time Complexity :
 ________________________________________
@@ -24,25 +24,6 @@ using namespace std;
     ll t;     \
     cin >> t; \
     while (t--)
-
-//  Time Complexity : O(n)
-//  Space Complexity :  O(1)
-int findElement(int arr[], int n)
-{
-    if (n == 1)
-        return 0;
-
-    int sum, i, prefixSum = 0, ans = -1;
-    sum = accumulate(arr, arr + n, 0);
-    for (i = 0; i < n; i++)
-    {
-        if (prefixSum == sum - arr[i] - prefixSum)
-            return i;
-
-        prefixSum += arr[i];
-    }
-    return ans;
-}
 
 //  Time Complexity : O(n)
 //  Space Complexity :  O(n)
@@ -69,6 +50,25 @@ int findEquilibrium(int arr[], int len)
     }
 
     return -1;
+}
+
+//  Time Complexity : O(n)
+//  Space Complexity :  O(1)
+int findElement(int arr[], int n)
+{
+    if (n == 1)
+        return 0;
+
+    int sum, i, prefixSum = 0, ans = -1;
+    sum = accumulate(arr, arr + n, 0);
+    for (i = 0; i < n; i++)
+    {
+        if (prefixSum == sum - arr[i] - prefixSum)
+            return i;
+
+        prefixSum += arr[i];
+    }
+    return ans;
 }
 
 int main()
