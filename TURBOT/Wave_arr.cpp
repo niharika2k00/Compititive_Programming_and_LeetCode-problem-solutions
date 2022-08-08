@@ -2,7 +2,7 @@
 ________________________________________
 ----------------------------------------
  Author    :  Niharika Dutta
- Code Link :
+ Code Link :    https://www.geeksforgeeks.org/sort-array-wave-form-2/
  Time Complexity :
 ________________________________________
 ----------------------------------------
@@ -41,7 +41,6 @@ int main()
     while (i <= j)
     {
         temp[index] = vec[j];
-        // cout << vec[j] << endl;
         index++;
         temp[index] = vec[i];
         i++;
@@ -49,16 +48,12 @@ int main()
         index++;
     }
 
+    // OR
+    /*    for (int i = 0; i < len - 1; i += 2)
+           swap(vec[i], vec[i + 1]); */
+
     for (auto it : temp)
         cout << it << "\t";
-
-    /*   reverse(vec.begin(), vec.end());
-
-      for (int i = 1; i < len - 1; i++)
-      {
-          swap(vec[i], vec[i + 1]);
-      }
-    */
 
     return 0;
 }

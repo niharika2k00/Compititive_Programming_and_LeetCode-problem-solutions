@@ -31,15 +31,49 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    string s = "Hello";
-    int a = 0, b = 0;
-    // getline(cin,s);
-    for (auto i : s)
-        if (i == '#')
-            a++;
-        else if (i == '*')
-            b++;
-    cout << b - a;
+    char c[3][20] = {"Espresso Coffee", "Cappuccino Coffee", "Latte Coffee"};
+
+    char t[8][30] = {"Plain Tea", "Assam Tea", "Ginger Tea", "Cardamom Tea", "Masala Tea", "Lemon Tea", "Green Tea", "Organic Darjeeling Tea"};
+
+    char s[4][20] = {"Hot and Sour Soup", "Veg Corn Soup", "Tomato Soup", "Spicy Tomato Soup"};
+
+    char ch = 'c';
+    int item = 1, i;
+
+    // cout << ch << item << endl;
+
+    if (ch == 'c')
+    {
+        if (item - 1 > 2)
+            cout << "INVALID INPUT" << endl;
+
+        else
+            cout << "Welcome to CCD!\nEnjoy your " << c[item - 1] << " ! " << endl;
+    }
+
+    if (ch == 't')
+    {
+        if (item - 1 > 7)
+            cout << "INVALID INPUT" << endl;
+
+        else
+            cout << "Welcome to CCD!\nEnjoy your " << t[item - 1] << " ! " << endl;
+    }
+
+    if (ch == 's')
+    {
+        if (item - 1 > 3)
+            cout << "INVALID INPUT" << endl;
+
+        else
+            cout << "Welcome to CCD!\nEnjoy your " << s[item - 1] << " ! " << endl;
+    }
 
     return 0;
 }
+
+// https://prepinsta.com/tcs-coding-questions/
+
+// https://prepinsta.com/top-100-codes/
+
+// https://prepinsta.com/tcs-nqt/placement-papers/coding-questions/

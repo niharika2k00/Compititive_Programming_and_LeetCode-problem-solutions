@@ -1,2 +1,1 @@
-
-    int len = s.size();
+aabbcffr

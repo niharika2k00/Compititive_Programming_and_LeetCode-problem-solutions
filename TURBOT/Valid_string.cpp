@@ -27,7 +27,7 @@ using namespace std;
 
 void removeHandler(string s, int len)
 {
-    int count = 0, flag = 1, store = 0, first = 0;
+    int flag = 0;
     unordered_map<char, int> hashMap;
     set<char> set;
     vector<int> freq;
@@ -56,37 +56,39 @@ void removeHandler(string s, int len)
 
         sort(freq.begin(), freq.end());
 
-        int start = freq[0];
+        int prev = freq[0];
         for (int i = 1; i < freq.size(); i++)
         {
-            int diff = abs(freq[i] - start);
-            if (diff == 1 && flag == 1)
-                count++;
+            int diff = abs(freq[i] - prev);
+            if (diff > 1) // if diff MORE THAN 1
+            {
+                cout << "\nINVALID STRING" << endl;
+                return;
+            }
+            prev = freq[i];
         }
 
-        unordered_map<int, int> freqMap;
+        unordered_map<int, int> freqMap; // stores the count of the frequency
 
         for (int i = 0; i < freq.size(); i++)
             freqMap[freq[i]]++;
 
         for (auto it : freqMap)
         {
-            first = it.second;
-
-            if (flag)
+            if (it.second == 1)
             {
-                store = first; // 2
-                flag = 0;
+                flag = 1;
+                break;
             }
         }
 
-        int res = abs(first - store);
-
-        if (count > 1)
-            cout << "\nINVALID STRING" << endl;
-
-        if (res == 1)
+        if (flag == 1) // means 1 element has frequency 1
+        {
             cout << "\nVALID STRING" << endl;
+            return;
+        }
+
+        cout << "\nINVALID STRING" << endl;
     }
 }
 
@@ -96,7 +98,7 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    string s = "dddaaacbbbddbaab";
+    string s = "aabbvvrc"; // dddaaacbbbddbaab  aabbcd
     int len = s.size();
 
     removeHandler(s, len);
