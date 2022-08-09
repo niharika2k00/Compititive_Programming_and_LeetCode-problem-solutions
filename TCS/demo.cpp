@@ -77,3 +77,7 @@ int main()
 // https://prepinsta.com/top-100-codes/
 
 // https://prepinsta.com/tcs-nqt/placement-papers/coding-questions/
+
+// https://www.geeksforgeeks.org/tcs-nqt-coding-sheet-exam-preparation/
+
+// https://www.youtube.com/c/CampusMonkByRachitRastogi

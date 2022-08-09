@@ -44,6 +44,7 @@ void UsingLoop(string &str, int left, int right)
     }
 }
 
+//   reverse(str.begin(), str.end());
 bool CheckPalindrome(string &str, int front, int len)
 {
     if (front < len)
