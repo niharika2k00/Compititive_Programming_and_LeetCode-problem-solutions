@@ -66,3 +66,31 @@ int main()
             means in [5 1 4 2 8], the INVERSION PAIRS are --->   4
                 (5 1) , (5 4) , (5 2) , (4 2)
  */
+
+sudo - s whoami
+
+            //  Password Reset
+            sudo passwd root
+
+                //  Create New User
+                sudo adduser<username>
+
+                    passwd niharika
+
+                        // Login as a Non - Root User
+                        sudo su -
+        root
+            sudo su -
+        niharika
+
+            // WSL
+            In Power
+            Shell(Run as administrator)
+                wsl
+        - l - v <
+    --to check the version
+
+    select name,
+    language, forks_count, stargazers_count from github_my_repository;
+
+steampipe query "select name from steampipe_registry_plugin;"
