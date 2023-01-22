@@ -8,7 +8,7 @@
 class Solution {
     public int canCompleteCircuit(int[] gas, int[] cost) {
 
-        //totalGas -> stores the gas remaining after traverlling around the circuit, 
+        //totalGas -> stores the gas remaining after travelling around the circuit, 
         //currGas -> stores the gasRem after filling up at a stn & trvaelling to next station, if that's not possible, stores 0
         //station -> stores the index from which we can start and finish a round circuit
 
