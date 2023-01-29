@@ -27,8 +27,8 @@ void Dijkstra(vector<pair<int, int>> graph[], int source, int n)
     vector<int> distance(n + 1, INT_MAX);                                                  // 1-indexed array for calculating shortest paths (set initially infinite);
 
     distance[source] = 0;
-    queue.push(make_pair(0, source)); // (distance , vertex)  --> in MinHeap the lowest distance will be on TOP
-
+    queue.push(make_pair(0, source)); // (distance , vertex)  --> in MinHeap judge with 1st para
+    
     while (!queue.empty())
     {
         int dist = queue.top().first;

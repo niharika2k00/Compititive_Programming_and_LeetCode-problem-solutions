@@ -26,7 +26,7 @@ using namespace std;
     while (t--)
 
 //  Memoization - Dp Approach  (Top - Down)
-int palindromicLCS(string &x, string &y, int m, int rev, vector<vector<int>> &Dp)
+int LPS(string &x, string &y, int m, int rev, vector<vector<int>> &Dp)
 {
     if (m == 0 || rev == 0)
         return 0;
@@ -35,10 +35,10 @@ int palindromicLCS(string &x, string &y, int m, int rev, vector<vector<int>> &Dp
         return Dp[m][rev];
 
     if (x[m - 1] == y[rev - 1]) // check last character
-        return Dp[m][rev] = 1 + palindromicLCS(x, y, m - 1, rev - 1, Dp);
+        return Dp[m][rev] = 1 + LPS(x, y, m - 1, rev - 1, Dp);
 
     else
-        return Dp[m][rev] = max(palindromicLCS(x, y, m - 1, rev, Dp), palindromicLCS(x, y, m, rev - 1, Dp));
+        return Dp[m][rev] = max(LPS(x, y, m - 1, rev, Dp), LPS(x, y, m, rev - 1, Dp));
 }
 
 int main()
@@ -57,7 +57,7 @@ int main()
     //  M  x  N  Dp matrix  initialises to -1
     vector<vector<int>> Dp(m + 1, vector<int>(m + 1, -1));
 
-    int len = palindromicLCS(x, rev, m, m, Dp); // same as LCS just return the reverse of the string.
+    int len = LPS(x, rev, m, m, Dp); // same as LCS just return the reverse of the string.
     cout << "Length of the Longest Palindromic Subsequence: " << len << endl;
 
     return 0;

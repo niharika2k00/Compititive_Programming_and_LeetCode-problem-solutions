@@ -6,13 +6,13 @@
     VARIATIONS OF DP ON STRINGS
   --------------------------------
 
- 1) Minimum insertions to form a palindrome  ===>  Len - (LCS)       : 
-
-        Length of the string - LCS[ longest common subsequence]
+ 1) Minimum insertions to form a palindrome  ===>  Len - (LCS)       Length of the string - LCS[ longest common subsequence]
 
 
- 2) Minimum number of insertions/deletion to form a palindrome    https://www.codingninjas.com/codestudio/problems/can-you-make_4244510?source=youtube&campaign=striver_dp_videos&utm_source=youtube&utm_medium=affiliate&utm_campaign=striver_dp_videos&leftPanelTab=0        :
- 
+ 2) Minimum number of insertions/deletion to form a palindrome
+       Video : https://www.youtube.com/watch?v=AEcRW4ylm_c&list=PL_z_8CaSLPWekqhdCPmFohncHwz8TY2Go&index=31
+       Link : https://www.codingninjas.com/codestudio/problems/can-you-make_4244510?source=youtube&campaign=striver_dp_videos&utm_source=youtube&utm_medium=affiliate&utm_campaign=striver_dp_videos&leftPanelTab=0
+
         Given : str1 , str2 ;
          x = str1.size() , y = str2.size() ;
 
@@ -28,7 +28,15 @@
 
  3) Shortest common super sequence (means the sequence that contains both the string)       :
 
-        [x + y - LCS] 
+        [x + y - LCS]
 
+ 4) Sequence Pattern Matching
+
+        LCS can be in the range [0 to min(str1, str2)], bcz if NO Match then 0 else min length string.
+        Here, str1 = "afgzho"
+              str2 = "agho"
+
+              - find the LCS of two string.
+              - if (lcsLength == str2.length)  return TRUE
 
 
