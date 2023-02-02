@@ -13,7 +13,7 @@ using namespace std;
   -  [LOOP] Check if (inDegree[i] == 0)  ?  Queue.push(i)
   -  [LOOP] FOR BFS ----->
 
-    # Time complexity: O(V + E) | Space complexity: O(V) for Stack 
+    # Time complexity: O(V + E) | Space complexity: O(V) for Stack
 */
 
 class Graph
@@ -59,6 +59,7 @@ public:
 
             for (auto it : adjacency_list[vertex])
             {
+                cout << "it: " << it << endl;
                 inDegree[it]--;
                 if (inDegree[it] == 0)
                     Q.push(it);
@@ -74,7 +75,7 @@ public:
 
 int main()
 {
-    Graph g(6); // total number of VERTEX in the graph
+    Graph g(4); // total number of VERTEX in the graph
     cout << "\n**************************   Topological Sort using BFS  ************************\n\n";
 
     // g.set_edge(2, 3);

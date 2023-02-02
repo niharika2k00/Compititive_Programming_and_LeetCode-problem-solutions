@@ -43,7 +43,7 @@ public:
             if (!visited[*i])
                 DFS(*i, visited, Stack);
 
-        Stack.push(start);
+        Stack.push(start); // outside cuz u ----> v so u should be inserted at the end.
     }
 
     void topological_Sort()

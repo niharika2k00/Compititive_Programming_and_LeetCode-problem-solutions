@@ -32,7 +32,7 @@ public:
     {
         int k = adjacency_list[0][1];
         cout << "\nNode in list[0][1] : " << k << endl;
-    }   
+    }
 
     void dfsUtil(int start, vector<bool> &visited)
     {

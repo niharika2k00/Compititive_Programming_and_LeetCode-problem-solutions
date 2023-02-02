@@ -8,7 +8,7 @@ using namespace std;
 
 /* TOPOLOGICAL SORT :
 
-   - Store the Vertex in the adjacency list
+  - Store the Vertex in the adjacency list
   -  [LOOP] Frequency calculate in inDegree vector
   -  [LOOP] Check if (inDegree[i] == 0)  ?  Queue.push(i)        // CONDITION
   -  [LOOP] FOR BFS ----->
@@ -20,7 +20,7 @@ class Graph
 {
 public:
     int index;
-    vector<vector<int>> adjacency_list; // declaration --> Vecotr of Vector means 2D vector
+    vector<vector<int>> adjacency_list; // declaration 2D vector
 
     Graph(int size)
     {
@@ -116,7 +116,7 @@ vector<int> topoSort(int totalVertex, vector<int> adj[])
         if (indegree[i] == 0)
             que.push(i);
     }
-
+    
     while (!que.empty())
     {
         int curr = que.front();
