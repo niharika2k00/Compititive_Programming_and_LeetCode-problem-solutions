@@ -26,14 +26,14 @@ public:
         {
             subArrSum += nums[i];
 
-            if (subArrSum == remain)
-                maxLength = max(maxLength, i - j + 1);
-
             while (subArrSum > remain)
             {
                 subArrSum = subArrSum - nums[j]; // delete the first element from the window
                 j++;
             }
+
+            if (subArrSum == remain)
+                maxLength = max(maxLength, i - j + 1);
         }
 
         return maxLength == -1 ? -1 : len - maxLength;
@@ -47,7 +47,7 @@ public:
          ---------------------------
 
     1) Find the total sum of the ARR, then subtract X from it.
-    2) Means we got the remaining SUM = (total - X) . So now find the LONGEST SUBARRAY with remaining SUM
+    2) Means we got the remaining SUM = (total - X). So now find the LONGEST SUBARRAY with remaining SUM
                 using the sliding window method.
 
 

@@ -4,6 +4,8 @@ ________________________________________
  Author    :  Niharika Dutta
  Code Link : https://www.geeksforgeeks.org/find-the-longest-substring-with-k-unique-characters-in-a-given-string/
 
+                Similar : https://leetcode.com/problems/fruit-into-baskets/description/
+
              https://practice.geeksforgeeks.org/problems/longest-k-unique-characters-substring0853/1#
  Time Complexity :
 ________________________________________
@@ -107,4 +109,4 @@ int main()
                 // Remove one element from the start (BEGINNING) , shift i(start)
                 // map[s[start]] -- ;    means -1 from the Count
                 // Increament start
- */
+*/
