@@ -31,7 +31,7 @@ int main()
     cin.tie(NULL);
     cout.tie(NULL);
 
-    vector<int> vec = {2, 10, -4, 69, 20, 8};
+    vector<int> vec = {2, 10, -4, 69, 20, 8}; // Ans:  1 3 3 69
     queue<int> Q;
     int i = 0, k = 3;
 
@@ -65,7 +65,7 @@ int main()
 EXPLAINATION ::
 
 - Use Queue or Dequeue STL functions
-- Insert k element into the Queue , and check whether the current element is GREATER than the previous/y pushed element
+- Insert k element into the Queue , and check whether the current element is GREATER than the previously pushed element
 
 - main LOOP from K to N
             print element

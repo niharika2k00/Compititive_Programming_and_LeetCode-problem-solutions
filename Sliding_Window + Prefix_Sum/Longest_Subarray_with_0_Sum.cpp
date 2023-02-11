@@ -49,7 +49,7 @@ int BruteForce(vector<int> &arr)
 //  Prefix Sum Concept
 //  Time Complexity :  O(n)
 //  Space Complexity :  O(n)
-int LongestSubsetWithZeroSum(vector<int> arr)
+int func(vector<int> arr)
 {
     unordered_map<int, int> hashMap; // <sum , index>
     int len = arr.size(), sum = 0, maxi = INT_MIN;
@@ -78,7 +78,7 @@ int main()
 
     vector<int> arr{1, 3, -1, 4, -4};
 
-    int result = LongestSubsetWithZeroSum(arr);
+    int result = func(arr);
     cout << "Length of the Longest Subarray with 0 sum is : " << result << endl;
 
     return 0;

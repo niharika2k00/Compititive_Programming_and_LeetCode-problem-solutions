@@ -51,6 +51,7 @@ int main()
         //  If Sum exist before in the MAP
         if (map.find(sum) != map.end())
         {
+            // maxLength =  max(maxLength, i-map[sum]);
             if (i - map[sum] > maxLength)
             {
                 maxLength = i - map[sum];
