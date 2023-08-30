@@ -1,5 +1,9 @@
 {
   "files.associations": {
+    "*.spc": "terraform",
+    "*.sp": "hcl",
+    ".sql": "sql",
+    "*.tf": "terraform",
     "any": "cpp",
     "array": "cpp",
     "atomic": "cpp",
@@ -80,6 +84,12 @@
     "typeindex": "cpp",
     "typeinfo": "cpp",
     "valarray": "cpp",
-    "variant": "cpp"
-  }
+    "variant": "cpp",
+    "__hash_table": "cpp",
+    "__split_buffer": "cpp",
+    "__tree": "cpp",
+    "queue": "cpp",
+    "stack": "cpp"
+  },
+  "C_Cpp.errorSquiggles": "disabled"
 }

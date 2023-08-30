@@ -1,46 +1,49 @@
-/*
- * @lc app=leetcode id=53 lang=cpp
- *
- * [53] Maximum Subarray
- */
-
-// @lc code=start
+// https://leetcode.com/problems/maximum-subarray/
 class Solution
 {
 public:
-    // KADANES ALGORITMS  --->   largest contiguous subarray
-    int maxSubArray(vector<int> &nums)
+    // Kaldane's Algotithm
+    int helper1(vector<int> &vec, int len)
     {
-        int i, len = nums.size(), maxSum = 0, currentSum = 0, count = 0;
-
+        int currSum = 0, maxSum = 0, count = 0;
         // All Negetive elements present in the array  [-1]  OR  [-2,-1]
-        for (i = 0; i < len; i++)
-            if (nums[i] < 0)
+        for (int i = 0; i < len; i++)
+            if (vec[i] < 0)
                 count++;
 
         if (count == len)
-            return *max_element(nums.begin(), nums.end());
+            return *max_element(vec.begin(), vec.end());
 
-        // General Kadanes algorithm
-        for (i = 0; i < len; i++)
+        for (int i = 0; i < len; i++)
         {
-            currentSum += nums[i];
-            maxSum = max(maxSum, currentSum);
+            currSum = currSum + vec[i];
 
-            if (currentSum < 0) // negative sum
-                currentSum = 0;
+            if (currSum < 0)
+                currSum = 0;
+
+            maxSum = max(currSum, maxSum);
         }
         return maxSum;
     }
-};
-// @lc code=end
 
-/*
- int currentSum =nums[0], totalSum = nums[0];
-          for(int i=1; i<nums.size(); i++) {
+    // Using 1D DP
+    int helper2(vector<int> &vec, int len)
+    {
+        int currSum = vec[0], maxSum = vec[0];
 
-            currentSum = max(nums[i], currentSum+nums[i]);
-            totalSum = max(totalSum, currentSum);
+        for (int i = 1; i < len; i++)
+        {
+            currSum = max(currSum + vec[i], vec[i]);
+            maxSum = max(currSum, maxSum);
+        }
+        return maxSum;
     }
-        return totalSum;
- */
+
+    int maxSubArray(vector<int> &nums)
+    {
+        int len = nums.size();
+
+        // return helper1(nums, len);
+        return helper2(nums, len);
+    }
+};

@@ -1,9 +1,9 @@
-/* 
+/*
 ________________________________________
 ----------------------------------------
  Author    :  Niharika Dutta
- Code Link :    
- Time Complexity :   O(log n) 
+ Code Link :
+ Time Complexity :   O(log n)
 ________________________________________
 ----------------------------------------
  */
@@ -55,13 +55,13 @@ int main()
     return 0;
 }
 
-/* 
+/*
 
-STL :  BUILD IN FUNCTION 
+STL :  BUILD IN FUNCTION
 
-  # For Binary Search --->  ARAAY MUST BE SORTED 
+  # For Binary Search --->  ARAAY MUST BE SORTED
 
 binary_search(startaddress, endaddress, valuetofind)
 e.g.  binary_search(arr, arr + 10 , 8);
 
- */
+*/

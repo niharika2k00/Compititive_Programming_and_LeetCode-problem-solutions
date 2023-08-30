@@ -3,6 +3,9 @@
                                                           __________________________________
 
 
+TOP-DOWN APPROCH = RECURSIVE
+BOTTOM-UP = TABULAR
+
     VARIATIONS OF DP ON STRINGS
   --------------------------------
 

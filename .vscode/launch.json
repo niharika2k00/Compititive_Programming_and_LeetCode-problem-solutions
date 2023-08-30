@@ -1,0 +1,30 @@
+{
+  "configurations": [
+    {
+      "name": "(lldb) Launch",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "enter program name, for example ${workspaceFolder}/a.out",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${fileDirname}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "lldb"
+    },
+    {
+      "name": "C/C++: cpp build and debug active file",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${fileDirname}/${fileBasenameNoExtension}",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${fileDirname}",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "lldb",
+      "preLaunchTask": "C/C++: cpp build active file"
+    }
+  ],
+  "version": "2.0.0"
+}

@@ -1,8 +1,8 @@
 
-/* 
+/*
 ________________________________________
   - By Niharika Dutta
- Code Link : 
+ Code Link :
 ________________________________________
  */
 #include <bits/stdc++.h>
@@ -31,7 +31,7 @@ int main()
     int arr[] = {1, 1, 1, 2, 2, 3, 4};
     int i, size = sizeof(arr) / sizeof(arr[0]);
     unordered_map<int, int> map;
-    priority_queue<pair<int, int>> maxHeap; // Heap taking PAIR
+    priority_queue<pair<int, int>> maxHeap; // Heap taking PAIR  max heap
 
     for (i = 0; i < size; i++)
         map[arr[i]]++;
