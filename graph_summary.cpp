@@ -87,14 +87,19 @@ Dijkstra-- -- > * when + ve weights are associated with edges in the graph.
 //      --------------  MINIMUN COST SPANNING TREE (greedy method)  ---------
 //   __________________________________________________________________________
 
+Spanning Tree -->
+  - All edges needs to be connected
+  - Vertex = Edge-1
 
-Prims Algorithm  --->  *select min cost edge *then take a vertices already connected to the selected edge
-                       *always maintaing a tree as further connedted min vertice may not form a tree
+Minimum Spanning Tree -->
+  - Pick minimum cost in the edges weight
+  - Hence use MinHeap
+b 
+                        - then take a vertices already connected to the selected edge
+                        - always maintaing a tree as further connedted min vertice may not form a tree
 
-Kruskal Algorithm--->  *Always select the min cost edge
-                       *But if it forms a CYCLE then dont consider it
-
-
+Kruskal Algorithm --->  - Always select the min cost edge
+                        - But if it forms a CYCLE then dont consider it
 
 
 
@@ -106,5 +111,3 @@ Kruskal Algorithm--->  *Always select the min cost edge
    Bellman - Ford : O(V.E) = O(n^2)
    Floyd - Warshall : O(V ^ 3)
    Topological Sort :  O(V + E)
-
-     */
