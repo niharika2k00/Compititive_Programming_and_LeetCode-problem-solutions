@@ -1,4 +1,3 @@
-
 # ----------------------------------------
 #  SCRIPT FOR AUTO PUSH CODE IN GITHUB
 # ----------------------------------------
@@ -16,5 +15,3 @@ git push origin main
 
 
 #  -n  remove new line
-
-

@@ -28,7 +28,7 @@ using namespace std;
     cin >> t; \
     while (t--)
 
-//   Minimizes the sum of the cost of all the numbers along the path. You need to tell the minimum sum of that path.
+// Minimizes the sum of the cost of all the numbers along the path. You need to tell the minimum sum of that path.
 int minPath(int row, int col, vector<vector<int>> &Dp, vector<vector<int>> &grid)
 {
     if (row == 0 && col == 0)
